@@ -1,0 +1,37 @@
+## Modules/Extra: wifiSound.sys
+
+SetEnv CORE_DIR $[HOME]/.fvwm/core
+
+KillModule FvwmButtons TaskButtonsCurve
+KillModule FvwmButtons TaskButtonsFlux
+KillModule FvwmButtons RightTbar
+
+## Colorset check core/3Colorsets/KColors/kColorsets.sys
+
+## Color setting
+Colorset 131  fg #ffffff, bg #028383, hi, sh, Plain, NoShape
+
+## Wifi, Sound and other apps panel
+
+Module FvwmButtons WifiSnd
+
+DestroyModuleConfig WifiSnd: *
+*WifiSnd: Geometry 92x30-0-118
+*WifiSnd: Colorset 131
+*WifiSnd: Frame 0
+*WifiSnd: Rows 1
+
+Test (x stalonetray) *WifiSnd: (92x1, Colorset 131, Swallow(NoClose,UseOld) \
+    stalonetray 'Exec exec stalonetray --config ~/.fvwm/setup/stalonetrayrc', Frame 0, Colorset 131)
+
+*WifiSnd: (10x1)
+
+## Style setting
+
+Style WifiSnd !Borders, !Title, WindowListSkip, Sticky, StaysOnTop
+Style WifiSnd NoTitle
+
+## Change pre-settings
+KillModule FvwmButtons TimeDayButton
+Read $[CORE_DIR]/7Modules/TimeDayButton/timeDayB.sys
+*TimeDayButton: Geometry 92x70-0-40

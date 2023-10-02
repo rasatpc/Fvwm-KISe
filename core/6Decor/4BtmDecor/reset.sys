@@ -1,0 +1,7 @@
+## reset.sys
+# Loaded by button4Dec.sys
+
+# Reset Mouse function.
+
+## Change DeQTile to QTile
+Schedule 1000 Mouse 1 8 A QTile

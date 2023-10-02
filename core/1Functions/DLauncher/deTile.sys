@@ -1,0 +1,14 @@
+## deTiles.sys
+## Loaded by deskL.sys
+
+## Vertical/horizontal tiling
+
+FvwmRearrange -tile $0 -r -mn 3 -maximize 0 0 $[wa.width]p $[wa.height]p #(3 columns)
+
+## Change WTile to de-tiling allowing to click same button.
+
+Schedule 1000 DestroyFunc WTile
+Schedule 1000 AddToFunc WTile
+Schedule 1000 + I All (CurrentPage, !Iconic, CirculateHit, !Sticky) Maximize Off
+Schedule 1000 + I WindowId $0 WarpToWindow 50 50
+Schedule 1000 + I Read $[CORE_DIR]/1Functions/DLauncher/reset.sys

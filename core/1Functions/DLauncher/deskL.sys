@@ -1,0 +1,59 @@
+## Functions: deskL.sys
+
+SetEnv CORE_DIR $[HOME]/.fvwm/core
+SetEnv USER_DIR $[HOME]/.fvwm/user
+
+## Vertical/horizontal tiling
+
+DestroyFunc WTile
+AddToFunc WTile
++ I Read $[CORE_DIR]/1Functions/DLauncher/deTile.sys
+
+## OverView (using function FvwmExpose)
+
+## Iconify all except focused window.
+
+DestroyFunc AIconic
+AddToFunc AIconic
++ I All (CurrentPage, !Iconic, !Focused) Thumbnail
+
+## Work Desk environment
+
+DestroyFunc WorkD
+AddToFunc WorkD
++ I KillModule FvwmButtons RightPager
++ I Read $[CORE_DIR]/7Modules/DeskerBarPg/deskerConf.sys
++ I Read $[USER_DIR]/WorkButtons/hideWorkBar.sys
+
+#####
+## DESK LAUNCHER
+#####
+
+SetEnv dLicons $[CORE_DIR]/1Functions/DLauncher/icons
+
+## Disclude the possibility of FvwmButtons being iconified.
+Style FvwmButtons !Iconifiable
+
+DestroyFunc DLauncher
+AddToFunc DLauncher
++ I DestroyModuleConfig $0DLaunch: *
++ I *$0DLaunch: Geometry 80x80
++ I *$0DLaunch: PressColorset 7
++ I *$0DLaunch: Columns 1
++ I *$0DLaunch: Rows    4
++ I *$0DLaunch: Frame   0
++ I *$0DLaunch: (1x3+0+0, Icon $1, Action (Mouse 1) `$2`)
++ I *$0DLaunch: Pixmap none
++ I *$0DLaunch: (1x1+0+3, Font 9x15, Fore White, Back #2b4e5e, \
+                Title $0, Action (Mouse 1) `Exec exec $2`)
++ I Style $0DLaunch HandleWidth 0, NoTitle
++ I Module FvwmButtons $3 $0DLaunch
++ I UpdateStyles
+    
+DLauncher Iconify $[dLicons]/iconifyBkg.png "AIconic" "-g +15-15"
+DLauncher OverView $[dLicons]/overViewBkg.png 'FvwmExpose' "-g +105-15"
+DLauncher Tile $[dLicons]/tileBkg.png "WTile" "-g +195-15"
+DLauncher WorkDesk $[dLicons]/work.png "WorkD" "-g +285-15"
+
+Style *DLaunch* !Borders, !Title, WindowListSkip, Sticky, StaysOnTop
+Style *DLaunch* NeverFocus

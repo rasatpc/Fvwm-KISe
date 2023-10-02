@@ -1,0 +1,28 @@
+## Bindings/Extra: KeyBindings.sys
+
+SetEnv HOME_DIR $[HOME]/.fvwm
+SetEnv CORE_DIR $[HOME]/.fvwm/core
+
+## Key commands
+# A = Alt
+# C = Control
+# S = Shift
+# M = Meta (Alt)
+# Super = WinIcon
+
+## KEY-MOUSE BINDINGS (untag below lines)
+
+# Silent Key z A M Move # alt-z (letter)
+# Silent Key F8 A C Resize # ctrl-F8
+# Silent Key Space A M Thumbnail # alt-space
+# Silent Key m A M Maximize 97 90 # alt-m
+# Silent Key x A M Destroy # alt-x
+
+## Maximize alt-m
+Silent Key m A M Maximize 100 100 # width hight
+
+## Minimize (thumbnail) alt-t
+Silent Key t A M Thumbnail
+
+## Close alt-x
+Silent Key x A M Close

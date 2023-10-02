@@ -1,0 +1,68 @@
+## Functions/Core: startFunc.sys
+
+#########################
+## Add the below line at the top of /.fvwm/config or local.config).
+Read $[CORE_DIR]/1Functions/startFunc.sys
+
+## More about default Functions, read
+## .fvwm/core/1Functions/FVWM-Functions.def
+#########################
+
+## Mouse Bindings Functions
+
+DestroyFunc RaiseMoveX
+AddToFunc RaiseMoveX
++ I Raise
++ M $0
++ D $1
+
+DestroyFunc RaiseMove
+AddToFunc RaiseMove
++ I Raise
++ M $0
+
+DestroyFunc MoveToCurrent
+AddToFunc MoveToCurrent
++ I ThisWindow MoveToPage
++ I ThisWindow MoveToDesk
+
+## Function: ViewManPage $0
+## This function loads the man page $0 in an terminal
+## and is used with the help menu.
+
+DestroyFunc ViewManPage
+AddToFunc   ViewManPage
++ I Exec exec $[infostore.terminal] -g 80x40 \
+  -n "Manual Page - $0" -T "Manual Page - $0" -e man "$0"
+
+## Function: IconManClick
+## This function is run from FvwmIconMan when the button is clicked.
+## Example Iconify with Thumbnails
+
+DestroyFunc IconManClick
+AddToFunc   IconManClick
++ I ThisWindow (Raised, !Shaded, !Iconic, CurrentPage, AnyScreen) Thumbnail
++ I TestRc (Match) Break
++ I ThisWindow WindowShade off
++ I ThisWindow Iconify off
++ I ThisWindow Raise
++ I ThisWindow (AcceptsFocus) FlipFocus
+
+## Function: ToggleTitle
+## This function will toggle if fvwm shows the TitleBar.
+
+DestroyFunc ToggleTitle
+AddToFunc   ToggleTitle
++ I ThisWindow (HasTitle) WindowStyle !Title
++ I TestRc (NoMatch) WindowStyle Title
+
+## Function: ChangeDesk
+## This function is called by FvwmEvent every time the Desk is changed.
+
+DestroyFunc ChangeDesk
+AddToFunc   ChangeDesk
++ I SendToModule FvwmButtons ChangeButton desk0 Colorset 10
++ I SendToModule FvwmButtons ChangeButton desk1 Colorset 10
++ I SendToModule FvwmButtons ChangeButton desk2 Colorset 10
++ I SendToModule FvwmButtons ChangeButton desk3 Colorset 10
++ I SendToModule FvwmButtons ChangeButton desk$0 Colorset 11

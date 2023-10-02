@@ -1,0 +1,14 @@
+## Functions/Core: winPos.sys
+
+## Window position
+
+AddToFunc StartFunction I Module FvwmEvent FvwmEvent-MoveWindow
+
+DestroyModuleConfig FvwmEvent-MoveWindow: *
+*FvwmEvent-MoveWindow: Cmd Function
+*FvwmEvent-MoveWindow: add_window MoveWindow
+
+DestroyFunc MoveWindow
+AddToFunc   MoveWindow
++ I ThisWindow ("Calendar*") Move -2 -10
++ I ThisWindow ("Alert*") Move -15 -30

@@ -1,0 +1,64 @@
+## Modules/Extra: deskerPanel.sys
+## Loaded by deskerConf.sys
+
+SetEnv HOME_DIR $[HOME]/.fvwm
+SetEnv CORE_DIR $[HOME]/.fvwm/core
+
+SetEnv micon /usr/share/pixmaps/fvwm
+SetEnv icons $[CORE_DIR]/7Modules/DeskerBarPg/icons
+
+## Bar Buttons
+
+Module FvwmButtons BarButtons
+
+DestroyModuleConfig BarButtons: *
+*BarButtons: Geometry 160x240-0+0
+*BarButtons: Font "xft:Sans:size=10:antialias=True"
+*BarButtons: Colorset 16
+*BarButtons: Columns 2
+*BarButtons: Frame 0
+
+*BarButtons: (1x2, Icon $[icons]/work-spaceC.png, \
+	Panel(left, position module -10+2 top, steps 6, delay 10, indicator 30) \
+	"FvwmDesker" 'Module FvwmPager FvwmDesker 0 3', \
+    Action(Mouse 2) 'Exec exec xterm', \
+    Action(Mouse 3) 'Exec exec thunar')
+    
+*BarButtons: (1x2, Padding 0 0, Container(Padding 0 0, Frame 1, Columns 2))
+
+*BarButtons: (Icon $[icons]/move.png, Action Move)
+*BarButtons: (Icon $[icons]/curve.png, Action(Mouse 1) `ReturnDesk`)
+*BarButtons: (Icon $[icons]/resize.png, Action Resize)
+*BarButtons: (Icon $[icons]/close.png, Action Close)
+*BarButtons: (End)
+
+*BarButtons: (1x2, Title "1rof/3cal", Icon $[icons]/calendar-rofi.png, \
+	Action(Mouse 1) 'Exec exec rofi -show', \
+	Action(Mouse 3) "Exec exec $[CORE_DIR]/7Modules/TimeDayButton/script/Calendar.sh",Frame 1)
+	
+*BarButtons: (1x2, Title "xclock", Swallow "xclock" "Exec exec xclock -padding 0 -geometry -1500-1500")
+
+*BarButtons: (2x2, Swallow FvwmPager 'Module FvwmPager *', Frame 0)
+
+Style BarButtons NoTitle, NoHandles, !Title, WindowListSkip, Layer 4, Sticky, !Iconifiable, BorderColorset 10, BorderWidth 0, NeverFocus
+
+DestroyModuleConfig FvwmPager: *
+*FvwmPager: Colorset * 15
+*FvwmPager: HilightColorset * 17  ## (active page background)
+*FvwmPager: BalloonColorset * 10  ## (font color)
+*FvwmPager: WindowColorsets 5 18  ## (inactive - active apps)
+*FvwmPager: WindowBorderWidth 1
+*FvwmPager: BalloonStringFormat %c
+*FvwmPager: BallonYOffset +2
+*FvwmPager: Window3dBorders
+*FvwmPager: UseSkipList # hides modules
+*FvwmPager: MiniIcons
+*FvwmPager: Label 0 Web
+*FvwmPager: Label 1 Email
+*FvwmPager: Label 2 Work
+*FvwmPager: Label 3 Misc
+
+Style FvwmPager * NoTitle, WindowListSkip, Sticky, !Handles, !Iconifiable, FixedSize, BorderColorset 10, BorderWidth 1
+
+## Desker Pager
+Read $[CORE_DIR]/7Modules/DeskerBarPg/deskerPager.sys

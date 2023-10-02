@@ -1,0 +1,88 @@
+## Modules/Extra: rightTbar.sys
+
+SetEnv CORE_DIR $[HOME]/.fvwm/core
+
+KillModule FvwmButtons TaskButtonsCurve
+KillModule FvwmButtons *RightPanel
+KillModule FvwmButtons TaskButtonsFlux
+KillModule FvwmButtons WifiSnd
+
+## Logo location
+
+SetEnv logo-icon $[CORE_DIR]/7Modules/RightTaskBar/icons
+
+## Color settings
+
+ColorSet 15 RootTransparent Buffer, Tint #4A516A 50, fg white, bg black
+Colorset 131  fg #ffffff, bg #028383, hi, sh, Plain, NoShape
+
+## FvwmScript date/time background color setting.
+
+DestroyModuleConfig FvwmScript:*
+*FvwmScript: DefaultColorset 10
+
+## Right Taskbar
+
+Module FvwmButtons RightTbar
+
+DestroyModuleConfig RightTbar:*
+*RightTbar: Geometry 120x$[vp.height]-0+280
+*RightTbar: Colorset 10
+*RightTbar: Rows $[vp.height]
+*RightTbar: Frame 0
+*RightTbar: (120x45, Icon "$[logo-icon]/fvwm-logo-110x38.png", Frame 0, Colorset 15)
+*RightTbar: (120x7, Frame 0, Colorset 15)
+*RightTbar: (120x2, Frame 0, Colorset 10)
+
+Test (x stalonetray) *RightTbar: (120x22, Swallow(NoClose,UseOld) \
+    stalonetray 'Exec exec stalonetray --config ~/.fvwm/setup/stalonetrayrc', Frame 0, Colorset 131)
+    
+Test (x stalonetray) PipeRead 'echo "*RightTbar: (120x$(($[vp.height]-430)), \
+    Top, Swallow FvwmIconMan \'Module FvwmIconMan\', Frame 0, Colorset 10)"'
+Test (!x stalonetray) PipeRead 'echo "*RightTbar: (120x$(($[vp.height]-430)),\
+    Top, Swallow FvwmIconMan \'Module FvwmIconMan\', Frame 0, Colorset 10)"'
+
+*RightTbar: (120x5, Frame 0, Colorset 15)
+*RightTbar: (120x45, Swallow DateTime 'Module FvwmScript FvwmScript-DateTime', Frame 0)
+*RightTbar: (120x5, Frame 0, Colorset 15)
+*RightTbar: (120x30, Frame 0)
+
+## Style settings
+
+Style RightTbar !Title, WindowListSkip, Layer 4, Sticky, !Iconifiable, BorderColorset 10, BorderWidth 0, NeverFocus
+
+## Change pre-settings
+# FvwmIconMan
+# More options: core/7Modules/FVWM-Modules.def
+
+DestroyModuleConfig FvwmIconMan:*
+*FvwmIconMan: UseWinList true
+*FvwmIconMan: ButtonGeometry 120x22
+*FvwmIconMan: ManagerGeometry 1x1
+*FvwmIconMan: Background #2b4e5e
+*FvwmIconMan: Foreground #ffffff
+*FvwmIconMan: FocusColorset 11
+*FvwmIconMan: IconColorset 14
+*FvwmIconMan: FocusAndSelectColorset 12
+*FvwmIconMan: SelectColorset 12
+*FvwmIconMan: IconAndSelectColorset 12
+*FvwmIconMan: DrawIcons always
+*FvwmIconMan: ReliefThickness 0
+*FvwmIconMan: Format "%t"
+*FvwmIconMan: Font "xft:Sans:Bold:size=10:antialias=True"
+*FvwmIconMan: Action Mouse 0 A ret
+*FvwmIconMan: Action Mouse 1 A sendcommand IconManClick
+*FvwmIconMan: Action Mouse 3 A sendcommand "Menu MenuIconOps"
+*FvwmIconMan: Resolution global
+*FvwmIconMan: Tips needed
+*FvwmIconMan: Sort id
+
+## Change position
+## Load before Right Taskbar.
+
+*WinListB: Geometry 104x30-8-150
+*TimeDayButton: Geometry 100x70-10-30
+
+## Change level
+
+Style TimeDayButton StaysOnTop

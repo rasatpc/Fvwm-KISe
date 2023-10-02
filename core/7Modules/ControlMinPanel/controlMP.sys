@@ -1,0 +1,68 @@
+## Modules/Core: controlMP.sys
+
+SetEnv HOME_DIR $[HOME]/.fvwm
+SetEnv CORE_DIR $[HOME]/.fvwm/core
+
+KillModule FvwmButtons ControlPanelB
+
+## Help Drop Menu
+
+DestroyMenu MenuStart
+AddToMenu MenuStart
+Test (x featherpad) + "Info " Exec exec featherpad $[HOME_DIR]/setup/help/info.txt
+Test (x mousepad) + "Info " Exec exec mousepad $[HOME_DIR]/setup/help/info.txt
+
+Test (x featherpad) + "Bindings " Exec exec featherpad $[HOME_DIR]/setup/help/key-mouse-bindings.txt
+Test (x mousepad) + "Bindings " Exec exec mousepad $[HOME_DIR]/setup/help/Key-Mouse-Bindings.txt
+
++ "How To " Exec exec display -size 960x540 $[HOME]/.fvwm/setup/images/Fvwm-KISe-v1.1.0-help.png
+
+## Set small icons
+
+SetEnv smallIcons $[CORE_DIR]/7Modules/ControlMinPanel/icons
+
+## Panel
+
+Module FvwmButtons ControlMP
+
+DestroyModuleConfig ControlControlMP: *
+*ControlMP: Geometry 330x34-0+3
+*ControlMP: Fore #ffffff
+*ControlMP: Back #2b4e5e
+*ControlMP: PressColorset 7
+*ControlMP: Frame 0
+*ControlMP: Rows 1
+*ControlMP: Pixmap none
+*ControlMP: Font "xft:Sans:size=12:antialias=True"
+  
+*ControlMP: (1x1, Icon $[smallIcons]/search-wb.png, Action(Mouse 1) "Exec exec rofi -show" )
+*ControlMP: (1x1, Icon $[smallIcons]/resize-wb.png, Action Resize )
+*ControlMP: (1x1, Icon $[smallIcons]/move-wb.png, Action Move  )
+
+*ControlMP: (Title Help, Back #028383,  ActionOnPress, Action(Mouse 1) Menu MenuStart Rectangle +$left+38 0 12m)
+
+*ControlMP: (1x1, Colorset 10, Icon $[smallIcons]/quit-w.png, \
+	Panel (down, steps 6, delay 0, indicator 40) "ExitBar" 'Module FvwmButtons ExitBar', \
+    Action(Mouse 2) 'Exec exec xterm', \
+    Action(Mouse 3) 'Exec exec thunar', Frame 1)
+
+## Style Setting
+
+Style ControlMP !Borders, !Title, WindowListSkip, StaysOnTop, Sticky
+
+## Exit Button
+
+DestroyModuleConfig ExitBar: *
+*ExitBar: Fore White
+*ExitBar: Back #028383
+*ExitBar: Geometry 66x160+0+0
+*ExitBar: Rows 4
+*ExitBar: Frame 1
+## Logout, Suspend, Restart, and Shutdown
+*ExitBar: (1x1, Icon $[smallIcons]/logout.png, Action(Mouse 1) "Quit")
+*ExitBar: (1x1, Icon $[smallIcons]/suspend.png, Action(Mouse 1) "Exec sudo pm-suspend")
+*ExitBar: (1x1, Icon $[smallIcons]/restart.png, Action(Mouse 1) "Exec sudo reboot")
+*ExitBar: (1x1, Icon $[smallIcons]/quit.png, Action(Mouse 1) "Exec sudo halt")
+
+Style ExitBar NoTitle, NoHandles, Sticky, WindowListSkip, \
+	BorderWidth 0, CirculateSkip, StaysOnTop

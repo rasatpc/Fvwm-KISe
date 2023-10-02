@@ -1,0 +1,23 @@
+## Modules/Core: hideWorkBar.sys
+
+SetEnv HOME_DIR $[HOME]/.fvwm
+SetEnv CORE_DIR $[HOME]/.fvwm/core
+SetEnv USER_DIR $[HOME]/.fvwm/user
+
+## Set app icon folder
+# SetEnv wicons $[CORE_DIR]/7Modules/WorkButtons/icons
+SetEnv wicons $[USER_DIR]/WorkButtons/icons
+
+Module FvwmButtons HideWBar
+DestroyModuleConfig HideWBar: *
+*HideWBar: Geometry 64x64+0+192
+*HideWBar: Pixmap none
+*HideWBar: Rows 1
+*HideWBar: Frame 0
+
+*HideWBar: (1x1, Icon $[wicons]/64x64/Tux-My-Computer.png, Panel(down, steps 0, delay 0, indicator 30) "WorkBar" 'Read $[USER_DIR]/WorkButtons/workButtons.sys', \
+    Action(Mouse 2) 'Exec exec xterm', \
+    Action(Mouse 3) 'Exec exec thunar')
+
+Style HideWBar NoTitle, NoHandles, Sticky, WindowListSkip, \
+	BorderWidth 0, CirculateSkip, StaysOnTop

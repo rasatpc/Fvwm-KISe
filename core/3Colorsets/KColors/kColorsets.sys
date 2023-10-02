@@ -1,0 +1,56 @@
+## Styles/Core: kColors.sys
+
+## Transparent
+ColorSet 15 RootTransparent Buffer, Tint #4a516a 60, fg white, bg black
+
+## No borderline
+Colorset 19 fg #ffffff, bg #2b4e5e, hi #2b4e5e, sh #2b4e5e
+Colorset 191 fg #ffffff, bg #4e3715, hi #2b4e5e, sh #2b4e5e
+
+#########
+## Examples of Colorset in core/4Menus/KMenu/BgPanel/*.conf
+#########
+
+## Colorsets for Horizontal and Vertical panels
+## Gradient directions:
+# Diagonal = D
+# Horizontal = H
+# Vertical = V
+
+### GREY
+Colorset 20 VGradient 50 #646464 #b6b6b6
+Colorset 201 HGradient 50 #646464 #b6b6b6
+
+### GREEN
+Colorset 16 VGradient 50 #638079 #b6b6b6, fg #ffffff
+Colorset 21 bg #21d040 #(close for NsCDE)
+Colorset 22 VGradient 30 #21d040 #cfcfcf  #(close for NsCDE)
+
+### BROWN
+# Colorset 23 bg #5c564e
+Colorset 24 VGradient 100 #5c564e #f5f5dc
+
+### BLUE
+Colorset 25 HGradient 200 #d1d4d7 #17576a
+Colorset 253 HGradient 200 #17576a #d1d4d7
+Colorset 251 VGradient 200 #17576a #d1d4d7
+Colorset 252 VGradient 200 #d1d4d7 #17576a
+Colorset 27 fg #ffffff, bg #306ea2, hi #ffffff, sh #ffffff, Plain, NoShape
+
+### WOOD
+Colorset 26 bg #deb274
+Colorset 261 HGradient 10 #cd935d #e1bc8b
+Colorset 262 VGradient 50 #e4c293 #bc7f47
+Colorset 263 VGradient 50 #bc7f47 #e4c293
+Colorset 264 VGradient 100 #deb274 #ebce9b
+
+## BLUE and BROWN
+Colorset 110 fg #ffffff, bg #eaeaea, hi #ffffff, sh #ffffff, Plain, NoShape
+Colorset 111 fg #ffffff, bg #3a697e, hi #ffffff, sh #ffffff, Plain, NoShape
+Colorset 112 fg #ffffff, bg #bc7f47, hi #ffffff, sh #ffffff, Plain, NoShape
+Colorset 361 HGradient 50 #bc7f47 #deb274
+Colorset 362 VGradient 50 #deb274 #bc7f47
+Colorset 363 VGradient 50 #c0ccd1 #42616f
+
+Colorset 364 VGradient 50 #7d99a5 #42616f
+Colorset 365 VGradient 50  #c0ccd1 #7d99a5

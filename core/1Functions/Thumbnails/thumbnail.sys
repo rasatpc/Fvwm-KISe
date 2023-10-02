@@ -1,0 +1,37 @@
+## Styles/Extra: thumbnail.sys
+
+SetEnv HOME_DIR $[HOME]/.fvwm
+SetEnv CORE_DIR $[HOME]/.fvwm/core
+
+## Set Thumbnail cache folder
+
+SetEnv cacheth $[CORE_DIR]/1Functions/Thumbnails/cache
+
+## Thumbnail fuction
+
+DestroyFunc Thumbnail
+AddToFunc Thumbnail
++ I Raise
++ I ThisWindow (!Shaded, Iconifiable, !Iconic) PipeRead \
+       "xwd -silent -id $[w.id] | convert -scale 156 -frame 1x1 \
+       -mattecolor black -quality 0 xwd:- \
+       png:$[cacheth]/icon.tmp.$[w.id].png \
+       && echo WindowStyle IconOverride, \
+       Icon $[cacheth]/icon.tmp.$[w.id].png \
+       || echo Nop"
++ I Iconify
+
+DestroyFunc DeThumbnail
+AddToFunc DeThumbnail
++ I Exec rm -f $[cacheth]/icon.tmp.$[w.id].png
++ I DestroyWindowStyle
+*FvwmEvent: deiconify DeThumbnail
+AddToFunc StartFunction I Module FvwmEvent
+
+## Iconfy (minimize) to Thumbnail Placeholder
+
+Style * IconBox 400x600-10+340, IconGrid 1 4, \
+IconFill top right, !IconTitle, IconBackgroundRelief 0
+
+## Mouse Binding
+Mouse 1 I A Iconify off # One click deiconify

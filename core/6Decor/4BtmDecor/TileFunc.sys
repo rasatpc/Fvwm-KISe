@@ -1,0 +1,19 @@
+## TileFunc.sys
+## Loaded by button4Dec.sys
+
+## Vertical/horizontal tiling
+
+FvwmRearrange -tile $0 -r -mn 3 -maximize 0 0 $[wa.width]p $[wa.height]p #(3 columns)
+
+## De-Tiling
+
+Schedule 1000 DestroyFunc DeQTile
+Schedule 1000 AddToFunc DeQTile
+Schedule 1000 + I All (CurrentPage, !Iconic, CirculateHit, !Sticky) Maximize Off
+Schedule 1000 + I WindowId $0 WarpToWindow 50 50
+Schedule 1000 + I Read $[CORE_DIR]/6Decor/4BtmDecor/reset.sys
+
+## Change QTile to DeQTile
+## To use same Tile button.
+
+Mouse 1 8 A DeQTile ## right-click title bar tile-icon

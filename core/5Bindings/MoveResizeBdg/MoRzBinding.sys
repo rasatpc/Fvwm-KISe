@@ -1,0 +1,22 @@
+## Bindings/Core: MoRzBinding.sys
+
+## Move window (Super+left mouse click).
+## Super = key with window sign.
+
+DestroyFunc FocusWhenMove
+AddToFunc FocusWhenMove
+ + I Raise
+ + I Focus
+ + M Move
+
+Mouse 1 WS 4 FocusWhenMove
+
+## Resize window (Super+right mouse click).
+
+DestroyFunc FocusWhenResize
+AddToFunc FocusWhenResize
+ + I Raise
+ + I Focus
+ + I Resize
+
+Mouse 3 WS 4 FocusWhenResize

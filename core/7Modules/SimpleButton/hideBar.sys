@@ -1,0 +1,18 @@
+## Modules/Core: hideBar.sys
+
+SetEnv HOME_DIR $[HOME]/.fvwm
+SetEnv CORE_DIR $[HOME]/.fvwm/core
+SetEnv USER_DIR $[HOME]/.fvwm/user
+
+Module FvwmButtons HideBar
+DestroyModuleConfig HideBar: *
+*HideBar: Fore Black
+*HideBar: Back #009393
+*HideBar: Geometry 64x64+0+190
+*HideBar: Rows 1
+*HideBar: Frame 0
+
+*HideBar: (Panel(down, steps 0, delay 0, position module left, indicator 50) "SimpleButton" 'Read $[USER_DIR]/SimpleButton/simpleB.sys')
+
+Style HideBar NoTitle, NoHandles, Sticky, WindowListSkip, \
+	BorderWidth 0, CirculateSkip, StaysOnTop

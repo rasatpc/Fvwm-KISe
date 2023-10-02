@@ -1,0 +1,51 @@
+## Modules/Core: simpleB.sys
+#
+# DESKTOP ICONS PANEL
+
+SetEnv HOME_DIR $[HOME]/.fvwm
+SetEnv CORE_DIR $[HOME]/.fvwm/core
+SetEnv USER_DIR $[HOME]/.fvwm/user
+
+## Remove similar modules
+KillModule FvwmButtons DashToDock
+KillModule FvwmButtons HideWBar
+
+## Set app icon folder
+# SetEnv sbicons $[CORE_DIR]/7Modules/SimpleButton/icons/icon48x48
+SetEnv sbicons $[USER_DIR]/SimpleButton/icons/icon48x48
+
+## Icon Panel
+## Geometry example:
+## [width]x[hight]+[left-right]+[top-down]
+
+Module FvwmButtons SimpleButton
+
+DestroyModuleConfig SimpleButton: *
+*SimpleButton: Geometry 54x470+2+192
+*SimpleButton: PressColorset 7
+# *SimpleButton: Colorset 10 ## (close for Pixmap)
+*SimpleButton: Pixmap none
+*SimpleButton: Frame 0
+
+## Add or remove below buttons
+
+*SimpleButton: Rows 8  ## (as per numbers of buttons)
+
+*SimpleButton: (1x1, Icon $[sbicons]/thunar.png, \
+              Action(Mouse 1) "Exec exec thunar")
+*SimpleButton: (1x1, Icon $[sbicons]/firefox.png, \
+              Action(Mouse 1) "Exec exec firefox")
+*SimpleButton: (1x1, Icon $[sbicons]/libreoffice-main.png, \
+              Action(Mouse 1) "Exec exec libreoffice")
+*SimpleButton: (1x1, Icon $[sbicons]/featherpad.png, \
+              Action(Mouse 1) "Exec exec featherpad")
+*SimpleButton: (1x1, Icon $[sbicons]/gimp.png, \
+				Action(Mouse 1) "Exec exec gimp")
+*SimpleButton: (1x1, Icon $[sbicons]/scribus.png, \
+				Action(Mouse 1) "Exec exec scribus")
+*SimpleButton: (1x1, Icon $[sbicons]/gparted.png, \
+              Action(Mouse 1) "Exec exec /usr/bin/gparted ")
+*SimpleButton: (1x1, Icon $[sbicons]/screenshooter.png, \
+              Action(Mouse 1) "Exec exec xfce4-screenshooter")
+
+Style SimpleButton !Borders, !Title, WindowListSkip, StaysOnTop, Sticky
