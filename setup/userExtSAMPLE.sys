@@ -1,0 +1,173 @@
+## Copy and rename .fvwm/setup/userExtSAMPLE.sys to .fvwm/userExt.sys
+
+## This file is for you to add/remove and make changes in core configs.
+## Currently there are 25 scripts (configs) in .fvwm/core.
+
+## Make changes (tag and untag) and add your own.
+## To maintain Fvwm sequence, each config has an
+## assigned location and category tag (core,  extra, and user).
+
+## Major core config changes for user, copy it from .fvwm/core
+## to .fvwm/user
+## Tag core config and replace $[CORE_DIR] with $[USER_DIR]
+## Example:
+##  # Read $[CORE_DIR]/4Menus/KMenu/kMenu.conf
+##  Read $[USER_DIR]/KMenu/kMenu.conf
+
+#################################################
+## CORE (essential), EXTRA (additional), and USER
+#################################################
+
+###########
+# 1. FUNCTIONS (launcher, thumbnail, window position, etc)
+# .fvwm/core/1Functions/< 7x configs>
+###########
+
+## CORE
+Read $[CORE_DIR]/1Functions/WinPosition/winPos.sys
+Read $[CORE_DIR]/1Functions/DLauncher/deskL.sys
+Read $[CORE_DIR]/1Functions/PageIndicator/deskPgNo.sys
+
+## EXTRA
+Read $[CORE_DIR]/1Functions/Thumbnails/thumbnail.sys
+
+## USER ($[USER_DIR])
+Read $[USER_DIR]/AutoMoveWin/autoMoveW.sys
+
+###########
+# 2. STYLES (menu colors, etc)
+# .fvwm/2Styles/< 2 x configs>
+###########
+
+## CORE
+Read $[CORE_DIR]/2Styles/FVWM-Styles.def
+
+## EXTRA
+Read $[CORE_DIR]/2Styles/MenuBlue/mBlue.conf
+
+## USER ($[USER_DIR])
+
+###########
+# 3. COLORSETS (color settings, etc.)
+# .fvwm/core/3Colorsets/< 1 x configs>
+###########
+
+## CORE
+Read $[CORE_DIR]/3Colorsets/KColors/kColorsets.sys
+Read $[CORE_DIR]/3Colorsets/FVWM-Colorsets.def
+
+## EXTRA
+
+## USER ($[USER_DIR])
+
+###########
+# 4. MENUS  (menu style, list, etc.)
+# .fvwm/core/4Menus/< 1 x configs>
+###########
+
+## CORE
+
+## EXTRA
+Read $[CORE_DIR]/4Menus/KMenu/kMenu.conf
+
+## USER ($[USER_DIR])
+
+###########
+# 5. BINDINGS  (window list, move/resize, etc.)
+# .fvwm/core/5Bindings/< 3 x configs>
+###########
+
+## CORE
+Read $[CORE_DIR]/5Bindings/FVWM-Bindings.def
+Read $[CORE_DIR]/5Bindings/ExposeList/fvwmExposeList.sys
+Read $[CORE_DIR]/5Bindings/MoveResizeBdg/MoRzBinding.sys
+
+## EXTRA
+Read $[CORE_DIR]/5Bindings/KeyBindings/kBinding.sys
+
+## USER ($[USER_DIR])
+
+###########
+# 6. DECOR  (window title bar, border, etc.)
+# .fvwm/core/6Decor/< 2 x configs>
+###########
+
+## CORE
+Read $[CORE_DIR]/6Decor/FVWM-Decor.def
+
+## EXTRA
+Read $[CORE_DIR]/6Decor/4BtmDecor/button4Dec.sys
+
+## USER ($[USER_DIR])
+
+###########
+# 7. MODULES (control-panel, desk-icon, pager, etc.)
+# .fvwm/core/7Modules/< 9 x configs>
+###########
+
+## CORE (control-panel, desk-icon, pager, etc.)
+Read $[CORE_DIR]/7Modules/FVWM-Modules.def
+Read $[CORE_DIR]/7Modules/ControlMinPanel/controlMP.sys
+
+## EXTRA
+Test (x conky) Read $[CORE_DIR]/7Modules/ConkyBtn/hideC.conf
+Read $[CORE_DIR]/7Modules/RightPager/rightPg.sys
+Read $[CORE_DIR]/7Modules/RightTaskBar/rightTbar.sys
+
+## USER ($[USER_DIR])
+Read $[USER_DIR]/SimpleButton/hideBar.sys
+
+###########################################
+## Change preloaded settings.
+###########################################
+
+##### EdgeScroll
+## This will move the view port between the pages when the mouse
+## moves to the edge of the screen.
+
+EdgeScroll 0 0
+EdgeResistance 450
+EdgeThickness 1
+Style * EdgeMoveDelay 500, EdgeMoveResistance 100
+
+##### EwmhBaseStruts
+## EwmhBaseStruts [left] [right] [top] [bottom]
+## Reserves space along the edge(s) of the Screen that will not
+## be covered when maximizing or placing windows.
+
+EwmhBaseStruts 80 180 90 100
+
+##### Mouse
+## Mouse click behaviour and window focus.
+
+Style * ClickToFocus, FPGrabFocus
+
+##### Window Placement
+## Style to center the window location.
+
+Style * TileCascadePlacement
+
+## When iconifying all except one which is focused.
+## Mouse click not to focus the button.
+Style *DLaunch* NeverFocus
+Style RightPager NeverFocus
+
+##### Exit panel 
+## Center panel postion.
+
+Style ConfirmQuit !Title, PositionPlacement Center, WindowListSkip, Layer 6
+
+###########################################
+## OTHER changes and addon.
+###########################################
+
+##### Keyboard
+## Keyboard TouchPad on/off
+
+Test (x synclient) Exec synclient TouchpadOff=1
+Test (x xinput) Exec xinput disable 12
+
+##### Change Window title bar font.
+##
+
+DefaultFont "xft:Noto:Sans:size=12"

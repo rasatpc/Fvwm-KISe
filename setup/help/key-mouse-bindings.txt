@@ -1,0 +1,27 @@
+KEY & MOUSE BINDINGS
+
+KEY
+Close window (alt-x)
+Maximize (alt-m)
+Minimize (thumbnail) (alt-t)
+Move Desk Icon Panel north (alt-n)
+Move Desk Icon Panel west (alt-w)
+Switch between Virtual Desktops (ctrl-F1/F2/F3/F4)
+
+MOUSE
+Move window (Super+left mouse click)
+Resize window (Super+right mouse click)
+FvwmExpose (Mouse middle-click anywhere on desk)
+
+Load Thunar - Left-click desk, Work Button and Desker icon.
+Load Xterm - Mid-click Work Button and Desker icon
+Load Rofi - Left-click Desker icon (rofi/calendar)
+Load Calendar - Right-click Desker icon.
+
+Edit Work Button apps - Right-click main icons.
+
+More bindings:
+.fvwm/core/5Bindings
+
+More information:
+.fvwm/setup/images/Fvwm-KISe-v1.1.0-help.png
