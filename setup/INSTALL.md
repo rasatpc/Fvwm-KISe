@@ -12,19 +12,19 @@ Extract and copy subfolders to ~/.fvwm
 # GENERAL
 # FVWM3 PACKAGE INSTALL & DEPENDENCIES 
 
-Install Fvwm3 package `(if available)` or Fvwm2
+Install Fvwm3 package (if available) or Fvwm2
 
 MX Linux:
-* `sudo apt-get install fvwm3`
+* sudo apt-get install fvwm3
 
 Arch Linux:
 * `yay -S fvwm3`
 
 Fedora/OpenSUSE/other RPM-based distros:
-* `sudo dfn install fvwm3`
+* sudo dfn install fvwm3
 
 Alpine Linux:
-* `apk add fvwm`
+* apk add fvwm
 
 Documentation, XDG menu, Network and Volume Icon (add icon in system tray):
 ===============================================================
@@ -34,7 +34,7 @@ Documentation, XDG menu, Network and Volume Icon (add icon in system tray):
 
 Required by Thumbnails and Picom (compositor):
 ===============================================================
-* sudo apt install imagemagick picom
+* sudo apt install imagemagick x11-apps picom
 * sudo apt install imagemagick x11-apps picom
 * sudo pacman -Syu imagemagick x11-apps picom
 * sudo dnf install ImageMagick xwd x11-apps picom
