@@ -48,9 +48,9 @@ Copy .fvwm/setup/rofi to .config/
 
 Required by Yad and other scripts:
 ===============================================================
-* sudo apt install yad gawk sed wget conky
-* sudo pacman -Syu yad gawk sed wget conky
-* sudo dnf install yad gawk sed wget conky
+* sudo apt install yad gawk sed wget
+* sudo pacman -Syu yad gawk sed wget
+* sudo dnf install yad gawk sed wget
 
 #############
 # ALTERNATIVE

@@ -1,7 +1,7 @@
 ## Copy and rename .fvwm/setup/userExtSAMPLE.sys to .fvwm/userExt.sys
 
 ## This file is for you to add/remove and make changes in core configs.
-## Currently there are 25 scripts (configs) in .fvwm/core.
+## Currently there are 24 scripts (configs) in .fvwm/core.
 
 ## Make changes (tag and untag) and add your own.
 ## To maintain Fvwm sequence, each config has an
@@ -102,7 +102,7 @@ Read $[CORE_DIR]/6Decor/4BtmDecor/button4Dec.sys
 
 ###########
 # 7. MODULES (control-panel, desk-icon, pager, etc.)
-# .fvwm/core/7Modules/< 9 x configs>
+# .fvwm/core/7Modules/< 8 x configs>
 ###########
 
 ## CORE (control-panel, desk-icon, pager, etc.)
@@ -110,7 +110,6 @@ Read $[CORE_DIR]/7Modules/FVWM-Modules.def
 Read $[CORE_DIR]/7Modules/ControlMinPanel/controlMP.sys
 
 ## EXTRA
-Test (x conky) Read $[CORE_DIR]/7Modules/ConkyBtn/hideC.conf
 Read $[CORE_DIR]/7Modules/RightPager/rightPg.sys
 Read $[CORE_DIR]/7Modules/RightTaskBar/rightTbar.sys
 
