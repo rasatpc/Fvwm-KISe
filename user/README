@@ -1,0 +1,8 @@
+Here you can add your own scripts without getting affected by version updates or other official changes.
+
+For example, copy one of the scripts from .fvwm/core or make your own, and add the Read link in .fvwm/userExt.sys.
+
+Replace $[CORE_DIR] with $[USER_DIR], example:
+Read $[CORE_DIR]/4Menus/KMenu/kMenu.conf
+to
+Read $[USER_DIR]/KMenu/kMenu.conf
