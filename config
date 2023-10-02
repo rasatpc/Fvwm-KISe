@@ -1,0 +1,68 @@
+##################################
+#  ____________________________
+# (   ______ KISe _____________)
+#  ) (__  _  _  _    _
+# (   __)( \/ )( \/\/ )/\/\
+#  ) (    \  /  \    //    \
+# (___)    \/    \/\/(_/\/\_) 3
+#
+#
+#  This is the startup configuration file. It follows the same sequence
+#  as the original Fvwm config system.
+#
+#  The system is organized as follows:
+# 
+#    1: Functions
+#    2: Styles
+#    3: Colorsets
+#    4: Menus
+#    5: Bindings
+#    6: Decor
+#    7: Modules
+#
+#  In Fvwm-KISe, the sections are located in separate folders instead of
+#  one large config file making it easy to manage and add new functions,
+#  decor, and modules defined by the user.
+#
+#  To make changes and add new features without being overwritten by new
+#  updates, it includes two folders and system files:
+#
+#  .fvwm/core  + config: core script (configs) folders and startup file.
+#
+#  .fvwm/user  + userExt.sys: user script folders and user system file
+#  reads core and user scripts.
+#
+#################################
+
+SetEnv HOME_DIR $[HOME]/.fvwm
+SetEnv CORE_DIR $[HOME]/.fvwm/core
+SetEnv USER_DIR $[HOME]/.fvwm/user
+
+## .fvwm/setup
+## If .fvwm/userExt.sys doesn't exist, copy userExtSAMPLE.sys.
+## If .config/picom/picom.K.conf doesn't exist, copy picom.K.conf.
+## If .config/rofi/config.rasi doesn't exist, copy config.rasi
+##
+
+## Copy essential folders and files to assigned locations.
+Exec exec sh $[HOME_DIR]/setup/copySampleTo.sh
+
+## Load Picom compositor.
+
+Exec exec killall -qw picom
+Schedule 500 Exec exec picom --config ~/.config/picom/picom.K.conf
+
+## Load startup functions, transparency, wifi and system info.
+
+Read $[CORE_DIR]/1Functions/startFunc.sys
+Read $[CORE_DIR]/1Functions/Transparency/transp.conf
+Read $[CORE_DIR]/1Functions/InitMgr/initMgr.sys
+
+#######################
+## USER
+#######################
+
+## To make changes and add new features without being overwritten
+## by new updates, this reads the userExt.sys file.
+
+Read $[HOME_DIR]/userExt.sys
