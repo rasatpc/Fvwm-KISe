@@ -6,7 +6,8 @@ SetEnv USER_DIR $[HOME]/.fvwm/user
 
 ## Remove similar modules
 KillModule FvwmButtons DashToDock
-KillModule FvwmButtons HideBar ## SimpleButton
+## SimpleButton
+KillModule FvwmButtons HideBar
 
 ## Set app icon folder
 # SetEnv wicons $[CORE_DIR]/7Modules/WorkButtons/icons

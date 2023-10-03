@@ -1,6 +1,7 @@
 ## Modules/Extra: rightPg.sys
 
-KillModule FvwmPager WorkPager
+KillModule FvwmPager FvwmPagerBar
+KillModule FvwmPager FvwmDesker
 KillModule FvwmButtons BarButtons
 
 ## Color settings

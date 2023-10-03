@@ -1,0 +1,118 @@
+## Modules/Extra: dButtonPager.sys
+## Loaded by deskerConf.sys
+
+SetEnv HOME_DIR $[HOME]/.fvwm
+SetEnv CORE_DIR $[HOME]/.fvwm/core
+
+SetEnv micon /usr/share/pixmaps/fvwm
+SetEnv icons $[CORE_DIR]/7Modules/Desker/icons
+
+## Desktop size
+DesktopSize "2 1"  ## (columns - rows)
+
+## Desk names
+DesktopName 0 Web
+DesktopName 1 Email
+DesktopName 2 Work
+DesktopName 3 Misc
+
+######
+# Bar Buttons
+######
+
+Module FvwmButtons BarButtons
+
+DestroyModuleConfig BarButtons: *
+*BarButtons: Geometry 160x240-0+0
+*BarButtons: Font "xft:Sans:size=10:antialias=True"
+*BarButtons: Colorset 16
+*BarButtons: Columns 2
+*BarButtons: Frame 0
+
+*BarButtons: (1x2, Icon $[icons]/work-spaceC.png, \
+	Panel(left, position module -10+2 top, steps 6, delay 10, indicator 30) \
+	"FvwmDesker" 'Module FvwmPager FvwmDesker 0 3', \
+    Action(Mouse 2) 'Exec exec xterm', \
+    Action(Mouse 3) 'Exec exec thunar')
+    
+*BarButtons: (1x2, Padding 0 0, Container(Padding 0 0, Frame 1, Columns 2))
+
+*BarButtons: (Icon $[icons]/move.png, Action Move)
+*BarButtons: (Icon $[icons]/curve.png, Action(Mouse 1) `ReturnDesk`)
+*BarButtons: (Icon $[icons]/resize.png, Action Resize)
+*BarButtons: (Icon $[icons]/close.png, Action Close)
+*BarButtons: (End)
+
+*BarButtons: (1x2, Title "1rof/3cal", Icon $[icons]/calendar-rofi.png, \
+	Action(Mouse 1) 'Exec exec rofi -show', \
+	Action(Mouse 3) "Exec exec $[CORE_DIR]/7Modules/TimeDayButton/script/Calendar.sh",Frame 1)
+	
+*BarButtons: (1x2, Title "xclock", Swallow "xclock" "Exec exec xclock -padding 0 -geometry -1500-1500")
+
+*BarButtons: (2x2, Swallow "FvwmPagerBar" 'FvwmPager FvwmPagerBar * *')
+
+Style BarButtons NoTitle, NoHandles, !Title, WindowListSkip, Layer 4, Sticky, !Iconifiable, BorderColorset 10, BorderWidth 0, NeverFocus
+
+######
+# FvwmPager: Swallowed by Bar Buttons
+######
+
+DestroyModuleConfig FvwmPagerBar: *
+*FvwmPagerBar: Colorset * 15
+*FvwmPagerBar: HilightColorset * 17  ## (active page background)
+*FvwmPagerBar: BalloonColorset * 10  ## (font color)
+*FvwmPagerBar: WindowColorsets 5 18  ## (inactive - active apps)
+*FvwmPagerBar: WindowBorderWidth 1
+*FvwmPagerBar: BalloonStringFormat %c
+*FvwmPagerBar: BallonYOffset +2
+*FvwmPagerBar: Window3dBorders
+*FvwmPagerBar: UseSkipList # hides modules
+*FvwmPagerBar: MiniIcons
+
+Style FvwmPagerBar * NoTitle, WindowListSkip, Sticky, !Handles, !Iconifiable, FixedSize, BorderColorset 10, BorderWidth 1
+
+######
+# Desker Pager
+######
+
+DestroyModuleConfig FvwmDesker: *
+*FvwmDesker: Geometry 600x70
+*FvwmDesker: Rows 1  ## (page rows)
+*FvwmDesker: Colorset * 15
+*FvwmDesker: HilightColorset * 17  ## (active page background)
+*FvwmDesker: BalloonColorset * 10  ## (font color)
+*FvwmDesker: WindowColorsets 5 18  ## (inactive - active apps)
+*FvwmDesker: Font "xft:Sans:size=11:antialias=True"
+*FvwmDesker: WindowBorderWidth 1
+*FvwmDesker: BalloonStringFormat %c
+*FvwmDesker: BallonYOffset +2
+*FvwmDesker: Window3dBorders
+*FvwmDesker: UseSkipList # hides modules
+*FvwmDesker: MiniIcons
+
+Style FvwmDesker NoTitle, !Handles, Borders, BorderWidth 1, BorderColorset 6, Sticky, WindowListSkip, FixedSize, !Iconifiable, CirculateSkipIcon, CirculateSkip
+
+######
+# FvwmBacker module
+######
+DestroyModuleConfig FvwmBacker: *
+*FvwmBacker: Command (Desk 0, Page 0 0) Exec exec fvwm-root -r $[CORE_DIR]/7Modules/Desker/bkg/web-tiled-bw.png
+*FvwmBacker: Command (Desk 0, Page 1 0) Exec exec fvwm-root -r $[CORE_DIR]/7Modules/Desker/bkg/web-tiled-bw.png
+
+*FvwmBacker: Command (Desk 1, Page 0 0) Exec exec fvwm-root -r $[CORE_DIR]/7Modules/Desker/bkg/email-tiled-bw.png
+*FvwmBacker: Command (Desk 1, Page 1 0) Exec exec fvwm-root -r $[CORE_DIR]/7Modules/Desker/bkg/email-tiled-bw.png
+
+*FvwmBacker: Command (Desk 2, Page 0 0) Exec exec fvwm-root -r $[CORE_DIR]/7Modules/Desker/bkg/work-tiled-bw.png
+*FvwmBacker: Command (Desk 2, Page 1 0) Exec exec fvwm-root -r $[CORE_DIR]/7Modules/Desker/bkg/work-tiled-bw.png
+
+*FvwmBacker: Command (Desk 3, Page 0 0) Exec exec fvwm-root -r $[CORE_DIR]/7Modules/Desker/bkg/misc-tiled-bw.png
+*FvwmBacker: Command (Desk 3, Page 1 0) Exec exec fvwm-root -r $[CORE_DIR]/7Modules/Desker/bkg/misc-tiled-bw.png
+
+Module FvwmBacker
+
+######
+# Change preset menu style: Titlebar Right Click
+# (check core/4Menus/KMenu/kMenu.conf "Send To")
+######
+
+DestroyMenu MenuSendTo

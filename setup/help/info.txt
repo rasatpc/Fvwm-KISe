@@ -8,7 +8,7 @@ FVWM3 (ver. 1.0.6a)
 
 It comes with a minimal startup configuration. It gives the user the choice of expression. Details such as the appearance of windows, the function of panels, pagers, programs that will be used, and mouse/key control are created and defined by the user.
 
-FVWM-KISe (ver. 1.4.0)
+FVWM-KISe (ver. 1.4.1)
 
 Fvwm-Keep-It-Simple & elegant is a simplified version of myExt which started as a collection of ready-made scripts (configs). A simple and elegant base for you to use, modify or add your own.
 
@@ -24,4 +24,4 @@ https://fvwmforums.org/t/fvwm-kise/4256
 
 Fvwm3-myExt extensions (configs) development started by Rasat on 8 Dec 2020.
 Fvwm-KISe on 10 July 2023
-Last update: 1 October 2023
+Last update: 3 October 2023
