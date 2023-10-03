@@ -36,7 +36,7 @@ Style FvwmButtons !Iconifiable
 DestroyFunc DLauncher
 AddToFunc DLauncher
 + I DestroyModuleConfig $0DLaunch: *
-+ I *$0DLaunch: Geometry 80x80
++ I *$0DLaunch: Geometry 86x86
 + I *$0DLaunch: PressColorset 7
 + I *$0DLaunch: Columns 1
 + I *$0DLaunch: Rows    4
