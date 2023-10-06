@@ -18,7 +18,7 @@ MX Linux:
 * sudo apt-get install fvwm3
 
 Arch Linux:
-* `yay -S fvwm3`
+* yay -S fvwm3
 
 Fedora/OpenSUSE/other RPM-based distros:
 * sudo dfn install fvwm3

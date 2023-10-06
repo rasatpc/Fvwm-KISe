@@ -14,7 +14,7 @@ SetEnv logo-icon $[CORE_DIR]/7Modules/RightTaskBar/icons
 ## Color settings
 
 ColorSet 15 RootTransparent Buffer, Tint #4A516A 50, fg white, bg black
-Colorset 131  fg #ffffff, bg #028383, hi, sh, Plain, NoShape
+Colorset 21  fg #ffffff, bg #028383, hi, sh, Plain, NoShape
 
 ## FvwmScript date/time background color setting.
 
@@ -35,7 +35,7 @@ DestroyModuleConfig RightTbar:*
 *RightTbar: (120x2, Frame 0, Colorset 10)
 
 Test (x stalonetray) *RightTbar: (120x22, Swallow(NoClose,UseOld) \
-    stalonetray 'Exec exec stalonetray --config ~/.fvwm/setup/stalonetrayrc', Frame 0, Colorset 131)
+    stalonetray 'Exec exec stalonetray --config ~/.fvwm/setup/stalonetrayrc', Frame 0, Colorset 21)
     
 Test (x stalonetray) PipeRead 'echo "*RightTbar: (120x$(($[vp.height]-430)), \
     Top, Swallow FvwmIconMan \'Module FvwmIconMan\', Frame 0, Colorset 10)"'

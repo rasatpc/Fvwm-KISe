@@ -9,7 +9,7 @@ KillModule FvwmButtons RightTbar
 ## Colorset check core/3Colorsets/KColors/kColorsets.sys
 
 ## Color setting
-Colorset 131  fg #ffffff, bg #028383, hi, sh, Plain, NoShape
+Colorset 21  fg #ffffff, bg #028383, hi, sh, Plain, NoShape
 
 ## Wifi, Sound and other apps panel
 
@@ -17,12 +17,12 @@ Module FvwmButtons WifiSnd
 
 DestroyModuleConfig WifiSnd: *
 *WifiSnd: Geometry 92x30-0-118
-*WifiSnd: Colorset 131
+*WifiSnd: Colorset 21
 *WifiSnd: Frame 0
 *WifiSnd: Rows 1
 
-Test (x stalonetray) *WifiSnd: (92x1, Colorset 131, Swallow(NoClose,UseOld) \
-    stalonetray 'Exec exec stalonetray --config ~/.fvwm/setup/stalonetrayrc', Frame 0, Colorset 131)
+Test (x stalonetray) *WifiSnd: (92x1, Colorset 21, Swallow(NoClose,UseOld) \
+    stalonetray 'Exec exec stalonetray --config ~/.fvwm/setup/stalonetrayrc', Frame 0, Colorset 21)
 
 *WifiSnd: (10x1)
 

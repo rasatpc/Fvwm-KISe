@@ -7,7 +7,7 @@ KillModule FvwmButtons BarButtons
 ## Color settings
 
 ColorSet 15 RootTransparent Buffer, Tint #4a516a 50, fg white, bg black
-Colorset 131  fg #ffffff, bg #028383, hi, sh, Plain, NoShape
+Colorset 21  fg #ffffff, bg #028383, hi, sh, Plain, NoShape
 
 ## Right Pager
 
@@ -46,7 +46,7 @@ DesktopSize 2x2
 DestroyModuleConfig FvwmPager:*
 *FvwmPager: Geometry 110x80
 *FvwmPager: Colorset * 10
-*FvwmPager: HilightColorset * 131 # (page background) org. 13
+*FvwmPager: HilightColorset * 21 # (page background) org. 13
 *FvwmPager: BalloonColorset * 10
 *FvwmPager: WindowColorsets 10 11
 *FvwmPager: Font None

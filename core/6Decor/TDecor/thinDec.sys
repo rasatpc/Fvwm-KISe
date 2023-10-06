@@ -1,10 +1,10 @@
 ## Decor/Extra: thinDec.sys
 
 ## Title active color
-Colorset 40 fg #ffffff, bg #2b4e5e, hi #2b4e5e, sh #2b4e5e, Plain, NoShape
+Colorset 26 fg #ffffff, bg #2b4e5e, hi #2b4e5e, sh #2b4e5e, Plain, NoShape
 
 ## Title inactive color
-Colorset 41 fg #000000, bg #028383, hi, sh, Plain, NoShape
+Colorset 27 fg #000000, bg #028383, hi, sh, Plain, NoShape
 
 ## DECORATIONS
 
@@ -36,7 +36,7 @@ AddButtonStyle 6 Active Vector 5 35x60@3 65x60@3 65x50@3 35x50@3 35x60@3 # Iconi
 ## Decoration Styles
 
 TitleStyle Centered Height 26 -- Flat
-Style * Colorset 1, HilightColorset 40 # inactive and active title bar
+Style * Colorset 1, HilightColorset 26 # inactive and active title bar
 Style * BorderColorset 1, HilightBorderColorset 4
 
 ## Special Rules
