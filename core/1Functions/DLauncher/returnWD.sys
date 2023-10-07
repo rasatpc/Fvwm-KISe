@@ -1,0 +1,9 @@
+## returnWD.sys
+## Loaded by deskL.sys
+
+## Change WorkD to deWorkD allowing to click same button.
+## ReturnDesk loaded by $[CORE_DIR]/7Modules/Desker/deskerConf.sys
+
+Schedule 1000 DestroyFunc WorkD
+Schedule 1000 AddToFunc WorkD
+Schedule 1000 + I ReturnDesk

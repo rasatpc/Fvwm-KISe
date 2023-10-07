@@ -5,3 +5,10 @@
 Schedule 1000 DestroyFunc WTile
 Schedule 1000 AddToFunc WTile
 Schedule 1000 + I Read $[CORE_DIR]/1Functions/DLauncher/deTile.sys
+
+## Rest WorkD function.
+Schedule 1000 DestroyFunc WorkD
+Schedule 1000 AddToFunc WorkD
+Schedule 1000 + I Read $[CORE_DIR]/7Modules/Desker/deskerConf.sys
+Schedule 1000 + I Read $[USER_DIR]/WorkButtons/hideWorkBar.sys
+Schedule 1000 + I Read $[CORE_DIR]/1Functions/DLauncher/returnWD.sys

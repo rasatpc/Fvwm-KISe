@@ -23,6 +23,7 @@ DestroyFunc WorkD
 AddToFunc WorkD
 + I Read $[CORE_DIR]/7Modules/Desker/deskerConf.sys
 + I Read $[USER_DIR]/WorkButtons/hideWorkBar.sys
++ I Read $[CORE_DIR]/1Functions/DLauncher/returnWD.sys
 
 #####
 ## DESK LAUNCHER
