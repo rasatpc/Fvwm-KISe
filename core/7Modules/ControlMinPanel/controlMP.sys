@@ -16,6 +16,7 @@ Test (x featherpad) + "Bindings " Exec exec featherpad $[HOME_DIR]/setup/help/ke
 Test (x mousepad) + "Bindings " Exec exec mousepad $[HOME_DIR]/setup/help/Key-Mouse-Bindings.txt
 
 + "How To " Exec exec display -size 960x540 $[HOME]/.fvwm/setup/images/Fvwm-KISe-v1.4.0-help.png
++ "How WD " Exec exec display -size 960x540 $[HOME]/.fvwm/setup/images/Fvwm-KISe-workDesk-help.png
 
 ## Set small icons
 
