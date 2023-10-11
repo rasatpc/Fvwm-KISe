@@ -163,8 +163,8 @@ Style ConfirmQuit !Title, PositionPlacement Center, WindowListSkip, Layer 6
 ##### Keyboard
 ## Keyboard TouchPad on/off
 
-Test (x synclient) Exec synclient TouchpadOff=1
-Test (x xinput) Exec xinput disable 12
+# Test (x synclient) Exec synclient TouchpadOff=1
+# Test (x xinput) Exec xinput disable 12
 
 ##### Change Window title bar font.
 ##
