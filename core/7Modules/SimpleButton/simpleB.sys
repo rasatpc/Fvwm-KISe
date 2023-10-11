@@ -21,7 +21,7 @@ SetEnv sbicons $[USER_DIR]/SimpleButton/icons/icon48x48
 Module FvwmButtons SimpleButton
 
 DestroyModuleConfig SimpleButton: *
-*SimpleButton: Geometry 54x470+2+192
+*SimpleButton: Geometry 54x504+2+192
 *SimpleButton: PressColorset 7
 # *SimpleButton: Colorset 10 ## (close for Pixmap)
 *SimpleButton: Pixmap none
@@ -29,8 +29,10 @@ DestroyModuleConfig SimpleButton: *
 
 ## Add or remove below buttons
 
-*SimpleButton: Rows 8  ## (as per numbers of buttons)
+*SimpleButton: Rows 9  ## (as per numbers of buttons)
 
+*SimpleButton: (1x1, Icon $[sbicons]/terminal.png, \
+              Action(Mouse 1) "Exec exec xfce4-terminal")
 *SimpleButton: (1x1, Icon $[sbicons]/thunar.png, \
               Action(Mouse 1) "Exec exec thunar")
 *SimpleButton: (1x1, Icon $[sbicons]/firefox.png, \

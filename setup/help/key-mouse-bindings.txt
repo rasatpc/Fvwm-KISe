@@ -24,4 +24,5 @@ More bindings:
 .fvwm/core/5Bindings
 
 More information:
-.fvwm/setup/images/Fvwm-KISe-v1.1.0-help.png
+.fvwm/setup/images/Fvwm-KISe-v1.4.0-help.png
+.fvwm/setup/images/Fvwm-KISe-workDesk-help.png
