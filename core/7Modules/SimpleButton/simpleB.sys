@@ -1,38 +1,26 @@
 ## Modules/Core: simpleB.sys
-#
-# DESKTOP ICONS PANEL
+## DESKTOP ICONS PANEL
 
-SetEnv HOME_DIR $[HOME]/.fvwm
-SetEnv CORE_DIR $[HOME]/.fvwm/core
-SetEnv USER_DIR $[HOME]/.fvwm/user
-
-## Remove similar modules
-KillModule FvwmButtons DashToDock
-KillModule FvwmButtons HideWBar
-
-## Set app icon folder
-# SetEnv sbicons $[CORE_DIR]/7Modules/SimpleButton/icons/icon48x48
+## Set apps icon folder
 SetEnv sbicons $[USER_DIR]/SimpleButton/icons/icon48x48
 
 ## Icon Panel
-## Geometry example:
-## [width]x[hight]+[left-right]+[top-down]
-
-Module FvwmButtons SimpleButton
 
 DestroyModuleConfig SimpleButton: *
-*SimpleButton: Geometry 54x504+2+192
 *SimpleButton: PressColorset 7
 # *SimpleButton: Colorset 10 ## (close for Pixmap)
 *SimpleButton: Pixmap none
 *SimpleButton: Frame 0
 
-## Add or remove below buttons
+######
+# ADD or REMOVE below buttons
+# Geometry example:
+# [width]x[hight]+[left-right]+[top-down]
+######
 
-*SimpleButton: Rows 9  ## (as per numbers of buttons)
+*SimpleButton: Geometry 54x470+2+192 ## ([width] x Rows = [hight])
+*SimpleButton: Rows 8  ## (as per numbers of buttons)
 
-*SimpleButton: (1x1, Icon $[sbicons]/terminal.png, \
-              Action(Mouse 1) "Exec exec xfce4-terminal")
 *SimpleButton: (1x1, Icon $[sbicons]/thunar.png, \
               Action(Mouse 1) "Exec exec thunar")
 *SimpleButton: (1x1, Icon $[sbicons]/firefox.png, \

@@ -6,8 +6,7 @@ SetEnv USER_DIR $[HOME]/.fvwm/user
 
 ## Remove similar modules
 KillModule FvwmButtons DashToDock
-## SimpleButton
-KillModule FvwmButtons HideBar
+KillModule FvwmButtons HideBar ## SimpleButton
 
 ## Set app icon folder
 # SetEnv wicons $[CORE_DIR]/7Modules/WorkButtons/icons
@@ -16,7 +15,7 @@ SetEnv wicons $[USER_DIR]/WorkButtons/icons
 Module FvwmButtons WorkBar
 
 DestroyModuleConfig WorkBar: *
-*WorkBar: Geometry 64x384+0+0
+*WorkBar: Geometry 64x448+0+0
 #*WorkBar: Fore White
 #*WorkBar: Back #899995
 *WorkBar: PressColorset 7
@@ -26,7 +25,7 @@ DestroyModuleConfig WorkBar: *
 
 ## Add or remove below buttons
 
-*WorkBar: Rows 6  ## (as per numbers of buttons)
+*WorkBar: Rows 7  ## (as per numbers of buttons)
 
 *WorkBar: (1x1, Icon $[wicons]/3D/internet-feed-reader.svg:54x0, Panel(right, steps 0, delay 0, indicator 20) "WebBut" 'Read $[USER_DIR]/WorkButtons/web.conf', \
 	Action(Mouse 3) "Exec exec featherpad $[USER_DIR]/WorkButtons/web.conf")
@@ -34,10 +33,13 @@ DestroyModuleConfig WorkBar: *
 *WorkBar: (1x1, Icon $[wicons]/mail.png, Panel(right, steps 0, delay 0, indicator 20) "EmailBut" 'Read $[USER_DIR]/WorkButtons/email.conf', \
 	Action(Mouse 3) "Exec exec featherpad $[USER_DIR]/WorkButtons/email.conf")
 
+*WorkBar: (1x1, Icon $[wicons]/filemanager.png, Panel(right, steps 0, delay 0, indicator 20) "FileBut" 'Read $[USER_DIR]/WorkButtons/file.conf', \
+	Action(Mouse 3) "Exec exec featherpad $[USER_DIR]/WorkButtons/file.conf")
+
 *WorkBar: (1x1, Icon $[wicons]/3D/gnome-graphics.svg:54x0, Panel(right, steps 0, delay 0, indicator 20) "GraphBut" 'Read $[USER_DIR]/WorkButtons/graphic.conf', \
 	Action(Mouse 3) "Exec exec featherpad $[USER_DIR]/WorkButtons/graphic.conf")
 
-*WorkBar: (1x1, Icon $[wicons]/3D/package-office.svg:54x0, Panel(right, steps 0, delay 0, indicator 20) "OfficeBut" 'Read $[USER_DIR]/WorkButtons/office.conf', \
+*WorkBar: (1x1, Icon $[wicons]/libreoffice-writer.png, Panel(right, steps 0, delay 0, indicator 20) "OfficeBut" 'Read $[USER_DIR]/WorkButtons/office.conf', \
 	Action(Mouse 3) "Exec exec featherpad $[USER_DIR]/WorkButtons/office.conf")
 
 *WorkBar: (1x1, Icon $[wicons]/movie.png, Panel(right, steps 0, delay 0, indicator 20) "AudioBut" 'Read $[USER_DIR]/WorkButtons/audio.conf', \

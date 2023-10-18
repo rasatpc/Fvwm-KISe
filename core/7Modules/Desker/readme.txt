@@ -7,7 +7,7 @@ https://fvwmforums.org/t/fvwmpager-pixmap-for-desk-0-1-2/4380/1
 
 ImageMagick conver example:
 Web:
-convert web-tiled-bw.png -fill "#9cd7d7" -colorize 20 web-tiled-col.png
+convert web-tiled-bw.png -fill "#62b0d0" -colorize 20 web-tiled-col.png
 Email: #64ff4f
 convert email-tiled-bw.png -fill "#64ff4f" -colorize 20 email-tiled-col.png
 Work: #ffd176

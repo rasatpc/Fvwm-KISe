@@ -1,5 +1,5 @@
 ## reset.sys
-## Loaded by deskL.sys
+## Loaded by deTiles.sys
 
 ## Rest WTile function.
 Schedule 1000 DestroyFunc WTile

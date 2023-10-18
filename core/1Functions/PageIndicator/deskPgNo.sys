@@ -3,7 +3,7 @@
 SetEnv HOME_DIR $[HOME]/.fvwm
 SetEnv CORE_DIR $[HOME]/.fvwm/core
 
-ColorSet 15 RootTransparent Buffer, Tint #4A516A 50, fg white, bg black
+ColorSet 15 RootTransparent Buffer, Tint #4a516a 50, fg white, bg black
 
 DestroyFunc DeskPgNo
 

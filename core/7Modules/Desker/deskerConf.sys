@@ -1,4 +1,8 @@
 ## Modules/Extra: deskerConf.sys
+## Loaded by dButtonPager.sys
+
+SetEnv HOME_DIR $[HOME]/.fvwm
+SetEnv CORE_DIR $[HOME]/.fvwm/core
 
 KillModule FvwmButtons ControlMP
 KillModule FvwmButtons RightPager
@@ -10,6 +14,9 @@ KillModule FvwmBacker
 Colorset 17 fg #ffffff, bg #028383, hi, sh, Plain, NoShape
 Colorset 18 fg #ffffff, bg #306ea2, hi #ffffff, sh #ffffff, Plain
 
+##########
+## Return WorkDesk to default desk.
+##########
 DestroyFunc ReturnDesk
 AddToFunc ReturnDesk
 + I Read $[CORE_DIR]/7Modules/RightPager/rightPg.sys
@@ -22,5 +29,49 @@ AddToFunc ReturnDesk
 + I Module FvwmBacker
 + I Read $[CORE_DIR]/1Functions/DLauncher/reset.sys
 
+##########
+## Desk size: 2:1/2:2
+##########
+
+DestroyFunc ExtSize
+AddToFunc ExtSize
++ I Read $[CORE_DIR]/7Modules/Desker/deskSize.sys
+
+## Desk sizeButton 2:1
+
+Module FvwmButtons SizeBtm
+DestroyModuleConfig SizeBtm: *
+*SizeBtm: Geometry 40x30-176+4
+*SizeBtm: Colorset 15
+*SizeBtm: PressColorset 7
+*SizeBtm: Frame 0
+*SizeBtm: Rows 1
+*SizeBtm: Font "xft:Sans:size=12:antialias=True"
+  
+*SizeBtm: (1x1, Title "2:1", Action(Mouse 1) 'ExtSize' )
+
+Style SizeBtm !Borders, !Title, WindowListSkip, Sticky
+
+##########
+## Work Desk label.
+##########
+
+Module FvwmButtons WDlabel
+DestroyModuleConfig WDlabel: *
+*WDlabel: Geometry 310x60-300+30
+*WDlabel: Colorset 15
+*WDlabel: Frame 0
+*WDlabel: Rows 1
+*WDlabel: Font "xft:Sans:size=26:antialias=True"
+  
+*WDlabel: (1x1, Title "WORK DESK")
+
+Style WDlabel !Borders, !Title, WindowListSkip
+
+Schedule 2000 KillModule FvwmButtons WDlabel
+
+##########
 ## Load Desker Panel
+##########
+
 Read $[CORE_DIR]/7Modules/Desker/dButtonPager.sys

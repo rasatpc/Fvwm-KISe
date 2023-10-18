@@ -10,14 +10,15 @@
 
 cd $HOME/.fvwm
 
-# Check if userExt.sys does not exist.
+## Check if userExt.sys does not exist.
+
 FILEu=userExt.sys
 if [ ! -f "$FILEu" ]; then
     cp setup/userExtSAMPLE.sys userExt.sys
     rm userExtSAMPLE.sys
 fi
 
-# Check if picom.K.conf does not exist.
+## Check if picom.K.conf does not exist.
 
 cd $HOME/.config/picom
 FILEp=picom.K.conf
@@ -26,8 +27,10 @@ if [ ! -f "$FILEp" ]; then
 	mkdir picom
     cp $HOME/.fvwm/setup/picom/picom.K.conf $HOME/.config/picom/
 fi
+# Update picom.K.conf
+cp $HOME/.fvwm/setup/picom/picom.K.conf $HOME/.config/picom/
 
-# Check if config.rasi does not exist.
+## Check if config.rasi does not exist.
 
 cd $HOME/.config/rofi
 FILEr=config.rasi
@@ -37,7 +40,7 @@ if [ ! -f "$FILEr" ]; then
     cp $HOME/.fvwm/setup/rofi/config.rasi $HOME/.config/rofi/
 fi
 
-# Check if Auto Move Windows does not exist in core/user.
+## Check if Auto Move Windows does not exist in core/user.
 
 cd $HOME/.fvwm/user/AutoMoveWin
 FILEa=autoMoveW.sys
@@ -45,7 +48,7 @@ if [ ! -f "$FILEa" ]; then
     cp -r $HOME/.fvwm/core/1Functions/AutoMoveWin $HOME/.fvwm/user/
 fi
 
-# Check if SimpleButton does not exist in core/user.
+## Check if SimpleButton does not exist in core/user.
 
 cd $HOME/.fvwm/user/SimpleButton
 FILEs=simpleB.sys
@@ -53,7 +56,7 @@ if [ ! -f "$FILEs" ]; then
     cp -r $HOME/.fvwm/core/7Modules/SimpleButton $HOME/.fvwm/user/
 fi
 
-# Check if WorkButtons does not exist in core/user.
+## Check if WorkButtons does not exist in core/user.
 
 cd $HOME/.fvwm/user/WorkButtons
 FILEs=hideWorkBar.sys

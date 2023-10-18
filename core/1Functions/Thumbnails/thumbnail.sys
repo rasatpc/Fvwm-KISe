@@ -13,7 +13,7 @@ DestroyFunc Thumbnail
 AddToFunc Thumbnail
 + I Raise
 + I ThisWindow (!Shaded, Iconifiable, !Iconic) PipeRead \
-       "xwd -silent -id $[w.id] | convert -scale 156 -frame 1x1 \
+       "xwd -silent -id $[w.id] | convert -scale 144 -frame 1x1 \
        -mattecolor black -quality 0 xwd:- \
        png:$[cacheth]/icon.tmp.$[w.id].png \
        && echo WindowStyle IconOverride, \
@@ -30,7 +30,7 @@ AddToFunc StartFunction I Module FvwmEvent
 
 ## Iconfy (minimize) to Thumbnail Placeholder
 
-Style * IconBox 400x600-10+340, IconGrid 1 4, \
+Style * IconBox 400x600-10+330, IconGrid 1 4, \
 IconFill top right, !IconTitle, IconBackgroundRelief 0
 
 ## Mouse Binding

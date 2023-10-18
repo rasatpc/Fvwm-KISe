@@ -1,10 +1,7 @@
 ## Modules/Extra: dButtonPager.sys
 ## Loaded by deskerConf.sys
 
-SetEnv HOME_DIR $[HOME]/.fvwm
-SetEnv CORE_DIR $[HOME]/.fvwm/core
-
-SetEnv micon /usr/share/pixmaps/fvwm
+## Icon location.
 SetEnv icons $[CORE_DIR]/7Modules/Desker/icons
 
 ## Desktop size
@@ -29,11 +26,11 @@ DestroyModuleConfig BarButtons: *
 *BarButtons: Columns 2
 *BarButtons: Frame 0
 
-*BarButtons: (1x2, Icon $[icons]/work-spaceC.png, \
-	Panel(left, position module -10+2 top, steps 6, delay 10, indicator 30) \
+*BarButtons: (1x2, Icon $[icons]/work-line.png, \
+	Panel(left, position module -10+2 top, steps 6, delay 10, indicator 48) \
 	"FvwmDesker" 'Module FvwmPager FvwmDesker 0 3', \
     Action(Mouse 2) 'Exec exec xterm', \
-    Action(Mouse 3) 'Exec exec thunar')
+    Action(Mouse 3) 'Exec exec thunar', Frame 1, Colorset 16)
     
 *BarButtons: (1x2, Padding 0 0, Container(Padding 0 0, Frame 1, Columns 2))
 
@@ -72,17 +69,24 @@ DestroyModuleConfig FvwmPagerBar: *
 Style FvwmPagerBar * NoTitle, WindowListSkip, Sticky, !Handles, !Iconifiable, FixedSize, BorderColorset 10, BorderWidth 1
 
 ######
-# Desker Pager
+# Desker Pager: Swallowed by Bar Buttons
 ######
 
-Colorset 22 Pixmap $[CORE_DIR]/7Modules/Desker/bkg/web-bkg-bw.png, Tint #9cd7d7 40
-Colorset 23 Pixmap $[CORE_DIR]/7Modules/Desker/bkg/email-bkg-bw.png, Tint #64ff4f 20
-Colorset 24 Pixmap $[CORE_DIR]/7Modules/Desker/bkg/work-bkg-bw.png, Tint #ffd176 40
-Colorset 25 Pixmap $[CORE_DIR]/7Modules/Desker/bkg/misc-bkg-bw.png, Tint #6a8982 10
+## With transparent tint color
+Colorset 22 RootTransparent Buffer, fg black, Tint #9cd7d7 70
+Colorset 23 RootTransparent Buffer, fg black, Tint #89f07b 60
+Colorset 24 RootTransparent Buffer, fg black, Tint #ffd176 60
+Colorset 25 RootTransparent Buffer, fg black, Tint #4a516a 40
 
-##feff90
+## With thumbnail
+# Colorset 22 Pixmap $[CORE_DIR]/7Modules/Desker/bkg/web-bkg-bw.png, Tint #9cd7d7 40
+# Colorset 23 Pixmap $[CORE_DIR]/7Modules/Desker/bkg/email-bkg-bw.png, Tint #5ff34b 30
+# Colorset 24 Pixmap $[CORE_DIR]/7Modules/Desker/bkg/work-bkg-bw.png, Tint #ffd176 40
+# Colorset 25 Pixmap $[CORE_DIR]/7Modules/Desker/bkg/misc-bkg-bw.png, Tint #6a8982 10
+
+## Pager
 DestroyModuleConfig FvwmDesker: *
-*FvwmDesker: Geometry 600x70
+*FvwmDesker: Geometry 600x70-175+2
 *FvwmDesker: Rows 1  ## (page rows)
 *FvwmDesker: HilightColorset * 17  ## (active page background)
 *FvwmDesker: BalloonColorset * 10  ## (font color)
@@ -101,10 +105,15 @@ DestroyModuleConfig FvwmDesker: *
 
 Style FvwmDesker NoTitle, !Handles, Borders, BorderWidth 1, BorderColorset 6, Sticky, WindowListSkip, FixedSize, !Iconifiable, CirculateSkipIcon, CirculateSkip
 
+## Load at startup for 4 seconds
+# Module FvwmPager FvwmDesker 0 3
+# Schedule 4000 KillModule FvwmPager FvwmDesker
+
 ######
 # FvwmBacker module
 # *FvwmBacker: Command (Desk 0, Page * *) Exec exec feh --bg-scale $[fvwm_wallpaper]/LinuxForce.jpg
 ######
+
 DestroyModuleConfig FvwmBacker: *
 *FvwmBacker: Command (Desk 0, Page 0 0) Exec exec fvwm-root -r $[CORE_DIR]/7Modules/Desker/bkg/web-tiled-col.png
 *FvwmBacker: Command (Desk 0, Page 1 0) Exec exec fvwm-root -r $[CORE_DIR]/7Modules/Desker/bkg/web-tiled-col.png
@@ -118,6 +127,7 @@ DestroyModuleConfig FvwmBacker: *
 *FvwmBacker: Command (Desk 3, Page 0 0) Exec exec fvwm-root -r $[CORE_DIR]/7Modules/Desker/bkg/misc-tiled-col.png
 *FvwmBacker: Command (Desk 3, Page 1 0) Exec exec fvwm-root -r $[CORE_DIR]/7Modules/Desker/bkg/misc-tiled-col.png
 
+## Load
 Module FvwmBacker
 
 ######
