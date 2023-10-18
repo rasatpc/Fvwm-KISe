@@ -39,6 +39,8 @@ if [ ! -f "$FILEr" ]; then
 	mkdir rofi
     cp $HOME/.fvwm/setup/rofi/config.rasi $HOME/.config/rofi/
 fi
+# Update config.rasi
+cp $HOME/.fvwm/setup/rofi/config.rasi $HOME/.config/rofi/
 
 ## Check if Auto Move Windows does not exist in core/user.
 

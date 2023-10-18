@@ -18,11 +18,13 @@ DestroyModuleConfig SimpleButton: *
 # [width]x[hight]+[left-right]+[top-down]
 ######
 
-*SimpleButton: Geometry 54x470+2+192 ## ([width] x Rows = [hight])
-*SimpleButton: Rows 8  ## (as per numbers of buttons)
+*SimpleButton: Geometry 54x486+2+192 ## ([width] x Rows = [hight])
+*SimpleButton: Rows 9  ## (as per numbers of buttons)
 
 *SimpleButton: (1x1, Icon $[sbicons]/thunar.png, \
               Action(Mouse 1) "Exec exec thunar")
+*SimpleButton: (1x1, Icon $[sbicons]/searchBlue.png, \
+				Action(Mouse 1) "Exec exec xfce4-appfinder" )
 *SimpleButton: (1x1, Icon $[sbicons]/firefox.png, \
               Action(Mouse 1) "Exec exec firefox")
 *SimpleButton: (1x1, Icon $[sbicons]/libreoffice-main.png, \
