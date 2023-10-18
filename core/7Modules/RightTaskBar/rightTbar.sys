@@ -57,7 +57,7 @@ Style RightTbar !Title, WindowListSkip, Layer 4, Sticky, !Iconifiable, BorderCol
 
 DestroyModuleConfig FvwmIconMan:*
 *FvwmIconMan: UseWinList true
-*FvwmIconMan: ButtonGeometry 120x26
+*FvwmIconMan: ButtonGeometry 120x24
 *FvwmIconMan: ManagerGeometry 1x1
 *FvwmIconMan: Background #2b4e5e
 *FvwmIconMan: Foreground #ffffff
