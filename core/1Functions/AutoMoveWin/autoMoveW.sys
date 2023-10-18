@@ -1,9 +1,8 @@
 ## Functions/Extra: autoMoveW.sys
 ## Automatically move applications to specific desk/page when they create windows.
 
-SetEnv HOME_DIR $[HOME]/.fvwm
-SetEnv CORE_DIR $[HOME]/.fvwm/core
-
+## Automatically moving a window from one page/desk to another.
+#
 ##		APPS		COMMAND			DESK/PAGE		LOCATION
 ## --------------------------------------------------------------------
 
@@ -13,3 +12,5 @@ Style	*Firefox 	StartsOnPage	0 1 0			# desk 0 page-right side
 # Style	"Mozilla Thunderbird" StartsOnPage	1 1 0	# desk 1 page-right
 # Style	Gimp		StartsOnPage	2 0 0			# desk 2 page-left
 # Style	scribus		StartsOnPage	2 1 0			# desk 2 page-right
+# Style	Polkit*		StartsOnPage	3 0 0			# desk 3 page-left
+# Style	GitHub*		StartsOnPage	3 1 0			# desk 3 page-right
