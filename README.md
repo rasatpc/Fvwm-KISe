@@ -14,7 +14,6 @@ The default Fvwm config file is the base. In KISe it is split into associated fo
 * Task Panel
 * Calendar/Day/Time Panel
 * 4-button Window Title Bar
-* Desker Buttons and Pager (Work Desk)
 * Page Indicator
 * Elegant transparency and shadows.
 * Window focus on all desks and pages.

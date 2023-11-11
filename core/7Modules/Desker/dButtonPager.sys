@@ -7,7 +7,8 @@ SetEnv icons $[CORE_DIR]/7Modules/Desker/icons
 ## Desktop size
 DesktopSize "2 1"  ## (columns - rows)
 
-## Desk names
+## Desk names:
+
 DesktopName 0 Web
 DesktopName 1 Email
 DesktopName 2 Work
@@ -17,13 +18,14 @@ DesktopName 3 Misc
 # Bar Buttons
 ######
 
-## Desker pager button on/off
+## Desker pager On/Fff
+
 DestroyFunc DeskerSwitch
 AddToFunc DeskerSwitch
 + I Module FvwmPager FvwmDesker 0 3
 + I Schedule 1000 Read $[CORE_DIR]/7Modules/Desker/resetOFF.conf
 
-## Desker On
+## Load Desker On
 Schedule 2400 DeskerSwitch
 
 Module FvwmButtons BarButtons
@@ -35,7 +37,8 @@ DestroyModuleConfig BarButtons: *
 *BarButtons: Columns 2
 *BarButtons: Frame 0
 
-## FvwmButtons with window focus.
+## FvwmButtons
+
 *BarButtons: (1x2, Icon $[icons]/work-line.png, \
 	Action(Mouse 1) 'DeskerSwitch', \
 	    Action(Mouse 2) 'Exec exec xterm', \
@@ -139,5 +142,3 @@ Module FvwmBacker
 # Change preset menu style: Titlebar Right Click
 # (check core/4Menus/KMenu/kMenu.conf "Send To")
 ######
-
-DestroyMenu MenuSendTo

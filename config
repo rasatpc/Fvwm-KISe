@@ -28,7 +28,6 @@
 #  updates, it includes two folders and system files:
 #
 #  .fvwm/core  + config: core script (configs) folders and startup file.
-#
 #  .fvwm/user  + userExt.sys: user script folders and user system file
 #  reads core and user scripts.
 #
@@ -58,7 +57,9 @@ Read $[CORE_DIR]/1Functions/startFunc.sys
 Read $[CORE_DIR]/1Functions/Transparency/transp.conf
 Read $[CORE_DIR]/1Functions/InitMgr/initMgr.sys
 
+#####
 ## Remember focused window in current page.
+#####
 
 SetEnv FocusPage 0
 
@@ -67,7 +68,9 @@ AddToFunc SavePageFocus
 + I All (CurrentPage) State $[FocusPage] False
 + I Current State $[FocusPage] True
 
+#####
 ## Restore previous focused window in current page.
+#####
 
 DestroyFunc RestorePageFocus
 AddToFunc RestorePageFocus
