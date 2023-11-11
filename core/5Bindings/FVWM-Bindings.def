@@ -1,4 +1,4 @@
-# Fvwm version: 1.0.6a-17-g01908e2
+# Fvwm version: 1.0.8 (release 4 September 2023)
 # Default Bindings
 #
 
@@ -21,7 +21,6 @@
 #
 # Format: Key <X>  <Context> <Modifier> <Action>
 #         Mouse <X> <Context> <Modifier> <Action>
-
 ####################
 
 # Alt-F1 or Menu to load the root menu and Alt-Tab for a WindowList.

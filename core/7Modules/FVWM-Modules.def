@@ -1,4 +1,4 @@
-# Fvwm version: 1.0.6a-17-g01908e2
+# Fvwm version: 1.0.8 (release 4 September 2023)
 # Default Modules
 #
 
@@ -6,7 +6,7 @@
 # 7: Modules #
 ##############
 
-## FvwmIdent
+# FvwmIdent
 #
 # FvwmIdent is a module that can be used to get the various info about
 # a window. One use is getting the class/resource/name of a window.
@@ -14,7 +14,7 @@ DestroyModuleConfig FvwmIdent:*
 *FvwmIdent: Colorset 10
 *FvwmIdent: Font "xft:Sans:size=10:antialias=True"
 
-## FvwmScript
+# FvwmScript
 #
 # FvwmScript is a module that allows one to write custom desktop
 # widgets and various other tools. This config uses two FvwmScripts.
@@ -25,7 +25,7 @@ DestroyModuleConfig FvwmIdent:*
 DestroyModuleConfig FvwmScript:*
 *FvwmScript: DefaultColorset 10
 
-## FvwmButtons - RightPanel
+# FvwmButtons - RightPanel
 #
 # FvwmButtons is a powerful module that can be used to build custom
 # panels and docks. This config uses FvwmButtons to build the RightPanel.
@@ -34,7 +34,7 @@ DestroyModuleConfig FvwmScript:*
 #
 # Note - To use the system tray you must have "stalonetray" installed.
 DestroyModuleConfig RightPanel:*
-*RightPanel: Geometry 120x$[monitor.$[monitor.primary].height]-0+0
+*RightPanel: Geometry 120x$[monitor.$[monitor.primary].height]-0+0@p
 *RightPanel: Colorset 10
 *RightPanel: Rows $[monitor.$[monitor.primary].height]
 *RightPanel: Columns 120
@@ -63,7 +63,7 @@ Test (!x stalonetray) PipeRead 'echo "*RightPanel: (120x$(($[monitor.$[monitor.p
     Frame 0)
 *RightPanel: (120x5, Frame 0)
 
-## FvwmPager
+# FvwmPager
 #
 # This module displays the location of the windows on the various Pages
 # and Desks. This is setup to show only the Pages on the current Desk.
@@ -80,7 +80,7 @@ DestroyModuleConfig FvwmPager:*
 *FvwmPager: Window3dBorders
 *FvwmPager: MiniIcons
 
-## FvwmIconMan
+# FvwmIconMan
 #
 # FvwmIconMan is a powerful tool to list and manage windows. This
 # is used as the window list in the panel or taskbar.
@@ -105,7 +105,7 @@ DestroyModuleConfig FvwmIconMan:*
 *FvwmIconMan: Tips needed
 *FvwmIconMan: Sort id
 
-## FvwmEvent
+# FvwmEvent
 #
 # FvwmEvent is a module that can run an action or function
 # on specific events. This instance changes which desk number

@@ -2,7 +2,7 @@
 
 #########################
 ## Add the below line at the top of /.fvwm/config or local.config).
-Read $[CORE_DIR]/1Functions/startFunc.sys
+## Read $[CORE_DIR]/1Functions/startFunc.sys
 
 ## More about default Functions, read
 ## .fvwm/core/1Functions/FVWM-Functions.def

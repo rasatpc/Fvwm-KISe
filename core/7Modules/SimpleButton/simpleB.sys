@@ -40,4 +40,4 @@ DestroyModuleConfig SimpleButton: *
 *SimpleButton: (1x1, Icon $[sbicons]/screenshooter.png, \
               Action(Mouse 1) "Exec exec xfce4-screenshooter")
 
-Style SimpleButton !Borders, !Title, WindowListSkip, StaysOnTop, Sticky
+Style SimpleButton !Borders, !Title, WindowListSkip, StaysOnTop, Sticky, NeverFocus

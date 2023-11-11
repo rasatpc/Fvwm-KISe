@@ -1,7 +1,6 @@
 ## Functions/Extra: autoMoveW.sys
 ## Automatically move applications to specific desk/page when they create windows.
 
-## Automatically moving a window from one page/desk to another.
 #
 ##		APPS		COMMAND			DESK/PAGE		LOCATION
 ## --------------------------------------------------------------------

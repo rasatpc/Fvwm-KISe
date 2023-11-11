@@ -18,10 +18,7 @@ Colorset 20 fg #ffffff, bg #4e3715, hi #2b4e5e, sh #2b4e5e
 Colorset 21  fg #ffffff, bg #028383, hi, sh, Plain, NoShape
 
 ## Desker
-Colorset 22 Pixmap $[CORE_DIR]/7Modules/Desker/bkg/web-bkg-bw.png, Tint #2dd2d2 20
-Colorset 23 Pixmap $[CORE_DIR]/7Modules/Desker/bkg/email-bkg-bw.png, Tint #64ff4f 20
-Colorset 24 Pixmap $[CORE_DIR]/7Modules/Desker/bkg/work-bkg-bw.png, Tint #ffd176 40
-Colorset 25 Pixmap $[CORE_DIR]/7Modules/Desker/bkg/misc-bkg-bw.png, Tint #6a8982 20
+## Colorset 22 to 25
 
 ## Title active color
 Colorset 26 fg #ffffff, bg #2b4e5e, hi #2b4e5e, sh #2b4e5e, Plain, NoShape

@@ -58,6 +58,31 @@ Read $[CORE_DIR]/1Functions/startFunc.sys
 Read $[CORE_DIR]/1Functions/Transparency/transp.conf
 Read $[CORE_DIR]/1Functions/InitMgr/initMgr.sys
 
+## Remember focused window in current page.
+
+SetEnv FocusPage 0
+
+DestroyFunc SavePageFocus
+AddToFunc SavePageFocus
++ I All (CurrentPage) State $[FocusPage] False
++ I Current State $[FocusPage] True
+
+## Restore previous focused window in current page.
+
+DestroyFunc RestorePageFocus
+AddToFunc RestorePageFocus
++ I Current (CurrentPage) Break 1
++ I Next (CurrentPage, State $[FocusPage]) Focus
++ I None (CurrentPage, Focused) Prev (CurrentPage) Focus
+
+DestroyModuleConfig FvwmEvent-FDpg:*
+*FvwmEvent-FDpg: Cmd
+*FvwmEvent-FDpg: new_page RestorePageFocus
+*FvwmEvent-FDpg: new_desk RestorePageFocus
+*FvwmEvent-FDpg: focus_change SavePageFocus
+
+Module FvwmEvent FvwmEvent-FDpg
+
 #######################
 ## USER
 #######################

@@ -1,4 +1,4 @@
-# Fvwm version: 1.0.6a-17-g01908e2
+# Fvwm version: 1.0.8 (release 4 September 2023)
 # Default Functions.
 #
 
@@ -16,7 +16,6 @@
 #   + D [Action to do on a Mouse Double Click]
 #   + H [Action to do on a Mouse Hold]
 #   + M [Action to do on a Mouse Motion]
-#
 ###########
 
 # Start Function
@@ -26,7 +25,6 @@
 # so using Test (Init) or Test (Restart) can further control
 # actions that are run during the first time run (Init) or
 # actions that are run after a restart.
-
 DestroyFunc StartFunction
 AddToFunc   StartFunction
 + I Test (Init) InitBackground
@@ -84,6 +82,7 @@ AddToFunc   SetBG
 + I Exec exec fvwm-root $[FVWM_DATADIR]/default-config/images/background/$0
 + I Exec exec ln -fs $[FVWM_DATADIR]/default-config/images/background/$0 \
     $[FVWM_USERDIR]/.BGdefault
+
 
 # Function: IconManClick
 #

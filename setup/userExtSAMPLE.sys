@@ -150,6 +150,10 @@ Style * TileCascadePlacement
 ## Mouse click not to focus the button.
 Style *DLaunch* NeverFocus
 Style RightPager NeverFocus
+Style ControlMP NeverFocus
+Style ExitBar NeverFocus
+Style RightTbar NeverFocus
+Style HideBar NeverFocus
 
 ##### Exit panel 
 ## Center panel postion.

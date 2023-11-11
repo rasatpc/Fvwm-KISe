@@ -22,4 +22,4 @@ DestroyModuleConfig HideBar: *
 	Action(Mouse 3) "Exec exec featherpad $[USER_DIR]/SimpleButton/simpleB.sys")
 
 Style HideBar NoTitle, NoHandles, Sticky, WindowListSkip, \
-	BorderWidth 0, CirculateSkip, StaysOnTop
+	BorderWidth 0, CirculateSkip, StaysOnTop, NeverFocus

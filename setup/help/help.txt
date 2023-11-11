@@ -1,4 +1,4 @@
-FVWM-KISe (ver. 1.5.0)
+FVWM-KISe (ver. 1.5.3)
 
 The default FVWM config is the base. Instead of one lengthy config, Fvwm-KISe is using the myExt model of individual small scripts. They are organized into folders and run in the same sequence as the original Fvwm.
 
@@ -42,4 +42,4 @@ Any inspiring and functional script, please share on:
 https://fvwmforums.org
 
 By Rasat
-18 October 2023
+11 November 2023

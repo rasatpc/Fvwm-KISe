@@ -20,4 +20,4 @@ DestroyModuleConfig HideWBar: *
     Action(Mouse 3) 'Exec exec thunar')
 
 Style HideWBar NoTitle, NoHandles, Sticky, WindowListSkip, \
-	BorderWidth 0, CirculateSkip, StaysOnTop
+	BorderWidth 0, CirculateSkip, StaysOnTop, NeverFocus

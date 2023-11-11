@@ -27,7 +27,7 @@ DestroyModuleConfig WorkBar: *
 
 *WorkBar: Rows 7  ## (as per numbers of buttons)
 
-*WorkBar: (1x1, Icon $[wicons]/3D/internet-feed-reader.svg:54x0, Panel(right, steps 0, delay 0, indicator 20) "WebBut" 'Read $[USER_DIR]/WorkButtons/web.conf', \
+*WorkBar: (1x1, Icon $[wicons]/3D/internet-feed-reader.png, Panel(right, steps 0, delay 0, indicator 20) "WebBut" 'Read $[USER_DIR]/WorkButtons/web.conf', \
 	Action(Mouse 3) "Exec exec featherpad $[USER_DIR]/WorkButtons/web.conf")
 
 *WorkBar: (1x1, Icon $[wicons]/mail.png, Panel(right, steps 0, delay 0, indicator 20) "EmailBut" 'Read $[USER_DIR]/WorkButtons/email.conf', \
@@ -36,7 +36,7 @@ DestroyModuleConfig WorkBar: *
 *WorkBar: (1x1, Icon $[wicons]/filemanager.png, Panel(right, steps 0, delay 0, indicator 20) "FileBut" 'Read $[USER_DIR]/WorkButtons/file.conf', \
 	Action(Mouse 3) "Exec exec featherpad $[USER_DIR]/WorkButtons/file.conf")
 
-*WorkBar: (1x1, Icon $[wicons]/3D/gnome-graphics.svg:54x0, Panel(right, steps 0, delay 0, indicator 20) "GraphBut" 'Read $[USER_DIR]/WorkButtons/graphic.conf', \
+*WorkBar: (1x1, Icon $[wicons]/3D/gnome-graphics.png, Panel(right, steps 0, delay 0, indicator 20) "GraphBut" 'Read $[USER_DIR]/WorkButtons/graphic.conf', \
 	Action(Mouse 3) "Exec exec featherpad $[USER_DIR]/WorkButtons/graphic.conf")
 
 *WorkBar: (1x1, Icon $[wicons]/libreoffice-writer.png, Panel(right, steps 0, delay 0, indicator 20) "OfficeBut" 'Read $[USER_DIR]/WorkButtons/office.conf', \
@@ -49,4 +49,4 @@ DestroyModuleConfig WorkBar: *
 	Action(Mouse 3) "Exec exec featherpad $[USER_DIR]/WorkButtons/misc.conf")
 
 ## Style setting
-Style WorkBar !Borders, !Title, WindowListSkip, StaysOnTop, Sticky
+Style WorkBar !Borders, !Title, WindowListSkip, StaysOnTop, Sticky, NeverFocus

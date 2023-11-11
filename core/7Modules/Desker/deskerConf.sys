@@ -30,29 +30,6 @@ AddToFunc ReturnDesk
 + I Read $[CORE_DIR]/1Functions/DLauncher/reset.sys
 
 ##########
-## Desk size: 2:1/2:2
-##########
-
-DestroyFunc ExtSize
-AddToFunc ExtSize
-+ I Read $[CORE_DIR]/7Modules/Desker/deskSize.sys
-
-## Desk sizeButton 2:1
-
-Module FvwmButtons SizeBtm
-DestroyModuleConfig SizeBtm: *
-*SizeBtm: Geometry 40x30-176+4
-*SizeBtm: Colorset 15
-*SizeBtm: PressColorset 7
-*SizeBtm: Frame 0
-*SizeBtm: Rows 1
-*SizeBtm: Font "xft:Sans:size=12:antialias=True"
-  
-*SizeBtm: (1x1, Title "2:1", Action(Mouse 1) 'ExtSize' )
-
-Style SizeBtm !Borders, !Title, WindowListSkip, Sticky
-
-##########
 ## Work Desk label.
 ##########
 
@@ -68,7 +45,7 @@ DestroyModuleConfig WDlabel: *
 
 Style WDlabel !Borders, !Title, WindowListSkip
 
-Schedule 2000 KillModule FvwmButtons WDlabel
+Schedule 1200 KillModule FvwmButtons WDlabel
 
 ##########
 ## Load Desker Panel
