@@ -3,27 +3,59 @@
 SetEnv CORE_DIR $[HOME]/.fvwm/core
 SetEnv USER_DIR $[HOME]/.fvwm/user
 
-## Vertical/horizontal tiling
-
-DestroyFunc WTile
-AddToFunc WTile
-+ I Read $[CORE_DIR]/1Functions/DLauncher/deTile.sys
-
-## OverView (using function FvwmExpose)
-
-## Iconify all except focused window.
+######
+# Iconify all except focused window.
+######
 
 DestroyFunc AIconic
 AddToFunc AIconic
 + I All (CurrentPage, !Iconic, !Focused) Thumbnail
 
-## Work Desk environment
+######
+# OverView (check function FvwmExpose)
+# core/5Bindings/ExposeList/
+######
+
+######
+# Vertical/horizontal tiling
+# 3 columns
+######
+
+## Tiling
+DestroyFunc W3Tile
+AddToFunc W3Tile
++ I FvwmRearrange -tile $0 -r -mn 3 -maximize 0 0 86 82 $[wa.width]p $[wa.height]p
+
+## Tile switch.
+SetEnv Tile ON
+
+DestroyFunc WTile
+AddToFunc WTile
++ I Piperead 'if [ $Tile = ON ]; then echo "W3Tile"; \
+	echo "Schedule 500 SetEnv Tile OFF"; fi'
++ I Piperead 'if [ $Tile = OFF ]; \
+	then echo "All (CurrentPage, !Iconic, CirculateHit, !Sticky) Maximize Off"; \
+	echo "WindowId $0 WarpToWindow 50 50"; echo "SetEnv Tile ON"; fi'
+
+######
+# Work Desk environment.
+######
+
+## Loading
+DestroyFunc onWorkD
+AddToFunc onWorkD
++ I Read $[CORE_DIR]/7Modules/Desker/deskerConf.sys
++ I Read $[USER_DIR]/WorkButtons/hideWorkBar.sys
+
+## Desk switch.
+SetEnv Work ON
 
 DestroyFunc WorkD
 AddToFunc WorkD
-+ I Read $[CORE_DIR]/7Modules/Desker/deskerConf.sys
-+ I Read $[USER_DIR]/WorkButtons/hideWorkBar.sys
-+ I Read $[CORE_DIR]/1Functions/DLauncher/returnWD.sys
++ I Piperead 'if [ $Work = ON ]; then echo "onWorkD"; \
+	echo "Schedule 500 SetEnv Work OFF"; fi'
++ I Piperead 'if [ $Work = OFF ]; then echo "ReturnDesk"; \
+	echo "SetEnv Work ON"; fi'
 
 #####
 ## DESK LAUNCHER

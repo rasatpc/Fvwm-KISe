@@ -14,20 +14,25 @@ DesktopName 1 Email
 DesktopName 2 Work
 DesktopName 3 Misc
 
+## Desker switch:
+
+SetEnv Switch OFF
+
+DestroyFunc DeskerSwitch
+AddToFunc DeskerSwitch
++ I Piperead 'if [ $Switch = OFF ]; then echo "KillModule FvwmPager FvwmDesker"; \
+	echo "Schedule 500 SetEnv Switch ON"; fi'
++ I Piperead 'if [ $Switch = ON ]; then echo "Module FvwmPager FvwmDesker 0 3"; \
+	echo "SetEnv Switch OFF"; fi'
+
 ######
 # Bar Buttons
 ######
 
-## Desker pager On/Fff
+## Load Desker
+Schedule 1400 Module FvwmPager FvwmDesker 0 3
 
-DestroyFunc DeskerSwitch
-AddToFunc DeskerSwitch
-+ I Module FvwmPager FvwmDesker 0 3
-+ I Schedule 1000 Read $[CORE_DIR]/7Modules/Desker/resetOFF.conf
-
-## Load Desker On
-Schedule 2400 DeskerSwitch
-
+## Load Bar Buttons
 Module FvwmButtons BarButtons
 
 DestroyModuleConfig BarButtons: *
@@ -36,8 +41,6 @@ DestroyModuleConfig BarButtons: *
 *BarButtons: Colorset 16
 *BarButtons: Columns 2
 *BarButtons: Frame 0
-
-## FvwmButtons
 
 *BarButtons: (1x2, Icon $[icons]/work-line.png, \
 	Action(Mouse 1) 'DeskerSwitch', \

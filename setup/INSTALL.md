@@ -1,4 +1,4 @@
-3 November 2023
+23 November 2023
 ################
 # HOW TO INSTALL Fvwm-KISe on FVWM3 (or Fvwm2)
 ################

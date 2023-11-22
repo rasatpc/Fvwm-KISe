@@ -1,7 +1,7 @@
 ## Copy and rename .fvwm/setup/userExtSAMPLE.sys to .fvwm/userExt.sys
 
 ## This file is for you to add/remove and make changes in core configs.
-## Currently there are 24 scripts (configs) in .fvwm/core.
+## Currently there are 23 scripts (configs) in .fvwm/core.
 
 ## Make changes (tag and untag) and add your own.
 ## To maintain Fvwm sequence, each config has an
@@ -36,7 +36,7 @@ Read $[USER_DIR]/AutoMoveWin/autoMoveW.sys
 
 ###########
 # 2. STYLES (menu colors, etc)
-# .fvwm/2Styles/< 2 x configs>
+# .fvwm/2Styles/< 1 x configs>
 ###########
 
 ## CORE
