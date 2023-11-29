@@ -26,7 +26,7 @@ DestroyModuleConfig FvwmScript:*
 Module FvwmButtons RightTbar
 
 DestroyModuleConfig RightTbar:*
-*RightTbar: Geometry 120x$[vp.height]-0+280
+*RightTbar: Geometry 120x$[vp.height]-0+270
 *RightTbar: Colorset 10
 *RightTbar: Rows $[vp.height]
 *RightTbar: Frame 0
@@ -36,7 +36,9 @@ DestroyModuleConfig RightTbar:*
 
 Test (x stalonetray) *RightTbar: (120x24, Swallow(NoClose,UseOld) \
     stalonetray 'Exec exec stalonetray --config ~/.fvwm/setup/stalonetrayrc', Frame 0, Colorset 21)
-    
+
+   *RightTbar: (120x2, Frame 0, Colorset 10)
+   *RightTbar: (120x5, Frame 0, Colorset 15)
 Test (x stalonetray) PipeRead 'echo "*RightTbar: (120x$(($[vp.height]-430)), \
     Top, Swallow FvwmIconMan \'Module FvwmIconMan\', Frame 0, Colorset 10)"'
 Test (!x stalonetray) PipeRead 'echo "*RightTbar: (120x$(($[vp.height]-430)),\
@@ -59,7 +61,7 @@ DestroyModuleConfig FvwmIconMan:*
 *FvwmIconMan: UseWinList true
 *FvwmIconMan: ButtonGeometry 120x24
 *FvwmIconMan: ManagerGeometry 1x1
-*FvwmIconMan: Background #2b4e5e
+*FvwmIconMan: Colorset 10
 *FvwmIconMan: Foreground #ffffff
 *FvwmIconMan: FocusColorset 11
 *FvwmIconMan: IconColorset 14

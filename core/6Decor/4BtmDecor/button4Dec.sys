@@ -66,10 +66,10 @@ AddToDecor 4BTMDecor
 
 Style * Colorset 5, HilightColorset 2, \
         BorderColorset 5, HilightBorderColorset 3, \
-        BorderWidth 0, HandleWidth 0, \
+        BorderWidth 1, HandleWidth 1, \
         FvwmBorder, FirmBorder, \
         MWMButtons, UseDecor 4BTMDecor
 Style * Font "xft:Sans:size=12:minspace=False:antialias=True"
 
 ## Special Rules
-Style * !Handles, BorderWidth 1, HandleWidth 0
+Style * Handles, BorderWidth 1, HandleWidth 1

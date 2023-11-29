@@ -3,10 +3,8 @@ KEY & MOUSE BINDINGS
 KEY
 Close window (alt-x)
 Maximize (alt-m)
+Full-screen Maximize (alt-f)
 Minimize (thumbnail) (alt-t)
-Move Desk Icon Panel north (alt-n)
-Move Desk Icon Panel west (alt-w)
-Switch between Virtual Desktops (ctrl-F1/F2/F3/F4)
 
 MOUSE
 Move window (Super+left mouse click)

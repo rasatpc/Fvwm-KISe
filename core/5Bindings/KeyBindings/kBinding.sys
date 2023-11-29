@@ -21,6 +21,9 @@ SetEnv CORE_DIR $[HOME]/.fvwm/core
 ## Maximize alt-m
 Silent Key m A M Maximize 100 100 # width hight
 
+## Full-screen Maximize
+Silent Key f A M ToggleMaximize
+
 ## Minimize (thumbnail) alt-t
 Silent Key t A M Thumbnail
 

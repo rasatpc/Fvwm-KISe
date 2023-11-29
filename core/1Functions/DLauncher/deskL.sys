@@ -12,13 +12,24 @@ AddToFunc AIconic
 + I All (CurrentPage, !Iconic, !Focused) Thumbnail
 
 ######
+# Full screen maximize.
+######
+
+DestroyFunc ToggleMaximize
+AddToFunc ToggleMaximize
++ I Current (Maximized) WindowStyle Title, Border
++ I Current (!Maximized) WindowStyle !Title, Borders
++ I UpdateStyles
++ I Current Maximize ewmhiwa
++ I Style ScreenDLaunch StaysOnTop, NeverFocus
+
+######
 # OverView (check function FvwmExpose)
 # core/5Bindings/ExposeList/
 ######
 
 ######
-# Vertical/horizontal tiling
-# 3 columns
+# Vertical/horizontal tiling (3 columns)
 ######
 
 ## Tiling
@@ -38,7 +49,7 @@ AddToFunc WTile
 	echo "WindowId $0 WarpToWindow 50 50"; echo "SetEnv Tile ON"; fi'
 
 ######
-# Work Desk environment.
+# Work Desk.
 ######
 
 ## Loading
@@ -57,9 +68,9 @@ AddToFunc WorkD
 + I Piperead 'if [ $Work = OFF ]; then echo "ReturnDesk"; \
 	echo "SetEnv Work ON"; fi'
 
-#####
+################
 ## DESK LAUNCHER
-#####
+########
 
 SetEnv dLicons $[CORE_DIR]/1Functions/DLauncher/icons
 
@@ -81,11 +92,13 @@ AddToFunc DLauncher
 + I Style $0DLaunch HandleWidth 0, NoTitle
 + I Module FvwmButtons $3 $0DLaunch
 + I UpdateStyles
-    
-DLauncher Iconify $[dLicons]/iconifyBkg.png "AIconic" "-g +15-15"
-DLauncher OverView $[dLicons]/overViewBkg.png 'FvwmExpose' "-g +105-15"
-DLauncher Tile $[dLicons]/tileBkg.png "WTile" "-g +195-15"
-DLauncher WorkDesk $[dLicons]/work.png "WorkD" "-g +285-15"
 
-Style *DLaunch* !Borders, !Title, WindowListSkip, Sticky, StaysOnTop
+DLauncher Iconify $[dLicons]/iconifyBkg.png "AIconic" "-g +15-15"
+DLauncher Screen $[dLicons]/full-screen.png "ToggleMaximize" "-g +105-15"
+DLauncher OverView $[dLicons]/overViewBkg.png "FvwmExpose" "-g +195-15"
+DLauncher Tile $[dLicons]/tileBkg.png "WTile" "-g +285-15"
+DLauncher WorkDesk $[dLicons]/work.png "WorkD" "-g +375-15"
+
+Style *DLaunch* !Borders, !Title, WindowListSkip, Sticky, StaysOnBottom
 Style *DLaunch* NeverFocus
+# Style ScreenDLaunch StaysOnTop

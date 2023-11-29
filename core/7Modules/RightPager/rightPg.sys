@@ -70,12 +70,3 @@ Module FvwmEvent EventNewDesk
 KillModule FvwmButtons ControlMP
 *ControlMP: Geometry 330x34-175+6
 Module FvwmButtons ControlMP
-
-## Page number for Titlebar right-click
-
-DestroyMenu MenuSendTo
-AddToMenu MenuSendTo
-+ " Page 0 " MoveToPage 0 0
-+ " Page 1 " MoveToPage 1 0
-+ " Page 2 " MoveToPage 0 1
-+ " Page 3 " MoveToPage 1 1

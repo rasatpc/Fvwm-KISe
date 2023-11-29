@@ -5,16 +5,19 @@ The default Fvwm config file is the base. In KISe it is split into associated fo
 
 # Main features:
 * Desk Launcher includes:
-	Iconfied Thumbnails, Windows Overview, Tiling, and Work Desk.
+	Iconfied Thumbnails, Full-Screen Maximize, Windows Overview,
+	Tiling, and Work Desk.
 
-* Work Desk includes navigation buttons and 4 Desks with 2 Pages each.
+* Work Desk includes navigation buttons, Rofi, Calendar, Clock,
+	and 4 Desks Pager with 2 Pages each.
  	(Web, Email, Work and Misc. desk).
 
-* Icon/Application Panel
-* Task Panel
-* Calendar/Day/Time Panel
-* 4-button Window Title Bar
-* Page Indicator
+* Icon/Application Panel.
+* Task Panel.
+* Day/Time Panel.
+* 4-button Window Title Bar.
+* Page Indicator.
+* Tiled and scalable wallpaper features.
 * Elegant transparency and shadows.
 * Window focus on all desks and pages.
 

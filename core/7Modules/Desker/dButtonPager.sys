@@ -63,7 +63,7 @@ DestroyModuleConfig BarButtons: *
 
 *BarButtons: (2x2, Swallow "FvwmPagerBar" 'FvwmPager FvwmPagerBar * *')
 
-Style BarButtons NoTitle, NoHandles, !Title, WindowListSkip, Layer 4, Sticky, !Iconifiable, BorderColorset 10, BorderWidth 0, NeverFocus
+Style BarButtons NoTitle, NoHandles, !Title, WindowListSkip, Layer 4, Sticky, !Iconifiable, BorderColorset 10, BorderWidth 0, StaysOnTop, NeverFocus
 
 ######
 # FvwmPager: Swallowed by Bar Buttons
@@ -118,7 +118,7 @@ DestroyModuleConfig FvwmDesker: *
 *FvwmDesker: UseSkipList # hides modules
 *FvwmDesker: MiniIcons
 
-Style FvwmDesker NoTitle, !Handles, Borders, BorderWidth 1, BorderColorset 6, Sticky, WindowListSkip, FixedSize, !Iconifiable, CirculateSkipIcon, CirculateSkip
+Style FvwmDesker NoTitle, !Handles, Borders, BorderWidth 1, BorderColorset 6, Sticky, WindowListSkip, FixedSize, !Iconifiable, CirculateSkipIcon, CirculateSkip, StaysOnTop
 
 ######
 # FvwmBacker module

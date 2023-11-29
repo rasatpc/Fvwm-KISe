@@ -15,7 +15,7 @@ Test (x mousepad) + "Info " Exec exec mousepad $[HOME_DIR]/setup/help/info.txt
 Test (x featherpad) + "Bindings " Exec exec featherpad $[HOME_DIR]/setup/help/key-mouse-bindings.txt
 Test (x mousepad) + "Bindings " Exec exec mousepad $[HOME_DIR]/setup/help/Key-Mouse-Bindings.txt
 
-+ "How To " Exec exec display -size 960x540 $[HOME]/.fvwm/setup/images/Fvwm-KISe-v1.4.0-help.png
++ "How To " Exec exec display -size 960x540 $[HOME]/.fvwm/setup/images/Fvwm-KISe-v1.7.0-help.png
 + "How WD " Exec exec display -size 960x540 $[HOME]/.fvwm/setup/images/Fvwm-KISe-workDesk-help.png
 
 ## Set small icons
@@ -49,7 +49,7 @@ DestroyModuleConfig ControlControlMP: *
 
 ## Style Setting
 
-Style ControlMP !Borders, !Title, WindowListSkip, StaysOnTop, Sticky, NeverFocus
+Style ControlMP !Borders, !Title, WindowListSkip, StaysOnBottom, Sticky, NeverFocus
 
 ## Exit Button
 
@@ -66,4 +66,4 @@ DestroyModuleConfig ExitBar: *
 *ExitBar: (1x1, Icon $[smallIcons]/quit.png, Action(Mouse 1) "Exec sudo halt")
 
 Style ExitBar NoTitle, NoHandles, Sticky, WindowListSkip, \
-	BorderWidth 0, CirculateSkip, StaysOnTop, NeverFocus
+	BorderWidth 0, CirculateSkip, StaysOnBottom, NeverFocus

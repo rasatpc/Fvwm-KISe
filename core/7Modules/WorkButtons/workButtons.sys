@@ -49,4 +49,4 @@ DestroyModuleConfig WorkBar: *
 	Action(Mouse 3) "Exec exec featherpad $[USER_DIR]/WorkButtons/misc.conf")
 
 ## Style setting
-Style WorkBar !Borders, !Title, WindowListSkip, StaysOnTop, Sticky, NeverFocus
+Style WorkBar !Borders, !Title, WindowListSkip, StaysOnBottom, Sticky, NeverFocus

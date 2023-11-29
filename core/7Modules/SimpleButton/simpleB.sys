@@ -41,4 +41,4 @@ DestroyModuleConfig SimpleButton: *
               Action(Mouse 1) "Exec exec xfce4-screenshooter")
 
 ## Style setting
-Style SimpleButton !Borders, !Title, WindowListSkip, StaysOnTop, Sticky, NeverFocus
+Style SimpleButton !Borders, !Title, WindowListSkip, Sticky, StaysOnBottom, NeverFocus

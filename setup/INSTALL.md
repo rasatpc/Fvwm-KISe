@@ -32,12 +32,11 @@ Documentation, XDG menu, Network and Volume Icon (add icon in system tray):
 * sudo pacman -Syu asciidoctor xterm python3-xdg stalonetray volumeicon
 * sudo dnf install rubygem-asciidoctor xterm xdg-utils stalonetray volumeicon
 
-Required by Thumbnails and Picom (compositor):
+Required by Thumbnails, Picom (compositor), and Wallpaper:
 ===============================================================
-* sudo apt install imagemagick x11-apps picom
-* sudo apt install imagemagick x11-apps picom
-* sudo pacman -Syu imagemagick x11-apps picom
-* sudo dnf install ImageMagick xwd x11-apps picom
+* sudo apt install feh imagemagick x11-apps picom
+* sudo pacman -Syu feh imagemagick x11-apps picom
+* sudo dnf install feh ImageMagick xwd x11-apps picom
 
 Search apps and File Manager:
 ===============================================================
