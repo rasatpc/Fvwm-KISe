@@ -18,6 +18,11 @@
 #   + M [Action to do on a Mouse Motion]
 ###########
 
+## Check Fvwm version.
+
+Test (x fvwm-root) InfoStoreAdd VER "fvwm-root -r"
+Test (x fvwm3-root) InfoStoreAdd VER "fvwm3-root -r"
+
 # Start Function
 #
 # The start function is run right after fvwm is done reading
@@ -38,11 +43,11 @@ AddToFunc   StartFunction
 DestroyFunc InitBackground
 AddToFunc InitBackground
 + I Test (f $[FVWM_USERDIR]/.BGdefault) \
-    Exec exec fvwm-root -r $[FVWM_USERDIR]/.BGdefault
-+ I TestRc (NoMatch) Exec exec fvwm-root -r \
+    Exec exec $[infostore.VER] $[FVWM_USERDIR]/.BGdefault
++ I TestRc (NoMatch) Exec exec $[infostore.VER] \
     $[FVWM_DATADIR]/default-config/images/background/bg1.png
 
-Test (x fvwm3-root) Exec exec fvwm3-root -r ~/.fvwm/.BGdefault
+#Test (x fvwm3-root) Exec exec fvwm3-root -r ~/.fvwm/.BGdefault
 
 # Mouse Bindings Functions
 DestroyFunc RaiseMoveX
@@ -80,15 +85,12 @@ AddToFunc   ViewManPage
 DestroyFunc SetBG
 AddToFunc   SetBG
 + I Test (f $[FVWM_USERDIR]/images/background/$0) \
-    Exec exec fvwm-root -r $[FVWM_USERDIR]/images/background/$0
+    Exec exec $[infostore.VER] $[FVWM_USERDIR]/images/background/$0
 + I TestRc (Match) Exec exec ln -fs images/background/$0 \
     $[FVWM_USERDIR]/.BGdefault
-
-+ I Test (x fvwm3-root) Exec exec fvwm3-root -r ~/.fvwm/.BGdefault
-
 + I TestRc (Match) Break
 + I Test (!f $[FVWM_DATADIR]/default-config/images/background/$0) Break
-+ I Exec exec fvwm-root -r $[FVWM_DATADIR]/default-config/images/background/$0
++ I Exec exec $[infostore.VER] $[FVWM_DATADIR]/default-config/images/background/$0
 + I Exec exec ln -fs $[FVWM_DATADIR]/default-config/images/background/$0 \
     $[FVWM_USERDIR]/.BGdefault
 
