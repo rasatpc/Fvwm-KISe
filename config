@@ -37,13 +37,13 @@ SetEnv HOME_DIR $[HOME]/.fvwm
 SetEnv CORE_DIR $[HOME]/.fvwm/core
 SetEnv USER_DIR $[HOME]/.fvwm/user
 
-## .fvwm/setup
-## If .fvwm/userExt.sys doesn't exist, copy userExtSAMPLE.sys.
-## If .config/picom/picom.K.conf doesn't exist, copy picom.K.conf.
-## If .config/rofi/config.rasi doesn't exist, copy config.rasi
+## If .fvwm/userExt.sys doesn't exist, copy setup/userExtSAMPLE.sys.
+## If .config/picom/picom.K.conf doesn't exist, copy copy setup/picom/picom.K.conf.
+## If .config/rofi/config.rasi doesn't exist, copy setup/rofi/config.rasi
 ##
 
 ## Copy essential folders and files to assigned locations.
+
 Exec exec sh $[HOME_DIR]/setup/copySampleTo.sh
 
 ## Load Picom compositor.
@@ -51,10 +51,9 @@ Exec exec sh $[HOME_DIR]/setup/copySampleTo.sh
 Exec exec killall -qw picom
 Schedule 500 Exec exec picom --config ~/.config/picom/picom.K.conf
 
-## Load startup functions, transparency, wifi and system info.
+## Load startup functions, wifi and system info.
 
-Read $[CORE_DIR]/1Functions/startFunc.sys
-Read $[CORE_DIR]/1Functions/Transparency/transp.conf
+Read $[CORE_DIR]/1Functions/FVWM-Functions.def
 Read $[CORE_DIR]/1Functions/InitMgr/initMgr.sys
 
 #####

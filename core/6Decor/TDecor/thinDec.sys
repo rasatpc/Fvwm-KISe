@@ -41,4 +41,4 @@ Style * BorderColorset 1, HilightBorderColorset 4
 
 ## Special Rules
 
-Style * !Handles, BorderWidth 1, HandleWidth 0
+Style * !Handles, BorderWidth 1, HandleWidth 2
