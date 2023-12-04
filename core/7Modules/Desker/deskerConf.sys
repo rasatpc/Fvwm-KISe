@@ -14,6 +14,11 @@ KillModule FvwmBacker
 Colorset 17 fg #ffffff, bg #028383, hi, sh, Plain, NoShape
 Colorset 18 fg #ffffff, bg #306ea2, hi #ffffff, sh #ffffff, Plain
 
+## Check Fvwm version
+## (core/1Functions/FVWM-Functions.def)
+# Test (x fvwm-root) InfoStoreAdd VER "fvwm-root -r"
+# Test (x fvwm3-root) InfoStoreAdd VER "fvwm3-root -r"
+
 ##########
 ## Return WorkDesk to default desk.
 ##########
@@ -25,7 +30,7 @@ AddToFunc ReturnDesk
 + I GoToPage 0 0
 + I KillModule FvwmBacker
 + I DestroyModuleConfig FvwmBacker: *
-+ I *FvwmBacker: Command (Desk 0, Page 0 0) Exec exec fvwm-root -r $[FVWM_USERDIR]/.BGdefault
++ I *FvwmBacker: Command (Desk 0, Page 0 0) Exec exec $[infostore.VER] $[FVWM_USERDIR]/.BGdefault
 + I Module FvwmBacker
 + I SetEnv Work ON
 

@@ -125,11 +125,6 @@ Style FvwmDesker NoTitle, !Handles, Borders, BorderWidth 1, BorderColorset 6, St
 # *FvwmBacker: Command (Desk 0, Page * *) Exec exec feh --bg-scale $[fvwm_wallpaper]/LinuxForce.jpg
 ######
 
-## Check Fvwm version
-## (core/1Functions/FVWM-Functions.def)
-# Test (x fvwm-root) InfoStoreAdd VER "fvwm-root -r"
-# Test (x fvwm3-root) InfoStoreAdd VER "fvwm3-root -r"
-
 ## Load Desk background
 
 DestroyModuleConfig FvwmBacker: *
