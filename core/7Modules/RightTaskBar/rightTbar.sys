@@ -51,7 +51,7 @@ Test (!x stalonetray) PipeRead 'echo "*RightTbar: (120x$(($[vp.height]-430)),\
 
 ## Style settings
 
-Style RightTbar !Title, WindowListSkip, Layer 4, Sticky, !Iconifiable, BorderColorset 10, BorderWidth 0, NeverFocus
+Style RightTbar !Title, WindowListSkip, Layer 4, Sticky, !Handles, !Iconifiable, BorderColorset 10, BorderWidth 0, NeverFocus
 
 ## Change pre-settings
 # FvwmIconMan

@@ -16,6 +16,7 @@ The default Fvwm config file is the base. In KISe it is split into associated fo
 * Task Panel.
 * Day/Time Panel.
 * 4-button Window Title Bar.
+* Auto Move Windows.
 * Page Indicator.
 * Tiled and scalable wallpaper features.
 * Elegant transparency and shadows.
