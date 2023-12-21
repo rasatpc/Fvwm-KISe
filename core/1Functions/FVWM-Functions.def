@@ -18,10 +18,11 @@
 #   + M [Action to do on a Mouse Motion]
 ###########
 
-## Check Fvwm version.
+## Check Fvwm image version.
 
-Test (x fvwm-root) InfoStoreAdd VER "fvwm-root -r"
 Test (x fvwm3-root) InfoStoreAdd VER "fvwm3-root -r"
+Test (x fvwm-root) InfoStoreAdd VER "fvwm-root -r"
+Test (x feh) InfoStoreAdd VER "feh --bg-tile"
 
 # Start Function
 #
@@ -38,7 +39,6 @@ AddToFunc   StartFunction
 + I Module FvwmEvent EventNewDesk
 
 # Function to set background when fvwm starts
-# Test for Fvwm2 and Fvwm3
 
 DestroyFunc InitBackground
 AddToFunc InitBackground
@@ -46,8 +46,6 @@ AddToFunc InitBackground
     Exec exec $[infostore.VER] $[FVWM_USERDIR]/.BGdefault
 + I TestRc (NoMatch) Exec exec $[infostore.VER] \
     $[FVWM_DATADIR]/default-config/images/background/bg1.png
-
-#Test (x fvwm3-root) Exec exec fvwm3-root -r ~/.fvwm/.BGdefault
 
 # Mouse Bindings Functions
 DestroyFunc RaiseMoveX

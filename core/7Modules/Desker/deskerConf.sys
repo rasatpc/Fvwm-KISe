@@ -14,11 +14,6 @@ KillModule FvwmBacker
 Colorset 17 fg #ffffff, bg #028383, hi, sh, Plain, NoShape
 Colorset 18 fg #ffffff, bg #306ea2, hi #ffffff, sh #ffffff, Plain
 
-## Check Fvwm version
-## (core/1Functions/FVWM-Functions.def)
-# Test (x fvwm-root) InfoStoreAdd VER "fvwm-root -r"
-# Test (x fvwm3-root) InfoStoreAdd VER "fvwm3-root -r"
-
 ##########
 ## Return WorkDesk to default desk.
 ##########

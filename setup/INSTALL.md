@@ -1,4 +1,4 @@
-23 November 2023
+21 December 2023
 ################
 # HOW TO INSTALL Fvwm-KISe on FVWM3 (or Fvwm2)
 ################
@@ -18,7 +18,7 @@ MX Linux:
 * sudo apt-get install fvwm3
 
 Arch Linux:
-* yay -S fvwm3
+* pacman -Sy fvwm3
 
 Fedora/OpenSUSE/other RPM-based distros:
 * sudo dfn install fvwm3
@@ -29,26 +29,26 @@ Alpine Linux:
 Documentation, XDG menu, Network and Volume Icon (add icon in system tray):
 ===============================================================
 * sudo apt-get install asciidoctor xterm python3-xdg stalonetray volumeicon-alsa
-* sudo pacman -Syu asciidoctor xterm python3-xdg stalonetray volumeicon
+* sudo pacman -Sy asciidoctor xterm python-pyxdg stalonetray volumeicon
 * sudo dnf install rubygem-asciidoctor xterm xdg-utils stalonetray volumeicon
 
 Required by Thumbnails, Picom (compositor), and Wallpaper:
 ===============================================================
 * sudo apt install feh imagemagick x11-apps picom
-* sudo pacman -Syu feh imagemagick x11-apps picom
+* sudo pacman -Sy feh imagemagick xorg-apps picom
 * sudo dnf install feh ImageMagick xwd x11-apps picom
 
 Search apps and File Manager:
 ===============================================================
-* sudo apt install rofi xfce4-appfinder thunar
-* sudo pacman -Syu rofi xfce4-appfinder thunar
-* sudo dnf install rofi xfce4-appfinder thunar
+* sudo apt install rofi xfce4-appfinder thunar featherpad
+* sudo pacman -Sy rofi xfce4-appfinder thunar featherpad
+* sudo dnf install rofi xfce4-appfinder thunar featherpad
 Copy .fvwm/setup/rofi to .config/
 
 Required by Yad and other scripts:
 ===============================================================
 * sudo apt install yad gawk sed wget
-* sudo pacman -Syu yad gawk sed wget
+* sudo pacman -Sy yad gawk sed wget
 * sudo dnf install yad gawk sed wget
 
 #############
@@ -62,7 +62,7 @@ MX Linux:
 * sudo apt-get install libevent-dev libx11-dev libxrandr-dev libxrender-dev libxt-dev libxft-dev
 
 Arch Linux:
-* sudo pacman -Syu libevent-dev libx11-dev libxrandr-dev libxrender-dev libxt-dev libxft-dev
+* sudo pacman -Sy libevent-dev libx11-dev libxrandr-dev libxrender-dev libxt-dev libxft-dev
 
 Fedora:
 * sudo dnf install libevent-devel libX11-devel libXrandr-devel libXt-devel libXft-devel
@@ -74,7 +74,7 @@ MX Linux:
 * sudo apt-get install libfribidi-dev libncurses5-dev libpng-dev libreadline-dev libxcursor-dev libxpm-dev sharutils
 
 Arch Linux:
-* sudo pacman -Syu libfribidi-dev libncurses5-dev libpng-dev libreadline-dev libxcursor-dev libxpm-dev sharutils
+* sudo pacman -Sy libfribidi-dev libncurses5-dev libpng-dev libreadline-dev libxcursor-dev libxpm-dev sharutils
 
 Fedora:
 * sudo dnf install fribidi-devel ncurses-devel libpng-devel readline-devel libXcursor-devel libXpm-devel sharutils
@@ -82,7 +82,7 @@ Fedora:
 For make & install command dependencies:
 ====================================
 * sudo apt-get install automake autogen gcc
-* sudo pacman -Syu automake autoreconf autogen
+* sudo pacman -Sy automake autoreconf autogen
 * sudo dnf install automake dh-autoreconf autogen
 
 Download GitHub and install:
@@ -100,10 +100,3 @@ Download GitHub and install:
 #############
 # END GITHUB
 #############
-
-# OPTIONAL
-
-Touchpad:
-* sudo apt install xserver-xorg-input-synaptics
-* sudo pacman -Syu xf86-input-synaptics
-* sudo dnf install xorg-x11-drv-synaptics

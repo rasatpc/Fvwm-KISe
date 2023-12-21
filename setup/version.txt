@@ -1,2 +1,2 @@
-05 December 2023
-Fvwm-KISe ver. 1.7.1
+21 December 2023
+Fvwm-KISe ver. 1.7.2
