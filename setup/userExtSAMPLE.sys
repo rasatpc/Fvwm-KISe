@@ -106,7 +106,6 @@ Read $[CORE_DIR]/6Decor/4BtmDecor/button4Dec.sys
 ###########
 
 ## CORE (control-panel, desk-icon, pager, etc.)
-Read $[CORE_DIR]/7Modules/FVWM-Modules.def
 Read $[CORE_DIR]/7Modules/ControlMinPanel/controlMP.sys
 
 ## EXTRA
@@ -164,6 +163,9 @@ Style ConfirmQuit !Title, PositionPlacement Center, WindowListSkip, Layer 6
 ###########################################
 ## OTHER changes and addon.
 ###########################################
+
+##### Hide GeometryWindow (window position text, left top corner).
+GeometryWindow Hide
 
 ##### Keyboard
 ## Keyboard TouchPad on/off

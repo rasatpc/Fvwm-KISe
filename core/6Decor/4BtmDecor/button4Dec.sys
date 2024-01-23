@@ -19,14 +19,14 @@ SetEnv Icons $[CORE_DIR]/6Decor/4BtmDecor/icons/24x24 # 24px
 ## Colorsets
 ## (check $[CORE_DIR]/3Colorsets/KColors/FVWM-Colorsets.def)
 
-#   5 - Inactive Windows 
+#   37 - Inactive Windows 
 #   2 - Active Window
-#   3 - Inactive Windows Borders
+#   19 - Inactive Windows Borders
 #   4 - Active Windows Borders
-Colorset 5 fg #000000, bg #6ebfbd # text
-Colorset 2 fg #ffffff, bg #2b4e5e # text
-Colorset 3 fg #000000, bg #81a9a8 # frame
-Colorset 4 fg #000000, bg #2b4e5e # frame
+Colorset 37 fg #ffffff, bg #7194a6, hi, sh, Plain, NoShape # text
+Colorset 2  fg #ffffff, bg #2b4e5e, hi, sh, Plain, NoShape # text
+Colorset 19 fg #ffffff, bg #2b4e5e, hi #2b4e5e, sh #2b4e5e  # text
+Colorset 4  fg black, bg #14252c, hi #24424f, sh #111f26, Plain, NoShape  # text
 
 ## Binding:
 
@@ -64,8 +64,8 @@ AddToDecor 4BTMDecor
 
 ## Style setting
 
-Style * Colorset 5, HilightColorset 2, \
-        BorderColorset 5, HilightBorderColorset 3, \
+Style * Colorset 37, HilightColorset 2, \
+        BorderColorset 37, HilightBorderColorset 19, \
         BorderWidth 1, HandleWidth 2, \
         FvwmBorder, FirmBorder, \
         MWMButtons, UseDecor 4BTMDecor

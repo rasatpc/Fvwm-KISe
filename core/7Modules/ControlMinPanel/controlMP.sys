@@ -30,7 +30,7 @@ DestroyModuleConfig ControlControlMP: *
 *ControlMP: Geometry 330x34-0+3
 *ControlMP: Fore #ffffff
 *ControlMP: Back #2b4e5e
-*ControlMP: PressColorset 7
+*ControlMP: PressColorset 4
 *ControlMP: Frame 0
 *ControlMP: Rows 1
 *ControlMP: Pixmap none

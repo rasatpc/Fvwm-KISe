@@ -71,9 +71,9 @@ Style BarButtons NoTitle, NoHandles, !Title, WindowListSkip, Layer 4, Sticky, !I
 
 DestroyModuleConfig FvwmPagerBar: *
 *FvwmPagerBar: Colorset * 15
-*FvwmPagerBar: HilightColorset * 17  ## (active page background)
+*FvwmPagerBar: HilightColorset * 21  ## (active page background)
 *FvwmPagerBar: BalloonColorset * 10  ## (font color)
-*FvwmPagerBar: WindowColorsets 5 18  ## (inactive - active apps)
+*FvwmPagerBar: WindowColorsets 37 18  ## (inactive - active apps)
 *FvwmPagerBar: WindowBorderWidth 1
 *FvwmPagerBar: BalloonStringFormat %c
 *FvwmPagerBar: BallonYOffset +2
@@ -90,26 +90,26 @@ Style FvwmPagerBar * NoTitle, WindowListSkip, Sticky, !Handles, !Iconifiable, Fi
 ## With transparent tint color
 #Colorset 22 RootTransparent Buffer, fg black, Tint #8bade7 60
 #Colorset 23 RootTransparent Buffer, fg black, Tint #64e153 75
-#Colorset 24 RootTransparent Buffer, fg black, Tint #ffd176 75
+#Colorset 28 RootTransparent Buffer, fg black, Tint #ffd176 75
 #Colorset 25 RootTransparent Buffer, fg black, Tint #d4cbcb 70
 
 ## With thumbnail
 Colorset 22 Pixmap $[CORE_DIR]/7Modules/Desker/bkg/web-bkg-bw.png, Tint #9cd7d7 35
 Colorset 23 Pixmap $[CORE_DIR]/7Modules/Desker/bkg/email-bkg-bw.png, Tint #5ff34b 30
-Colorset 24 Pixmap $[CORE_DIR]/7Modules/Desker/bkg/work-bkg-bw.png, Tint #ffd176 40
+Colorset 28 Pixmap $[CORE_DIR]/7Modules/Desker/bkg/work-bkg-bw.png, Tint #ffd176 40
 Colorset 25 Pixmap $[CORE_DIR]/7Modules/Desker/bkg/misc-bkg-bw.png, Tint #d4cbcb 20
 
 ## Pager
 DestroyModuleConfig FvwmDesker: *
 *FvwmDesker: Geometry 600x70-175+4
 *FvwmDesker: Rows 1  ## (page rows)
-*FvwmDesker: HilightColorset * 17  ## (active page background)
+*FvwmDesker: HilightColorset * 21  ## (active page background)
 *FvwmDesker: BalloonColorset * 10  ## (font color)
-*FvwmDesker: WindowColorsets 5 18  ## (inactive - active apps)
+*FvwmDesker: WindowColorsets 37 18  ## (inactive - active apps)
 *FvwmDesker: Font "xft:Sans:size=12:antialias=True"
 *FvwmDesker: Colorset 0 22
 *FvwmDesker: Colorset 1 23
-*FvwmDesker: Colorset 2 24
+*FvwmDesker: Colorset 2 28
 *FvwmDesker: Colorset 3 25
 *FvwmDesker: WindowBorderWidth 1
 *FvwmDesker: BalloonStringFormat %c

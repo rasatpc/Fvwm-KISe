@@ -1,4 +1,4 @@
-21 December 2023
+23 January 2024
 ################
 # HOW TO INSTALL Fvwm-KISe on FVWM3 (or Fvwm2)
 ################
@@ -91,11 +91,9 @@ Download GitHub and install:
 * git clone https://github.com/fvwmorg/fvwm3.git
 * cd fvwm3
 * ./autogen.sh
-* ./configure --enable-mandoc
+* ./configure --prefix=/usr --enable-mandoc
 * make
 * sudo make install
-
-./configure --prefix=/usr --enable-mandoc
 
 #############
 # END GITHUB

@@ -92,5 +92,4 @@ Module FvwmEvent FvwmEvent-FDpg
 ## To make changes and add new features without being overwritten
 ## by new updates, this reads the userExt.sys file.
 
-Read $[CORE_DIR]/6Decor/TDecor/thinDec.sys
-Schedule 300 Read $[HOME_DIR]/userExt.sys
+Read $[HOME_DIR]/userExt.sys
