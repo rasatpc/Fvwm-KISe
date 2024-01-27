@@ -1,7 +1,7 @@
 # Fvwm-KISe
 Fvwm Keep-It-Simple & elegant - is a simplified version of Fvwm-myExt collection of ready-made scripts (configs). KISe is a simple and elegant base to use, modify, or add your own.
 
-The default Fvwm config file is the base. In KISe it is split into associated folders and runs in the same sequence as the original. This structure helps to maintain, debug, and create new functions, decor, and modules. Currently, there are 23 scripts of functions, styles, menus, decor, and modules.
+The default Fvwm config file is the base. In KISe it is split into associated folders and runs in the same sequence as the original. This structure helps to maintain, debug, and create new functions, decor, and modules. Currently, there are 22 scripts (configs) of functions, styles, menus, decor, and modules.
 
 # Main features:
 * Desk Launcher includes:
@@ -9,7 +9,7 @@ The default Fvwm config file is the base. In KISe it is split into associated fo
 	Tiling, and Work Desk.
 
 * Work Desk includes navigation buttons, Rofi, Calendar, Clock,
-	and 4 Desks Pager with 2 Pages each.
+	and 4 Desks Pager with 2 pages each.
  	(Web, Email, Work and Misc. desk).
 
 * Icon/Application Panel.

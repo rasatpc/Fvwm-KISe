@@ -8,6 +8,7 @@ Colorset 24 Transparent
 Colorset 16 VGradient 50 #638079 #b6b6b6, fg #ffffff
 
 ## FvwmPager
+Colorset 17 fg #ffffff, bg #028383, hi, sh, Plain, NoShape
 Colorset 18 fg #ffffff, bg #306ea2, hi #ffffff, sh #ffffff, Plain
 Colorset 34 fg #ffffff, bg #3a697e, hi, sh, Plain, NoShape
 Colorset 33 bg #d9d9d9, NoShape
@@ -58,6 +59,8 @@ Colorset 58 bg #deb274
 Colorset 48 HGradient 10 #cd935d #e1bc8b
 Colorset 49 VGradient 50 #e4c293 #bc7f47
 Colorset 50 VGradient 50 #bc7f47 #e4c293
+Colorset 55 VGradient 100 #deb274 #ebce9b
+Colorset 56 HGradient 100 #ebce9b #deb274
 
 ## BLUE and BROWN
 #Colorset 52 fg #ffffff, bg #eaeaea, hi #ffffff, sh #ffffff, Plain, NoShape

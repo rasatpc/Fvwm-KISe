@@ -1,7 +1,7 @@
 ## Copy and rename .fvwm/setup/userExtSAMPLE.sys to .fvwm/userExt.sys
 
 ## This file is for you to add/remove and make changes in core configs.
-## Currently there are 23 scripts (configs) in .fvwm/core.
+## Currently there are 22 scripts (configs) and the default config in .fvwm/core.
 
 ## Make changes (tag and untag) and add your own.
 ## To maintain Fvwm sequence, each config has an
@@ -20,7 +20,7 @@
 
 ###########
 # 1. FUNCTIONS (launcher, thumbnail, window position, etc)
-# .fvwm/core/1Functions/< 7x configs>
+# .fvwm/core/1Functions/< 6x configs>
 ###########
 
 ## CORE
