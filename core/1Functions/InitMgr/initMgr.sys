@@ -10,4 +10,5 @@ AddToFunc InitFunction
 + I Test (Init) Exec nm-applet # (wifi)
 + I Test (Init) Exec xfce4-power-manager # (screen & battery)
 + I Test (Init) Exec volumeicon # (sound)
-+ I Test (Init) Exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 & # (policykit authenticator)
++ I Test (Init) Exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 & # (policykit authenticator
++ I Test (Init) Exec gxkb # (keyboard language)

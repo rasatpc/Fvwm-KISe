@@ -1,4 +1,4 @@
-27 January 2024
+1 February 2024
 ################
 # HOW TO INSTALL Fvwm-KISe on FVWM3 (or Fvwm2)
 ################
@@ -38,12 +38,14 @@ Required by Thumbnails, Picom (compositor), and Wallpaper:
 * sudo pacman -Sy feh imagemagick xorg-apps picom
 * sudo dnf install feh ImageMagick xwd x11-apps picom
 
-Search apps and File Manager:
+Search apps, File Manager, Editor, and Keyboard indicator/switcher
 ===============================================================
-* sudo apt install rofi xfce4-appfinder thunar featherpad
-* sudo pacman -Sy rofi xfce4-appfinder thunar featherpad
-* sudo dnf install rofi xfce4-appfinder thunar featherpad
+* sudo apt install rofi xfce4-appfinder thunar featherpad gxkb
+* sudo pacman -Sy rofi xfce4-appfinder thunar featherpad gxkb
+* sudo dnf install rofi xfce4-appfinder thunar featherpad gxkb
+
 Copy .fvwm/setup/rofi to .config/
+Configure keyboard layout ~/.config/gxkb/gxkb.cfg
 
 Required by Yad and other scripts:
 ===============================================================
