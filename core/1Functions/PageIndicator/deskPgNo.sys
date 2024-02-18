@@ -1,8 +1,5 @@
 ## Functions/Extra: deskPgNo.sys
 
-SetEnv HOME_DIR $[HOME]/.fvwm
-SetEnv CORE_DIR $[HOME]/.fvwm/core
-
 ColorSet 15 RootTransparent Buffer, Tint #4a516a 50, fg white, bg black
 
 AddToFunc StartFunction I Module FvwmEvent FE
@@ -21,7 +18,6 @@ AddToFunc PGno
 + I *Pgfunc:  Colorset 15
 + I *Pgfunc:  Font "xft:Sans:size=11:antialias=True"
 + I Module FvwmButtons Pgfunc
-+ I Wait Pgfunc
 
 Style Pgfunc !Title, !Borders, WindowListSkip, StaysOnBottom
 
