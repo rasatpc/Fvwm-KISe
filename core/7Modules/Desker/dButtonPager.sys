@@ -147,3 +147,10 @@ Module FvwmBacker
 # Change preset menu style: Titlebar Right Click
 # (check core/4Menus/KMenu/kMenu.conf "Send To")
 ######
+
+DestroyMenu SendToDesk
+AddToMenu SendToDesk
++ " Web Desk  " MoveToDesk 0 0
++ " Email Desk " MoveToDesk 0 1
++ " Work Desk  " MoveToDesk 0 2
++ " Misc Desk " MoveToDesk 0 3

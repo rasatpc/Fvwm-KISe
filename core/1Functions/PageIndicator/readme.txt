@@ -1,6 +1,8 @@
 Config: Extra
 
-A horizontal Desk and page indicator shows the desk number and indicates which page is currently being displayed. Requires a mouse click to display the numbers.
+https://fvwmforums.org/t/any-idea-to-display-the-workspace-number-at-changes/1822
+
+A horizontal Desk and page indicator shows the desk number and indicates which page is currently being displayed.
 
 To install or edit .fvwm/userExt.sys
 
