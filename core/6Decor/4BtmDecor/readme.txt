@@ -1,5 +1,8 @@
 Config: Extra
 
+# Inspired by QNX Decoration Example
+# https://www.fvwm.org/Wiki/Decor/QNX/
+
 To install or edit .fvwm/userExt.sys
 
 ## Add the below line below "6.Decor / Extra".

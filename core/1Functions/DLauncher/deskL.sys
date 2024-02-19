@@ -101,4 +101,3 @@ DLauncher WorkDesk $[dLicons]/work.png "WorkD" "-g +375-15"
 
 Style *DLaunch* !Borders, !Title, WindowListSkip, Sticky, StaysOnBottom
 Style *DLaunch* NeverFocus
-# Style ScreenDLaunch StaysOnTop

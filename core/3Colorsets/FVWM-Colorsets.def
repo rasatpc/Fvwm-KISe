@@ -1,11 +1,10 @@
-# Fvwm version: 1.0.8 (release 4 September 2023)
+# Fvwm version: 1.0.9 (release 3 December 2023)
 # Default Colorsets
 #
 
-################
-# 3: Colorsets #
-################
-
+#######
+# 3: Colorsets
+#
 # Colorsets can be used to configure the color of the various
 # parts of fvwm such as window decor, menus, modules, etc.
 #

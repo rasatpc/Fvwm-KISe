@@ -4,7 +4,7 @@ Normally an icon represents a minimized application. If you want to turn that ar
 https://www.fvwm.org/Wiki/Tips/IconsOnDesktop/
 https://www.fvwm.org/Wiki/CookBook/IconifyExcept/
 
-To install or edit .fvwm/user.sys
+To install or edit .fvwm/userExt.sys
 
 ## Add the below line below "1.Functions / Core".
 Read $[CORE_DIR]/1Functions/DLauncher/deskL.sys

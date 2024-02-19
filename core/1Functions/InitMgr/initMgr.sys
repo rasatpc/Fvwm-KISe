@@ -1,8 +1,5 @@
 ## Functions/Core: initMgr.sys
 
-SetEnv HOME_DIR $[HOME]/.fvwm
-SetEnv CORE_DIR $[HOME]/.fvwm/core
-
 ## Startup manager
 
 Exec nm-applet # (wifi)

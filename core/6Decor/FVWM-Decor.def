@@ -1,11 +1,10 @@
-# Fvwm version: 1.0.8 (release 4 September 2023)
+# Fvwm version: 1.0.9 (release 3 December 2023)
 # Default Decor
 #
 
-###################
-# 6: Window Decor #
-###################
-
+#######
+# 6: Window Decor
+#
 # Buttons Locations: [1 3 5 7 9  TTTTT  0 8 6 4 2]
 #
 #   1 - WindowOps Menu
@@ -37,4 +36,3 @@ ButtonStyle All - Clear
 ButtonStyle 1 - MwmDecorMenu
 ButtonStyle 4 - MwmDecorMax
 ButtonStyle 6 - MwmDecorMin
-

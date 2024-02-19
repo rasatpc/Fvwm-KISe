@@ -1,8 +1,6 @@
 ## Decor/Extra: button4Dec.sys
 
-# Inspired by QNX Decoration Example
-# https://www.fvwm.org/Wiki/Decor/QNX/
-
+SetEnv HOME_DIR $[HOME]/.fvwm
 SetEnv CORE_DIR $[HOME]/.fvwm/core
 
 ## Tiling

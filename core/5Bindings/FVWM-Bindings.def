@@ -1,11 +1,10 @@
-# Fvwm version: 1.0.8 (release 4 September 2023)
+# Fvwm version: 1.0.9 (release 3 December 2023)
 # Default Bindings
 #
 
-#############################
-# 5: Mouse and Key bindings #
-#############################
-
+#######
+# 5: Mouse and Key bindings
+#
 # Contexts:
 #     R = Root Window                 rrrrrrrrrrrrrrrrrrrrrr
 #     W = Application Window          rIrrrr<---------^rrrrr

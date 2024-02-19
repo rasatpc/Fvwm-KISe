@@ -1,8 +1,5 @@
 ## Bindings/Extra: KeyBindings.sys
 
-SetEnv HOME_DIR $[HOME]/.fvwm
-SetEnv CORE_DIR $[HOME]/.fvwm/core
-
 ## Key commands
 # A = Alt
 # C = Control

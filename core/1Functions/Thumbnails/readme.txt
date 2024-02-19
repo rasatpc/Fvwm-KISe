@@ -3,9 +3,9 @@ Config: Extra
 https://www.fvwm.org/Archive/Faq/#using-application-screenshots-as-icon-or-mini-icon-thumbnails
 
 Needs imagemagick and x11-apps for this function to work.
-It takes a snapshot of the window before it is iconified, and then assigns
-the icon to the iconified window.
+It takes a snapshot of the window before it is iconified, and then assigns the icon to the iconified window.
 
+## Install
 sudo apt install imagemagick x11-apps
 
 .fvwm/core/4Menus/KMenu is depended on this config.

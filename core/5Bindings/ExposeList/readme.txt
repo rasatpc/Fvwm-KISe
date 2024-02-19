@@ -4,6 +4,7 @@ Needs imagemagick and x11-apps for this function to work.
 It takes a snapshot of the window before it is iconified, and then assigns
 the icon to the iconified window.
 
+## Install
 sudo apt install imagemagick x11-apps
 
 To install or edit .fvwm/userExt.sys

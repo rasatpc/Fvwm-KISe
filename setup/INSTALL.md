@@ -1,4 +1,4 @@
-1 February 2024
+19 February 2024
 ################
 # HOW TO INSTALL Fvwm-KISe on FVWM3 (or Fvwm2)
 ################

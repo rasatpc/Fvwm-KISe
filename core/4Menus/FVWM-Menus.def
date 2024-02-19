@@ -1,11 +1,10 @@
-# Fvwm version: 1.0.8 (release 4 September 2023)
+# Fvwm version: 1.0.9 (release 3 December 2023)
 # Default Menus
 #
 
-############
-# 4: Menus #
-############
-
+#######
+# 4: Menus
+###########
 MenuStyle * MenuColorset 5, ActiveColorset 6, GreyedColorset 7, TitleColorset 8
 MenuStyle * Hilight3DOff, HilightBack, HilightTitleBack, SeparatorsLong
 MenuStyle * TrianglesSolid, TrianglesUseFore
