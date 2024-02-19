@@ -1,5 +1,5 @@
 # Fvwm version: 1.0.9 (release 3 December 2023)
-# Default Functions
+# Modified from default Functions
 # Includes transparency option (fvwm-root -r and fvwm3-root -r)
 #
 
@@ -18,6 +18,12 @@
 #   + M [Action to do on a Mouse Motion]
 ###########
 
+## Check Fvwm image version.
+
+Test (x fvwm3-root) InfoStoreAdd VER "fvwm3-root -r"
+Test (x fvwm-root) InfoStoreAdd VER "fvwm-root -r"
+Test (x feh) InfoStoreAdd VER "feh --bg-tile"
+
 # Start Function
 #
 # The start function is run right after fvwm is done reading
@@ -25,6 +31,7 @@
 # so using Test (Init) or Test (Restart) can further control
 # actions that are run during the first time run (Init) or
 # actions that are run after a restart.
+
 DestroyFunc StartFunction
 AddToFunc   StartFunction
 + I Test (Init) InitBackground
@@ -32,11 +39,12 @@ AddToFunc   StartFunction
 + I Module FvwmEvent EventNewDesk
 
 # Function to set background when fvwm starts
+
 DestroyFunc InitBackground
 AddToFunc InitBackground
 + I Test (f $[FVWM_USERDIR]/.BGdefault) \
-    Exec exec fvwm-root $[FVWM_USERDIR]/.BGdefault
-+ I TestRc (NoMatch) Exec exec fvwm-root \
+    Exec exec $[infostore.VER] $[FVWM_USERDIR]/.BGdefault
++ I TestRc (NoMatch) Exec exec $[infostore.VER] \
     $[FVWM_DATADIR]/default-config/images/background/bg1.png
 
 # Mouse Bindings Functions
@@ -71,15 +79,16 @@ AddToFunc   ViewManPage
 # image and configure it to be loaded the next time fvwm is run.
 # Note, fvwm-root can't use .jpeg or resize images. Use something
 # like display, feh, etc.
+
 DestroyFunc SetBG
 AddToFunc   SetBG
 + I Test (f $[FVWM_USERDIR]/images/background/$0) \
-    Exec exec fvwm-root $[FVWM_USERDIR]/images/background/$0
+    Exec exec $[infostore.VER] $[FVWM_USERDIR]/images/background/$0
 + I TestRc (Match) Exec exec ln -fs images/background/$0 \
     $[FVWM_USERDIR]/.BGdefault
 + I TestRc (Match) Break
 + I Test (!f $[FVWM_DATADIR]/default-config/images/background/$0) Break
-+ I Exec exec fvwm-root $[FVWM_DATADIR]/default-config/images/background/$0
++ I Exec exec $[infostore.VER] $[FVWM_DATADIR]/default-config/images/background/$0
 + I Exec exec ln -fs $[FVWM_DATADIR]/default-config/images/background/$0 \
     $[FVWM_USERDIR]/.BGdefault
 
