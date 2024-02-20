@@ -154,6 +154,7 @@ Style ExitBar NeverFocus
 Style RightTbar NeverFocus
 Style HideBar NeverFocus
 Style NoDeskI NeverFocus
+Style Pgfunc NeverFocus
 
 ##### Exit panel 
 ## Center panel postion.
