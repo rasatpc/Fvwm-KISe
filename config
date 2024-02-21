@@ -96,11 +96,15 @@ Read $[HOME_DIR]/userExt.sys
 
 ## FvwmButtons not to be focused.
 
-Style *DLaunch* NeverFocus
-Style RightPager NeverFocus
-Style ControlMP NeverFocus
-Style ExitBar NeverFocus
-Style RightTbar NeverFocus
-Style HideBar NeverFocus
-Style NoDeskI NeverFocus
-Style Pgfunc NeverFocus
+DestroyFunc NoFoc
+AddToFunc NoFoc
++ I Style *DLaunch* NeverFocus
++ I Style RightPager NeverFocus
++ I Style ControlMP NeverFocus
++ I Style ExitBar NeverFocus
++ I Style RightTbar NeverFocus
++ I Style HideBar NeverFocus
++ I Style NoDeskI NeverFocus
++ I Style Pgfunc NeverFocus
+
+Schedule 4000 NoFoc
