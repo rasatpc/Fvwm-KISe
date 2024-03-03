@@ -106,5 +106,6 @@ AddToFunc NoFoc
 + I Style HideBar NeverFocus
 + I Style NoDeskI NeverFocus
 + I Style Pgfunc NeverFocus
++ I Style WiconB NeverFocus
 
 Schedule 4000 NoFoc
