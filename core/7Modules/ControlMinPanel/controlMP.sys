@@ -66,4 +66,4 @@ DestroyModuleConfig ExitBar: *
 *ExitBar: (1x1, Icon $[smallIcons]/quit.png, Action(Mouse 1) "Exec sudo halt")
 
 Style ExitBar NoTitle, NoHandles, Sticky, WindowListSkip, \
-	BorderWidth 0, CirculateSkip, StaysOnBottom, NeverFocus
+	BorderWidth 0, CirculateSkip, StaysOnTop, NeverFocus

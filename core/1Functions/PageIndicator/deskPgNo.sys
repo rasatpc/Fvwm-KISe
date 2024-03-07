@@ -2,7 +2,7 @@
 
 ColorSet 15 RootTransparent Buffer, Tint #4a516a 50, fg white, bg black
 
-AddToFunc StartFunction I Module FvwmEvent FE
+Module FvwmEvent FE
 
 DestroyModuleConfig FE:*
 *FE: new_page PGno
