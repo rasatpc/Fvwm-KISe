@@ -49,7 +49,7 @@ DestroyModuleConfig ControlControlMP: *
 
 ## Style Setting
 
-Style ControlMP !Borders, !Title, WindowListSkip, StaysOnBottom, Sticky, NeverFocus
+Style ControlMP !Borders, !Title, WindowListSkip, StaysOnTop, Sticky, NeverFocus
 
 ## Exit Button
 
