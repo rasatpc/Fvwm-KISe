@@ -23,11 +23,18 @@ Colorset 21  fg #ffffff, bg #028383, hi, sh, Plain, NoShape
 ## Title active color
 Colorset 26 fg #ffffff, bg #2b4e5e, hi #2b4e5e, sh #2b4e5e, Plain, NoShape
 Colorset 32 fg black, bg #9c9c9c, hi #24424f, sh #111f26, Plain, NoShape
+Colorset 38 fg #ffffff, bg #2b4e5e, hi, sh, Plain, NoShape
+
+## Active Windows Borders
+Colorset 47 fg #2b4e5e, bg #2b4e5e, hi #2b4e5e, sh #2b4e5e
 
 ## Title inactive color (bg) and text (fg)
 Colorset 27 fg #000000, bg #028383, hi, sh, Plain, NoShape
 Colorset 31 fg #000000, bg #c5c5c5, hi, sh, Plain, NoShape
-Colorset 37 fg #ffffff, bg #7194a6, hi, sh, Plain, NoShape
+Colorset 37 fg #ffffff, bg #4b88a4, hi, sh, Plain, NoShape
+
+## Inactive Windows Borders
+Colorset 51 fg #4b88a4, bg #4b88a4, hi #4b88a4, sh #4b88a4
 
 #########
 ## Examples of Colorset in core/4Menus/KMenu/BgPanel/*.conf
