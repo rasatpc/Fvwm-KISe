@@ -33,20 +33,28 @@ AddToFunc ToggleMaximize
 ######
 
 ## Tiling
-DestroyFunc W3Tile
-AddToFunc W3Tile
+DestroyFunc 3Tile
+AddToFunc 3Tile
 + I FvwmRearrange -tile $0 -r -mn 3 -maximize 0 0 86 82 $[wa.width]p $[wa.height]p
 
 ## Tile switch.
-SetEnv Tile ON
+InfoStoreAdd TileSwitch "ON"
 
-DestroyFunc WTile
-AddToFunc WTile
-+ I Piperead 'if [ $Tile = ON ]; then echo "W3Tile"; \
-	echo "Schedule 500 SetEnv Tile OFF"; fi'
-+ I Piperead 'if [ $Tile = OFF ]; \
-	then echo "All (CurrentPage, !Iconic, CirculateHit, !Sticky) Maximize Off"; \
-	echo "WindowId $0 WarpToWindow 50 50"; echo "SetEnv Tile ON"; fi'
+DestroyFunc Tile
+AddToFunc Tile
++ I Test (EnvMatch infostore.TileSwitch ON) TileOn
++ I TestRc (NoMatch) TileOff
+
+DestroyFunc TileOn
+AddToFunc TileOn
++ I 3Tile
++ I InfoStoreAdd TileSwitch OFF
+
+DestroyFunc TileOff
+AddToFunc TileOff
++ I All (CurrentPage, !Iconic, CirculateHit, !Sticky) Maximize Off
++ I WindowId $0 WarpToWindow 50 50
++ I InfoStoreAdd TileSwitch ON
 
 ######
 # Work Desk.
@@ -96,7 +104,7 @@ AddToFunc DLauncher
 DLauncher Iconify $[dLicons]/iconifyBkg.png "AIconic" "-g +15-15"
 DLauncher Screen $[dLicons]/full-screen.png "ToggleMaximize" "-g +105-15"
 DLauncher OverView $[dLicons]/overViewBkg.png "FvwmExpose" "-g +195-15"
-DLauncher Tile $[dLicons]/tileBkg.png "WTile" "-g +285-15"
+DLauncher Tile $[dLicons]/tileBkg.png "Tile" "-g +285-15"
 DLauncher WorkDesk $[dLicons]/work.png "WorkD" "-g +375-15"
 
 Style *DLaunch* !Borders, !Title, WindowListSkip, Sticky, StaysOnBottom
