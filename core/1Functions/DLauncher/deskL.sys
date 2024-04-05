@@ -35,7 +35,7 @@ AddToFunc ToggleMaximize
 ## Tiling
 DestroyFunc 3Tile
 AddToFunc 3Tile
-+ I FvwmRearrange -tile $0 -r -mn 3 -maximize 0 0 86 82 $[wa.width]p $[wa.height]p
++ I FvwmRearrange -tile -r -mn 3 -maximize 0 0 86 82
 
 ## Tile switch.
 InfoStoreAdd TileSwitch "ON"
@@ -53,7 +53,6 @@ AddToFunc TileOn
 DestroyFunc TileOff
 AddToFunc TileOff
 + I All (CurrentPage, !Iconic, CirculateHit, !Sticky) Maximize Off
-+ I WindowId $0 WarpToWindow 50 50
 + I InfoStoreAdd TileSwitch ON
 
 ######

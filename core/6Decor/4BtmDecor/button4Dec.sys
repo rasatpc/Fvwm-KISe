@@ -5,9 +5,28 @@ SetEnv CORE_DIR $[HOME]/.fvwm/core
 
 ## Tiling
 
+## Tiling
+DestroyFunc 3Tile
+AddToFunc 3Tile
++ I FvwmRearrange -tile -r -mn 3 -maximize 0 0 86 82
+
+## Tile switch.
+InfoStoreAdd TileSwitch "ON"
+
 DestroyFunc QTile
 AddToFunc QTile
-+ I Read $[CORE_DIR]/6Decor/4BtmDecor/TileFunc.sys
++ I Test (EnvMatch infostore.TileSwitch ON) TileOn
++ I TestRc (NoMatch) TileOff
+
+DestroyFunc TileOn
+AddToFunc TileOn
++ I 3Tile
++ I InfoStoreAdd TileSwitch OFF
+
+DestroyFunc TileOff
+AddToFunc TileOff
++ I All (CurrentPage, !Iconic, CirculateHit, !Sticky) Maximize Off
++ I InfoStoreAdd TileSwitch ON
 
 ## Icon location
 
