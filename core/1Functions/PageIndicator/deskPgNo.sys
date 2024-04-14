@@ -10,27 +10,19 @@ DestroyModuleConfig FE:*
 DestroyFunc PGno
 AddToFunc PGno
 + I DestroyModuleConfig Pgfunc: *
-+ I *Pgfunc: Geometry 170x32+88+10
++ I *Pgfunc: Geometry 240x32+8+10
 + I *Pgfunc: Fore #ffffff
 + I *Pgfunc: Pixmap none
++ I *Pgfunc: Font "xft:Sans:size=11:antialias=True"
 + I *Pgfunc: Frame 0
-+ I *Pgfunc: (Title ' Desk: $[desk.n] | Page: $[page.nx]  $[page.ny]', Action (Mouse 1) Nop)
-+ I *Pgfunc:  Colorset 15
-+ I *Pgfunc:  Font "xft:Sans:size=11:antialias=True"
++ I *Pgfunc: Rows 1
++ I *Pgfunc: (80x1, Back #2b4e5e, Title "DESK NO:", \
+	Font "xft:Sans:Bold:size=10:antialias=True")
++ I *Pgfunc: (160x1, Colorset 15, Title " Desk: $[desk.n] | Page: $[page.nx]  $[page.ny]", \
+	Action (Mouse 1) Nop)
 + I Module FvwmButtons Pgfunc
 
 Style Pgfunc !Title, !Borders, WindowListSkip, StaysOnTop
 
-## Desk Number Panel
-
-Module FvwmButtons NoDeskI
-DestroyModuleConfig NoDeskI: *
-*NoDeskI: Geometry 80x32+8+10
-*NoDeskI: Fore #ffffff
-*NoDeskI: Rows 1
-*NoDeskI: Pixmap none
-*NoDeskI: Frame 0
-*NoDeskI: (80x1, Title "DESK NO:", \
-	Font "xft:Sans:Bold:size=10:antialias=True", Back #2b4e5e)
-
-Style NoDeskI !Title, !Borders, WindowListSkip, StaysOnTop, Sticky
+## Start
+PGno
