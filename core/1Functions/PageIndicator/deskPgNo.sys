@@ -2,27 +2,32 @@
 
 ColorSet 15 RootTransparent Buffer, Tint #4a516a 50, fg white, bg black
 
-Module FvwmEvent FE
-
-DestroyModuleConfig FE:*
-*FE: new_page PGno
-
-DestroyFunc PGno
-AddToFunc PGno
-+ I DestroyModuleConfig Pgfunc: *
-+ I *Pgfunc: Geometry 240x32+8+10
-+ I *Pgfunc: Fore #ffffff
-+ I *Pgfunc: Pixmap none
-+ I *Pgfunc: Font "xft:Sans:size=11:antialias=True"
-+ I *Pgfunc: Frame 0
-+ I *Pgfunc: Rows 1
-+ I *Pgfunc: (80x1, Back #2b4e5e, Title "DESK NO:", \
+DestroyModuleConfig FB-A:*
+*FB-A: Geometry 235x32+8+10
+*FB-A: Fore #ffffff
+*FB-A: Pixmap none
+*FB-A: Font "xft:Sans:size=11:antialias=True"
+*FB-A: Frame 0
+*FB-A: Rows 1
+*FB-A: (80x1, Back #2b4e5e, Title "DESK NO:", \
 	Font "xft:Sans:Bold:size=10:antialias=True")
-+ I *Pgfunc: (160x1, Colorset 15, Title " Desk: $[desk.n] | Page: $[page.nx]  $[page.ny]", \
-	Action (Mouse 1) Nop)
-+ I Module FvwmButtons Pgfunc
+*FB-A: (70x1, Colorset 15, Title "Desk: $[monitor.$[monitor.current].desk]", \
+Id D, Action (Mouse 1) Nop)
+*FB-A: (85x1, Colorset 15, Title (Left) "Page: $[monitor.$[monitor.current].pagex]  \
+$[monitor.$[monitor.current].pagey]", Left, Id P, Action (Mouse 1) Nop)
 
-Style Pgfunc !Title, !Borders, WindowListSkip, StaysOnTop
+Style FB-A !Title, !Borders, WindowListSkip, StaysOnTop, Sticky
 
-## Start
-PGno
+KillModule FvwmButtons FB-A
+Module FvwmButtons FB-A
+
+DestroyModuleConfig FE-E:*
+*FE-E: Cmd
+*FE-E: new_desk "SendToModule FB-A ChangeButton D \
+Title 'Desk: $$$$[monitor.$[monitor.current].desk]'"
+*FE-E: new_page "SendToModule FB-A ChangeButton P \
+Title 'Page: $$$$[monitor.$[monitor.current].pagex]  \
+$$$$[monitor.$[monitor.current].pagey]'"
+
+KillModule FvwmEvent FE-E
+Module FvwmEvent FE-E

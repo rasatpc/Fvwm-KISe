@@ -1,6 +1,6 @@
 Config: Extra
 
-https://fvwmforums.org/t/any-idea-to-display-the-workspace-number-at-changes/1822
+https://fvwmforums.org/t/page-indicator-with-sendtomodule/4624
 
 A horizontal Desk and page indicator shows the desk number and indicates which page is currently being displayed.
 
