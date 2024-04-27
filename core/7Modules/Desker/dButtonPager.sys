@@ -14,25 +14,7 @@ DesktopName 1 Email
 DesktopName 2 Work
 DesktopName 3 Misc
 
-## Desker switch:
-
-SetEnv Switch OFF
-
-DestroyFunc DeskerSwitch
-AddToFunc DeskerSwitch
-+ I Piperead 'if [ $Switch = OFF ]; then echo "KillModule FvwmPager FvwmDesker"; \
-	echo "Schedule 500 SetEnv Switch ON"; fi'
-+ I Piperead 'if [ $Switch = ON ]; then echo "Module FvwmPager FvwmDesker 0 3"; \
-	echo "SetEnv Switch OFF"; fi'
-
-######
-# Bar Buttons
-######
-
-## Load Desker
-Schedule 1400 Module FvwmPager FvwmDesker 0 3
-
-## Load Bar Buttons
+## Bar Buttons
 Module FvwmButtons BarButtons
 
 DestroyModuleConfig BarButtons: *
@@ -43,7 +25,8 @@ DestroyModuleConfig BarButtons: *
 *BarButtons: Frame 0
 
 *BarButtons: (1x2, Icon $[icons]/work-line.png, \
-	Action(Mouse 1) 'DeskerSwitch', \
+	Panel(left, position module -10+2 top, steps 6, delay 10, indicator 48) \
+	"FvwmDesker" 'Schedule 500 Module FvwmPager FvwmDesker 0 3', Id open-panel, \
 	    Action(Mouse 2) 'Exec exec xterm', \
     Action(Mouse 3) 'Exec exec thunar', Frame 2, Colorset 16)
     
@@ -64,6 +47,8 @@ DestroyModuleConfig BarButtons: *
 *BarButtons: (2x2, Swallow "FvwmPagerBar" 'FvwmPager FvwmPagerBar * *')
 
 Style BarButtons NoTitle, NoHandles, !Title, WindowListSkip, Layer 4, Sticky, !Iconifiable, BorderColorset 10, BorderWidth 0, StaysOnTop, NeverFocus
+
+Schedule 2000 SendToModule BarButtons PressButton open-panel 1
 
 ######
 # FvwmPager: Swallowed by Bar Buttons
@@ -142,6 +127,7 @@ DestroyModuleConfig FvwmBacker: *
 
 ## Load
 Module FvwmBacker
+#AddToFunc StartFunction I Module FvwmBacker
 
 ######
 # Change preset menu style: Titlebar Right Click

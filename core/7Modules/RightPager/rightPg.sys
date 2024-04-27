@@ -1,4 +1,4 @@
-## Modules/Extra: rightPg.sys
+## Modules/Core: rightPg.sys
 
 KillModule FvwmPager FvwmPagerBar
 KillModule FvwmPager FvwmDesker
@@ -11,8 +11,6 @@ Colorset 21  fg #ffffff, bg #028383, hi, sh, Plain, NoShape
 
 ## Right Pager
 
-Module FvwmButtons RightPager
-
 DestroyModuleConfig RightPager:*
 *RightPager: Geometry 160x180-0+0
 *RightPager: Colorset 10
@@ -22,10 +20,10 @@ DestroyModuleConfig RightPager:*
 *RightPager: Font "xft:Sans:Bold:size=10:antialias=True"
 *RightPager: (150x5, Frame 0)
 *RightPager: (5x20, Frame 0)
-*RightPager: (25x20, Id desk0, Title "0", Action (Mouse 1) GotoDesk 0 0, Colorset 11, ActiveColorset 12, Frame 0)
-*RightPager: (25x20, Id desk1, Title "1", Action (Mouse 1) GotoDesk 0 1, ActiveColorset 12, Frame 0)
-*RightPager: (25x20, Id desk2, Title "2", Action (Mouse 1) GotoDesk 0 2, ActiveColorset 12, Frame 0)
-*RightPager: (25x20, Id desk3, Title "3", Action (Mouse 1) GotoDesk 0 3, ActiveColorset 12, Frame 0)
+*RightPager: (25x20, Id Desk0, Title "0", Action (Mouse 1) GotoDesk 0 0, Colorset 11, ActiveColorset 12, Frame 0)
+*RightPager: (25x20, Id Desk1, Title "1", Action (Mouse 1) GotoDesk 0 1, ActiveColorset 12, Frame 0)
+*RightPager: (25x20, Id Desk2, Title "2", Action (Mouse 1) GotoDesk 0 2, ActiveColorset 12, Frame 0)
+*RightPager: (25x20, Id Desk3, Title "3", Action (Mouse 1) GotoDesk 0 3, ActiveColorset 12, Frame 0)
 *RightPager: (10x20, Frame 0)
 *RightPager: (150x2, Frame 0)
 *RightPager: (5x80, Frame 0)
@@ -37,9 +35,7 @@ DestroyModuleConfig RightPager:*
 
 Style RightPager NoTitle, WindowListSkip, Sticky, !Handles, StaysOnTop, !Iconifiable, FixedSize, BorderColorset 10, BorderWidth 1
 
-## Change pre-settings
-# FvwmPager
-# More options: core/7Modules/FVWM-Modules.def
+## FvwmPager
 
 DesktopSize 2x2
 
@@ -57,16 +53,31 @@ DestroyModuleConfig FvwmPager:*
 *FvwmPager: MiniIcons
 *FvwmPager: UseSkipList # hides modules
 
-## FvwmEvent - This instance changes which desk number
-## is highlighted when the desk is changed.
+## Load RightPager
 
-DestroyModuleConfig EventNewDesk:*
-*EventNewDesk: PassID
-*EventNewDesk: new_desk ChangeDesk
+KillModule FvwmButtons RightPager
+Module FvwmButtons RightPager
 
-Module FvwmEvent EventNewDesk
+## FvwmEvent
+## Label number highlighted when desk is changed.
+
+DestroyModuleConfig EventDeskNo:*
+*EventDeskNo: PassID
+*EventDeskNo: new_desk DeskLabel
+
+DestroyFunc DeskLabel
+AddToFunc   DeskLabel
++ I SendToModule FvwmButtons ChangeButton Desk0 Colorset 10
++ I SendToModule FvwmButtons ChangeButton Desk1 Colorset 10
++ I SendToModule FvwmButtons ChangeButton Desk2 Colorset 10
++ I SendToModule FvwmButtons ChangeButton Desk3 Colorset 10
++ I SendToModule FvwmButtons ChangeButton Desk$0 Colorset 11
+
+KillModule FvwmEvent EventDeskNo
+Module FvwmEvent EventDeskNo
 
 ## Change pre-settings of controlMinPanel
+
 KillModule FvwmButtons ControlMP
 *ControlMP: Geometry 330x34-175+6
 Module FvwmButtons ControlMP

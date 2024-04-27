@@ -102,15 +102,16 @@ Read $[CORE_DIR]/6Decor/4BtmDecor/button4Dec.sys
 
 ###########
 # 7. MODULES (control-panel, desk-icon, pager, etc.)
-# .fvwm/core/7Modules/< 8 x configs>
+# .fvwm/core/7Modules/< 9 x configs>
 ###########
 
 ## CORE (control-panel, desk-icon, pager, etc.)
 Read $[CORE_DIR]/7Modules/ControlMinPanel/controlMP.sys
+Read $[CORE_DIR]/7Modules/RightTaskBar/rightTbar.sys
+Read $[CORE_DIR]/7Modules/RightPager/rightPg.sys
 
 ## EXTRA
-Read $[CORE_DIR]/7Modules/RightPager/rightPg.sys
-Read $[CORE_DIR]/7Modules/RightTaskBar/rightTbar.sys
+# Read $[CORE_DIR]/7Modules/WorkVpager/wVPager.sys
 
 ## USER ($[USER_DIR])
 Read $[USER_DIR]/SimpleButton/hideBar.sys
@@ -160,12 +161,6 @@ Style ConfirmQuit !Title, PositionPlacement Center, WindowListSkip, Layer 6
 
 ##### Hide GeometryWindow (window position text, left top corner).
 GeometryWindow Hide
-
-##### Keyboard
-## Keyboard TouchPad on/off
-
-# Test (x synclient) Exec synclient TouchpadOff=1
-# Test (x xinput) Exec xinput disable 12
 
 ##### Change Window title bar font.
 ##

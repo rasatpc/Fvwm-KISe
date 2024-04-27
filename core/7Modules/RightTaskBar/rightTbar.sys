@@ -1,4 +1,4 @@
-## Modules/Extra: rightTbar.sys
+## Modules/Core: rightTbar.sys
 
 SetEnv CORE_DIR $[HOME]/.fvwm/core
 

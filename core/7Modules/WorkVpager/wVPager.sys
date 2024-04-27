@@ -1,0 +1,65 @@
+## Modules/Extra: wVPager.sys
+#
+# WORK VERTICAL PAGER
+
+SetEnv CORE_DIR $[HOME]/.fvwm/core
+SetEnv USER_DIR $[HOME]/.fvwm/user
+InfoStoreAdd PAGER "Read $[CORE_DIR]/7Modules/WorkVpager/wVPager.sys"
+
+## Colorsets
+ColorSet 15 RootTransparent Buffer, Tint #4a516a 60, fg white, bg black
+Colorset 18 fg #ffffff, bg #306ea2, hi #ffffff, sh #ffffff, Plain
+Colorset 17 fg #ffffff, bg #028383, hi, sh, Plain, NoShape
+
+KillModule FvwmButtons RightPager
+KillModule FvwmPager V2x4Pager
+KillModule FvwmPager V1x5Pager
+KillModule FvwmPager ControlPagerB
+
+## Vertical Pager (4 desk with 8 pages)
+
+DesktopName 0 Web
+DesktopName 1 Email
+DesktopName 2 Office
+
+DesktopSize "2 1"  ## (columns - rows)
+
+Module FvwmPager VdeskPager 0 2  ## (desk number - number of desks)
+
+DestroyModuleConfig VdeskPager: *
+*VdeskPager: Geometry 150x240-0+0
+*VdeskPager: Rows 3  ## (page rows)
+*VdeskPager: Colorset * 15 ##  RootTransparent requires Picom.
+*VdeskPager: HilightColorset * 17  ## (active page background)
+*VdeskPager: BalloonColorset * 10  ## (font color)
+*VdeskPager: WindowColorsets 13 18  ## (inactive - active apps)
+*VdeskPager: Font "xft:Sans:size=12:antialias=True"
+*VdeskPager: WindowBorderWidth 1
+*VdeskPager: BalloonStringFormat %c
+*VdeskPager: BallonYOffset +2
+*VdeskPager: Window3dBorders
+*VdeskPager: UseSkipList # hides modules
+*VdeskPager: MiniIcons
+
+Style VdeskPager NoTitle, !Handles, Borders, BorderWidth 1, BorderColorset 6, Sticky, WindowListSkip, FixedSize, !Iconifiable 
+
+## Change preloaded settings
+KillModule FvwmButtons ControlMP
+*ControlMP: Geometry 330x34-170+10
+Module FvwmButtons ControlMP
+
+KillModule FvwmButtons ControlPanelB
+*ControlPanelB: Geometry 360x39-160+3
+Module FvwmButtons ControlPanelB
+
+KillModule FvwmButtons WinListB
+*WinListB: Geometry 92x30-160+54
+Module FvwmButtons WinListB
+
+## Titlebar Right Click (check mMenu.conf Send To)
+
+DestroyMenu SendToDesk
+AddToMenu SendToDesk
++ " Web Desk  " MoveToDesk 0 0
++ " Email Desk " MoveToDesk 0 1
++ " Office Desk  " MoveToDesk 0 2

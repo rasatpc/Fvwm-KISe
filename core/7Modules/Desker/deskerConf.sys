@@ -32,24 +32,6 @@ AddToFunc ReturnDesk
 + I SetEnv Work ON
 
 ##########
-## Work Desk label.
-##########
-
-Module FvwmButtons WDlabel
-DestroyModuleConfig WDlabel: *
-*WDlabel: Geometry 310x60+400+10
-*WDlabel: Colorset 15
-*WDlabel: Frame 0
-*WDlabel: Rows 1
-*WDlabel: Font "xft:Sans:size=26:antialias=True"
-  
-*WDlabel: (1x1, Title "WORK DESK")
-
-Style WDlabel !Borders, !Title, WindowListSkip
-
-Schedule 1200 KillModule FvwmButtons WDlabel
-
-##########
 ## Load Desker Panel
 ##########
 

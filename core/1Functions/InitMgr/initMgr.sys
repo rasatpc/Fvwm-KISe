@@ -7,3 +7,4 @@ Exec xfce4-power-manager # (screen & battery)
 Exec volumeicon # (sound)
 Exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 & # (policykit authenticator
 Exec gxkb # (keyboard language)
+Test (x touchpad-indicator) Exec touchpad-indicator

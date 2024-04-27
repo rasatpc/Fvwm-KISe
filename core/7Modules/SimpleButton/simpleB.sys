@@ -1,10 +1,34 @@
 ## Modules/Core: simpleB.sys
 ## DESKTOP ICONS PANEL
 
-## Set apps icon folder
-SetEnv sbicons $[USER_DIR]/SimpleButton/icons/icon48x48
+SetEnv HOME_DIR $[HOME]/.fvwm
+SetEnv CORE_DIR $[HOME]/.fvwm/core
+SetEnv USER_DIR $[HOME]/.fvwm/user
 
-## Icon Panel
+## Remove similar modules
+KillModule FvwmButtons DashToDock
+KillModule FvwmButtons HideWBar
+
+## Button Panel
+
+Module FvwmButtons HideBar
+DestroyModuleConfig HideBar: *
+*HideBar: Geometry 64x64+0+190
+*HideBar: Fore Black
+*HideBar: Back #009393
+*HideBar: Rows 1
+*HideBar: Frame 0
+
+*HideBar: (Panel(down, steps 0, delay 10, position module left, indicator 50) \
+	SimpleButton "Module FvwmButtons SimpleButton", Id open-panel, \
+	Action(Mouse 3) "Exec exec featherpad $[USER_DIR]/SimpleButton/simpleB.sys")
+
+Style HideBar NoTitle, NoHandles, Sticky, WindowListSkip, \
+	BorderWidth 0, CirculateSkip, StaysOnBottom, NeverFocus
+
+## Icon panel
+
+SetEnv sbicons $[USER_DIR]/SimpleButton/icons/icon48x48
 
 DestroyModuleConfig SimpleButton: *
 *SimpleButton: PressColorset 7
@@ -18,7 +42,6 @@ DestroyModuleConfig SimpleButton: *
 # [width]x[hight]+[left-right]+[top-down]
 ######
 
-*SimpleButton: Geometry 54x486+2+192 ## ([width] x Rows = [hight])
 *SimpleButton: Rows 9  ## (as per numbers of buttons)
 
 *SimpleButton: (1x1, Icon $[sbicons]/thunar.png, \
@@ -42,3 +65,5 @@ DestroyModuleConfig SimpleButton: *
 
 ## Style setting
 Style SimpleButton !Borders, !Title, WindowListSkip, Sticky, StaysOnBottom, NeverFocus
+
+Schedule 2000 SendToModule HideBar PressButton open-panel 1
