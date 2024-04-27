@@ -38,8 +38,6 @@ DestroyModuleConfig SimpleButton: *
 
 ######
 # ADD or REMOVE below buttons
-# Geometry example:
-# [width]x[hight]+[left-right]+[top-down]
 ######
 
 *SimpleButton: Rows 9  ## (as per numbers of buttons)
