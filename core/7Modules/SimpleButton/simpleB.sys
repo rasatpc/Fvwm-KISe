@@ -13,13 +13,13 @@ KillModule FvwmButtons HideWBar
 
 Module FvwmButtons HideBar
 DestroyModuleConfig HideBar: *
-*HideBar: Geometry 64x64+0+190
+*HideBar: Geometry 58x58+0+190
 *HideBar: Fore Black
 *HideBar: Back #009393
 *HideBar: Rows 1
 *HideBar: Frame 0
 
-*HideBar: (Panel(down, steps 0, delay 10, position module left, indicator 50) \
+*HideBar: (Panel(down, steps 0, delay 10, position module left, indicator 46) \
 	SimpleButton "Module FvwmButtons SimpleButton", Id open-panel, \
 	Action(Mouse 3) "Exec exec featherpad $[USER_DIR]/SimpleButton/simpleB.sys")
 

@@ -114,7 +114,7 @@ Read $[CORE_DIR]/7Modules/RightPager/rightPg.sys
 # Read $[CORE_DIR]/7Modules/WorkVpager/wVPager.sys
 
 ## USER ($[USER_DIR])
-Read $[USER_DIR]/SimpleButton/hideBar.sys
+Read $[USER_DIR]/SimpleButton/simpleB.sys
 
 ###########################################
 ## Change preloaded settings.
