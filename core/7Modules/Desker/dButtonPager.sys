@@ -1,18 +1,24 @@
 ## Modules/Extra: dButtonPager.sys
 ## Loaded by deskerConf.sys
 
+SetEnv HOME_DIR $[HOME]/.fvwm
+SetEnv CORE_DIR $[HOME]/.fvwm/core
+
+## Load RetunDesk
+Read $[CORE_DIR]/7Modules/Desker/deskerConf.sys
+
+## Color settings
+## Colorset 0 to 16 (core/KColors/kColorsets.sys)
+
+Colorset 21 fg #ffffff, bg #028383, hi, sh, Plain, NoShape
+Colorset 18 fg #ffffff, bg #306ea2, hi #ffffff, sh #ffffff, Plain
+
 ## Icon location.
 SetEnv icons $[CORE_DIR]/7Modules/Desker/icons
 
-## Desktop size
-DesktopSize "2 1"  ## (columns - rows)
-
-## Desk names:
-
-DesktopName 0 Web
-DesktopName 1 Email
-DesktopName 2 Work
-DesktopName 3 Misc
+##########
+## Desker Panel button
+##########
 
 ## Bar Buttons
 Module FvwmButtons BarButtons
@@ -26,12 +32,11 @@ DestroyModuleConfig BarButtons: *
 
 *BarButtons: (1x2, Icon $[icons]/work-line.png, \
 	Panel(left, position module -10+2 top, steps 6, delay 10, indicator 48) \
-	"FvwmDesker" 'Schedule 500 Module FvwmPager FvwmDesker 0 3', Id open-panel, \
+	"FvwmDesker" 'Module FvwmPager FvwmDesker 0 3', Id open-panel, \
 	    Action(Mouse 2) 'Exec exec xterm', \
     Action(Mouse 3) 'Exec exec thunar', Frame 2, Colorset 16)
     
 *BarButtons: (1x2, Padding 0 0, Container(Padding 0 0, Frame 1, Columns 2))
-
 *BarButtons: (Icon $[icons]/move.png, Action Move)
 *BarButtons: (Icon $[icons]/curve.png, Action(Mouse 1) `ReturnDesk`)
 *BarButtons: (Icon $[icons]/resize.png, Action Resize)
@@ -43,15 +48,13 @@ DestroyModuleConfig BarButtons: *
 	Action(Mouse 3) "Exec exec $[CORE_DIR]/7Modules/TimeDayButton/script/Calendar.sh",Frame 1)
 	
 *BarButtons: (1x2, Title "xclock", Swallow "xclock" "Exec exec xclock -padding 0 -geometry -1500-1500")
-
 *BarButtons: (2x2, Swallow "FvwmPagerBar" 'FvwmPager FvwmPagerBar * *')
 
-Style BarButtons NoTitle, NoHandles, !Title, WindowListSkip, Layer 4, Sticky, !Iconifiable, BorderColorset 10, BorderWidth 0, StaysOnTop, NeverFocus
-
-Schedule 2000 SendToModule BarButtons PressButton open-panel 1
+Style BarButtons NoTitle, NoHandles, !Title, WindowListSkip, Layer 4, Sticky, !Iconifiable, \
+BorderColorset 10, BorderWidth 0, StaysOnTop, NeverFocus
 
 ######
-# FvwmPager: Swallowed by Bar Buttons
+# FvwmPager: Swallowed by BarButtons
 ######
 
 DestroyModuleConfig FvwmPagerBar: *
@@ -69,8 +72,18 @@ DestroyModuleConfig FvwmPagerBar: *
 Style FvwmPagerBar * NoTitle, WindowListSkip, Sticky, !Handles, !Iconifiable, FixedSize, BorderColorset 10, BorderWidth 1
 
 ######
-# Desker Pager: Swallowed by Bar Buttons
+# Desker Pager: Swallowed by BarButtons Panel
 ######
+
+## Desktop size
+DesktopSize "2 1"  ## (columns - rows)
+
+## Desk names:
+
+DesktopName 0 Web
+DesktopName 1 Email
+DesktopName 2 Work
+DesktopName 3 Misc
 
 ## With transparent tint color
 #Colorset 22 RootTransparent Buffer, fg black, Tint #8bade7 60
@@ -103,31 +116,22 @@ DestroyModuleConfig FvwmDesker: *
 *FvwmDesker: UseSkipList # hides modules
 *FvwmDesker: MiniIcons
 
-Style FvwmDesker NoTitle, !Handles, Borders, BorderWidth 1, BorderColorset 6, Sticky, WindowListSkip, FixedSize, !Iconifiable, CirculateSkipIcon, CirculateSkip, StaysOnTop
+Style FvwmDesker NoTitle, !Handles, Borders, BorderWidth 1, BorderColorset 6, Sticky, \
+WindowListSkip, FixedSize, !Iconifiable, CirculateSkipIcon, CirculateSkip, StaysOnTop
 
-######
-# FvwmBacker module
-# *FvwmBacker: Command (Desk 0, Page * *) Exec exec feh --bg-scale $[fvwm_wallpaper]/LinuxForce.jpg
-######
-
-## Load Desk background
+## Desk background
 
 DestroyModuleConfig FvwmBacker: *
-*FvwmBacker: Command (Desk 0, Page 0 0) Exec exec $[infostore.VER] $[CORE_DIR]/7Modules/Desker/bkg/web-tiled-col.png
-*FvwmBacker: Command (Desk 0, Page 1 0) Exec exec $[infostore.VER] $[CORE_DIR]/7Modules/Desker/bkg/web-tiled-col.png
-
-*FvwmBacker: Command (Desk 1, Page 0 0) Exec exec $[infostore.VER] $[CORE_DIR]/7Modules/Desker/bkg/email-tiled-col.png
-*FvwmBacker: Command (Desk 1, Page 1 0) Exec exec $[infostore.VER] $[CORE_DIR]/7Modules/Desker/bkg/email-tiled-col.png
-
-*FvwmBacker: Command (Desk 2, Page 0 0) Exec exec $[infostore.VER] $[CORE_DIR]/7Modules/Desker/bkg/work-tiled-col.png
-*FvwmBacker: Command (Desk 2, Page 1 0) Exec exec $[infostore.VER] $[CORE_DIR]/7Modules/Desker/bkg/work-tiled-col.png
-
-*FvwmBacker: Command (Desk 3, Page 0 0) Exec exec $[infostore.VER] $[CORE_DIR]/7Modules/Desker/bkg/misc-tiled-col.png
-*FvwmBacker: Command (Desk 3, Page 1 0) Exec exec $[VER] $[CORE_DIR]/7Modules/Desker/bkg/misc-tiled-col.png
+*FvwmBacker: Command (Desk 0) Exec exec $[infostore.VER] $[CORE_DIR]/7Modules/Desker/bkg/web-tiled-col.png
+*FvwmBacker: Command (Desk 1) Exec exec $[infostore.VER] $[CORE_DIR]/7Modules/Desker/bkg/email-tiled-col.png
+*FvwmBacker: Command (Desk 2) Exec exec $[infostore.VER] $[CORE_DIR]/7Modules/Desker/bkg/work-tiled-col.png
+*FvwmBacker: Command (Desk 3) Exec exec $[infostore.VER] $[CORE_DIR]/7Modules/Desker/bkg/misc-tiled-col.png
 
 ## Load
 Module FvwmBacker
-#AddToFunc StartFunction I Module FvwmBacker
+# AddToFunc StartFunction I Module FvwmBacker
+
+Schedule 2000 SendToModule BarButtons PressButton open-panel 1
 
 ######
 # Change preset menu style: Titlebar Right Click

@@ -8,18 +8,20 @@ SetEnv USER_DIR $[HOME]/.fvwm/user
 ## Remove similar modules
 KillModule FvwmButtons DashToDock
 KillModule FvwmButtons HideWBar
+KillModule FvwmButtons WorkBar
+KillModule FvwmButtons SimpleButton
 
 ## Button Panel
 
 Module FvwmButtons HideBar
 DestroyModuleConfig HideBar: *
-*HideBar: Geometry 58x58+0+190
+*HideBar: Geometry 58x56+0+190
 *HideBar: Fore Black
 *HideBar: Back #009393
 *HideBar: Rows 1
 *HideBar: Frame 0
 
-*HideBar: (Panel(down, steps 0, delay 10, position module left, indicator 46) \
+*HideBar: (Panel(down, steps 0, delay 10, position module left, indicator 44) \
 	SimpleButton "Module FvwmButtons SimpleButton", Id open-panel, \
 	Action(Mouse 3) "Exec exec featherpad $[USER_DIR]/SimpleButton/simpleB.sys")
 

@@ -8,6 +8,8 @@ SetEnv USER_DIR $[HOME]/.fvwm/user
 # SetEnv wicons $[CORE_DIR]/7Modules/WorkButtons/icons
 SetEnv wicons $[USER_DIR]/WorkButtons/icons
 
+Read $[USER_DIR]/WorkButtons/workButtons.sys
+
 Module FvwmButtons HideWBar
 DestroyModuleConfig HideWBar: *
 *HideWBar: Geometry 64x64+0+192
@@ -15,7 +17,7 @@ DestroyModuleConfig HideWBar: *
 *HideWBar: Rows 1
 *HideWBar: Frame 0
 
-*HideWBar: (1x1, Icon $[wicons]/64x64/Tux-My-Computer.png, Panel(down, steps 0, delay 0, indicator 30) "WorkBar" 'Read $[USER_DIR]/WorkButtons/workButtons.sys', \
+*HideWBar: (1x1, Icon $[wicons]/64x64/Tux-My-Computer.png, Panel(down, steps 0, delay 0, indicator 30) WorkBar "Module FvwmButtons WorkBar", Id open-panel, \
     Action(Mouse 2) 'Exec exec xterm', \
     Action(Mouse 3) 'Exec exec thunar')
 

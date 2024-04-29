@@ -6,18 +6,14 @@ SetEnv USER_DIR $[HOME]/.fvwm/user
 
 ## Remove similar modules
 KillModule FvwmButtons DashToDock
-KillModule FvwmButtons HideBar ## SimpleButton
+KillModule FvwmButtons SimpleButton
+KillModule FvwmButtons HideBar
 
 ## Set app icon folder
 # SetEnv wicons $[CORE_DIR]/7Modules/WorkButtons/icons
 SetEnv wicons $[USER_DIR]/WorkButtons/icons
 
-Module FvwmButtons WorkBar
-
 DestroyModuleConfig WorkBar: *
-*WorkBar: Geometry 64x448+0+0
-#*WorkBar: Fore White
-#*WorkBar: Back #899995
 *WorkBar: PressColorset 7
 *WorkBar: Colorset 16 ## (close for Pixmap)
 #*WorkBar: Pixmap none
@@ -27,26 +23,39 @@ DestroyModuleConfig WorkBar: *
 
 *WorkBar: Rows 7  ## (as per numbers of buttons)
 
-*WorkBar: (1x1, Icon $[wicons]/3D/internet-feed-reader.png, Panel(right, steps 0, delay 0, indicator 20) "WebBut" 'Read $[USER_DIR]/WorkButtons/web.conf', \
+*WorkBar: (1x1, Icon $[wicons]/3D/internet-feed-reader.png, Panel(right, steps 0, delay 0, indicator 20) WebBut "Module FvwmButtons WebBut", \
 	Action(Mouse 3) "Exec exec featherpad $[USER_DIR]/WorkButtons/web.conf")
 
-*WorkBar: (1x1, Icon $[wicons]/mail.png, Panel(right, steps 0, delay 0, indicator 20) "EmailBut" 'Read $[USER_DIR]/WorkButtons/email.conf', \
+*WorkBar: (1x1, Icon $[wicons]/mail.png, Panel(right, steps 0, delay 0, indicator 20) EmailBut "Module FvwmButtons EmailBut", \
 	Action(Mouse 3) "Exec exec featherpad $[USER_DIR]/WorkButtons/email.conf")
 
-*WorkBar: (1x1, Icon $[wicons]/filemanager.png, Panel(right, steps 0, delay 0, indicator 20) "FileBut" 'Read $[USER_DIR]/WorkButtons/file.conf', \
+*WorkBar: (1x1, Icon $[wicons]/filemanager.png, Panel(right, steps 0, delay 0, indicator 20) FileBut "Module FvwmButtons FileBut", \
 	Action(Mouse 3) "Exec exec featherpad $[USER_DIR]/WorkButtons/file.conf")
 
-*WorkBar: (1x1, Icon $[wicons]/3D/gnome-graphics.png, Panel(right, steps 0, delay 0, indicator 20) "GraphBut" 'Read $[USER_DIR]/WorkButtons/graphic.conf', \
+*WorkBar: (1x1, Icon $[wicons]/3D/gnome-graphics.png, Panel(right, steps 0, delay 0, indicator 20) GraphBut "Module FvwmButtons GraphBut", \
 	Action(Mouse 3) "Exec exec featherpad $[USER_DIR]/WorkButtons/graphic.conf")
 
-*WorkBar: (1x1, Icon $[wicons]/libreoffice-writer.png, Panel(right, steps 0, delay 0, indicator 20) "OfficeBut" 'Read $[USER_DIR]/WorkButtons/office.conf', \
+*WorkBar: (1x1, Icon $[wicons]/libreoffice-writer.png, Panel(right, steps 0, delay 0, indicator 20) OfficeBut "Module FvwmButtons OfficeBut", \
 	Action(Mouse 3) "Exec exec featherpad $[USER_DIR]/WorkButtons/office.conf")
 
-*WorkBar: (1x1, Icon $[wicons]/movie.png, Panel(right, steps 0, delay 0, indicator 20) "AudioBut" 'Read $[USER_DIR]/WorkButtons/audio.conf', \
+*WorkBar: (1x1, Icon $[wicons]/movie.png, Panel(right, steps 0, delay 0, indicator 20) AudioBut "Module FvwmButtons AudioBut", \
 	Action(Mouse 3) "Exec exec featherpad $[USER_DIR]/WorkButtons/audio.conf")
 
-*WorkBar: (1x1, Icon $[wicons]/win-apps.png, Panel(right, steps 0, delay 0, indicator 20) "MiscBut" 'Read $[USER_DIR]/WorkButtons/misc.conf', \
+*WorkBar: (1x1, Icon $[wicons]/win-apps.png, Panel(right, steps 0, delay 0, indicator 20) MiscBut "Module FvwmButtons MiscBut", \
 	Action(Mouse 3) "Exec exec featherpad $[USER_DIR]/WorkButtons/misc.conf")
 
 ## Style setting
 Style WorkBar !Borders, !Title, WindowListSkip, StaysOnBottom, Sticky, NeverFocus
+
+## Sub-panels
+
+Read $[USER_DIR]/WorkButtons/web.conf
+Read $[USER_DIR]/WorkButtons/email.conf
+Read $[USER_DIR]/WorkButtons/file.conf
+Read $[USER_DIR]/WorkButtons/graphic.conf
+Read $[USER_DIR]/WorkButtons/office.conf
+Read $[USER_DIR]/WorkButtons/audio.conf
+Read $[USER_DIR]/WorkButtons/misc.conf
+
+## Panel open at startup.
+# Schedule 1500 SendToModule HideWBar PressButton open-panel 1

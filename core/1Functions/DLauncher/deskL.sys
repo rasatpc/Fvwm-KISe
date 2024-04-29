@@ -62,7 +62,7 @@ AddToFunc TileOff
 ## Loading
 DestroyFunc onWorkD
 AddToFunc onWorkD
-+ I Read $[CORE_DIR]/7Modules/Desker/deskerConf.sys
++ I Read $[CORE_DIR]/7Modules/Desker/dButtonPager.sys
 + I Read $[USER_DIR]/WorkButtons/hideWorkBar.sys
 
 ## Desk switch.

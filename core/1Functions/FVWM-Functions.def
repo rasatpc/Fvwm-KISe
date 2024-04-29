@@ -1,7 +1,13 @@
-# Fvwm version: 1.0.9 (release 3 December 2023)
+# Fvwm version: 1.1.1 (release 28 April 2024)
 # Modified from default Functions
 # Includes transparency option (fvwm-root -r and fvwm3-root -r)
 #
+
+# This is used for "Run Command" and the Meta+Space key-binding.
+# runcmd is the binary name and runcmdopt contains additional
+# command line options.
+InfoStoreAdd runcmd "dmenu_run"
+InfoStoreAdd runcmdopt "-nb '#2b4e5e'"
 
 ###########
 # 1: Functions

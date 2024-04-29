@@ -1,19 +1,12 @@
 ## Modules/Extra: deskerConf.sys
 ## Loaded by dButtonPager.sys
 
-SetEnv HOME_DIR $[HOME]/.fvwm
-SetEnv CORE_DIR $[HOME]/.fvwm/core
-
 KillModule FvwmButtons ControlMP
 KillModule FvwmButtons RightPager
 KillModule FvwmBacker
 KillModule FvwmPager VdeskPager
-
-## Color settings
-## Colorset 0 to 16 (core/KColors/kColorsets.sys)
-
-Colorset 21 fg #ffffff, bg #028383, hi, sh, Plain, NoShape
-Colorset 18 fg #ffffff, bg #306ea2, hi #ffffff, sh #ffffff, Plain
+KillModule FvwmButtons DashToDock
+KillModule FvwmButtons SimpleButton
 
 ##########
 ## Return WorkDesk to default desk.
@@ -22,17 +15,8 @@ DestroyFunc ReturnDesk
 AddToFunc ReturnDesk
 + I Read $[CORE_DIR]/7Modules/RightPager/rightPg.sys
 + I $[infostore.PAGER] ## If InfostoreAdd it replaces RightPager.
-+ I Read $[USER_DIR]/SimpleButton/hideBar.sys
-+ I GoToDesk 0 0
-+ I GoToPage 0 0
++ I Read $[USER_DIR]/SimpleButton/simpleB.sys
 + I KillModule FvwmBacker
 + I DestroyModuleConfig FvwmBacker: *
-+ I *FvwmBacker: Command (Desk 0, Page 0 0) Exec exec $[infostore.VER] $[FVWM_USERDIR]/.BGdefault
-+ I Module FvwmBacker
++ I Exec exec $[infostore.VER] $[FVWM_USERDIR]/.BGdefault
 + I SetEnv Work ON
-
-##########
-## Load Desker Panel
-##########
-
-Read $[CORE_DIR]/7Modules/Desker/dButtonPager.sys
