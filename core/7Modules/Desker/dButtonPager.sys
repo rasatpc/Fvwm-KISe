@@ -32,7 +32,7 @@ DestroyModuleConfig BarButtons: *
 
 *BarButtons: (1x2, Icon $[icons]/work-line.png, \
 	Panel(left, position module -10+2 top, steps 6, delay 10, indicator 48) \
-	"FvwmDesker" 'Module FvwmPager FvwmDesker 0 3', Id open-panel, \
+	"FvwmDesker" 'Schedule 500 Module FvwmPager FvwmDesker 0 3', Id open-panel, \
 	    Action(Mouse 2) 'Exec exec xterm', \
     Action(Mouse 3) 'Exec exec thunar', Frame 2, Colorset 16)
     
