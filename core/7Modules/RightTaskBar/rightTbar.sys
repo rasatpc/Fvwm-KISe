@@ -22,6 +22,7 @@ DestroyModuleConfig FvwmScript:*
 *FvwmScript: DefaultColorset 10
 
 ## Right Taskbar
+Module FvwmButtons RightTbar
 
 DestroyModuleConfig RightTbar:*
 *RightTbar: Geometry 120x$[vp.height]-0+270
@@ -50,8 +51,6 @@ Test (!x stalonetray) PipeRead 'echo "*RightTbar: (120x$(($[vp.height]-430)),\
 ## Style settings
 
 Style RightTbar !Title, WindowListSkip, Layer 4, Sticky, !Handles, !Iconifiable, BorderColorset 10, BorderWidth 0, NeverFocus
-
-AddToFunc StartFunction I Module FvwmButtons RightTbar
 
 ## Change pre-settings
 # FvwmIconMan
