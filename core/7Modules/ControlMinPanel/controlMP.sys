@@ -3,8 +3,6 @@
 SetEnv HOME_DIR $[HOME]/.fvwm
 SetEnv CORE_DIR $[HOME]/.fvwm/core
 
-KillModule FvwmButtons ControlPanelB
-
 ## Help Drop Menu
 
 DestroyMenu MenuStart
@@ -24,8 +22,6 @@ SetEnv smallIcons $[CORE_DIR]/7Modules/ControlMinPanel/icons
 
 ## Panel
 
-Module FvwmButtons ControlMP
-
 DestroyModuleConfig ControlControlMP: *
 *ControlMP: Geometry 330x34-0+3
 *ControlMP: Fore #ffffff
@@ -40,12 +36,13 @@ DestroyModuleConfig ControlControlMP: *
 *ControlMP: (1x1, Icon $[smallIcons]/resize-wb.png, Action Resize )
 *ControlMP: (1x1, Icon $[smallIcons]/move-wb.png, Action Move  )
 
-*ControlMP: (Title Help, Back #028383,  ActionOnPress, Action(Mouse 1) Menu MenuStart Rectangle +$left+38 0 12m)
+*ControlMP: (Title Help, Back #028383,  ActionOnPress, \
+Action(Mouse 1) Menu MenuStart Rectangle +$left+38 0 12m)
 
 *ControlMP: (1x1, Colorset 10, Icon $[smallIcons]/quit-w.png, \
-	Panel (down, steps 6, delay 0, indicator 40) "ExitBar" 'Module FvwmButtons ExitBar', \
-    Action(Mouse 2) 'Exec exec xterm', \
-    Action(Mouse 3) 'Exec exec thunar', Frame 1)
+	Panel (down, steps 6, delay 0, indicator 40) ExitBar "Module FvwmButtons ExitBar", Frame 1)
+
+AddToFunc StartFunction I Module FvwmButtons ControlMP
 
 ## Style Setting
 

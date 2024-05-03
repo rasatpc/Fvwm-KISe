@@ -4,6 +4,9 @@
 SetEnv HOME_DIR $[HOME]/.fvwm
 SetEnv CORE_DIR $[HOME]/.fvwm/core
 
+KillModule FvwmButtons RightTbar
+KillModule FvwmScript FvwmScript-DateTime
+
 ## Time/Day panel color
 
 *FvwmScript: DefaultColorset 10
@@ -11,7 +14,7 @@ SetEnv CORE_DIR $[HOME]/.fvwm/core
 Module FvwmButtons TimeDayButton
 
 DestroyModuleConfig TimeDayButton:*
-*TimeDayButton: Geometry 92x70-0-25
+*TimeDayButton: Geometry 120x70-0-17
 *TimeDayButton: Colorset 10
 *TimeDayButton: Columns 120
 *TimeDayButton: Font "xft:Sans:Bold:size=10:antialias=True"

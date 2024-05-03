@@ -16,7 +16,7 @@ Colorset 21  fg #ffffff, bg #028383, hi, sh, Plain, NoShape
 Module FvwmButtons WifiSnd
 
 DestroyModuleConfig WifiSnd: *
-*WifiSnd: Geometry 92x30-0-118
+*WifiSnd: Geometry 120x30-0-87
 *WifiSnd: Colorset 21
 *WifiSnd: Frame 0
 *WifiSnd: Rows 1
@@ -30,8 +30,3 @@ Test (x stalonetray) *WifiSnd: (92x1, Colorset 21, Swallow(NoClose,UseOld) \
 
 Style WifiSnd !Borders, !Title, WindowListSkip, Sticky, StaysOnTop
 Style WifiSnd NoTitle
-
-## Change pre-settings
-KillModule FvwmButtons TimeDayButton
-Read $[CORE_DIR]/7Modules/TimeDayButton/timeDayB.sys
-*TimeDayButton: Geometry 92x70-0-40

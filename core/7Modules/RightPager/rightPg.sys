@@ -77,7 +77,4 @@ KillModule FvwmEvent EventDeskNo
 Module FvwmEvent EventDeskNo
 
 ## Change pre-settings of controlMinPanel
-
-KillModule FvwmButtons ControlMP
 *ControlMP: Geometry 330x34-175+6
-Module FvwmButtons ControlMP
