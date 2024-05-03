@@ -1,10 +1,6 @@
 ## Modules/Core: simpleB.sys
 ## DESKTOP ICONS PANEL
 
-SetEnv HOME_DIR $[HOME]/.fvwm
-SetEnv CORE_DIR $[HOME]/.fvwm/core
-SetEnv USER_DIR $[HOME]/.fvwm/user
-
 ## Remove similar modules
 KillModule FvwmButtons DashToDock
 KillModule FvwmButtons HideWBar
@@ -65,5 +61,3 @@ DestroyModuleConfig SimpleButton: *
 
 ## Style setting
 Style SimpleButton !Borders, !Title, WindowListSkip, Sticky, StaysOnBottom, NeverFocus
-
-Schedule 2000 SendToModule HideBar PressButton open-panel 1

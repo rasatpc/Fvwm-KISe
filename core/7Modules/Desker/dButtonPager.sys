@@ -7,9 +7,6 @@ SetEnv CORE_DIR $[HOME]/.fvwm/core
 ## Load RetunDesk
 Read $[CORE_DIR]/7Modules/Desker/deskerConf.sys
 
-## Color settings
-## Colorset 0 to 16 (core/KColors/kColorsets.sys)
-
 Colorset 21 fg #ffffff, bg #028383, hi, sh, Plain, NoShape
 Colorset 18 fg #ffffff, bg #306ea2, hi #ffffff, sh #ffffff, Plain
 
@@ -31,8 +28,8 @@ DestroyModuleConfig BarButtons: *
 *BarButtons: Frame 0
 
 *BarButtons: (1x2, Icon $[icons]/work-line.png, \
-	Panel(left, position module -10+2 top, steps 6, delay 10, indicator 48) \
-	"FvwmDesker" 'Schedule 500 Module FvwmPager FvwmDesker 0 3', Id open-panel, \
+	Panel(left, position module -10+4 top, steps 6, delay 10, indicator 48) \
+	"FvwmDesker" 'Module FvwmPager FvwmDesker 0 3', Id open-panel, \
 	    Action(Mouse 2) 'Exec exec xterm', \
     Action(Mouse 3) 'Exec exec thunar', Frame 2, Colorset 16)
     
@@ -47,7 +44,7 @@ DestroyModuleConfig BarButtons: *
 	Action(Mouse 1) 'Exec exec rofi -show', \
 	Action(Mouse 3) "Exec exec $[CORE_DIR]/7Modules/TimeDayButton/script/Calendar.sh",Frame 1)
 	
-*BarButtons: (1x2, Title "xclock", Swallow "xclock" "Exec exec xclock -padding 0 -geometry -1500-1500")
+*BarButtons: (1x2, Title "xclock", Swallow "xclock" "Exec exec xclock")
 *BarButtons: (2x2, Swallow "FvwmPagerBar" 'FvwmPager FvwmPagerBar * *')
 
 Style BarButtons NoTitle, NoHandles, !Title, WindowListSkip, Layer 4, Sticky, !Iconifiable, \
@@ -69,8 +66,6 @@ DestroyModuleConfig FvwmPagerBar: *
 *FvwmPagerBar: UseSkipList # hides modules
 *FvwmPagerBar: MiniIcons
 
-Style FvwmPagerBar * NoTitle, WindowListSkip, Sticky, !Handles, !Iconifiable, FixedSize, BorderColorset 10, BorderWidth 1
-
 ######
 # Desker Pager: Swallowed by BarButtons Panel
 ######
@@ -85,11 +80,8 @@ DesktopName 1 Email
 DesktopName 2 Work
 DesktopName 3 Misc
 
-## With transparent tint color
+## Transparent tint color example
 #Colorset 22 RootTransparent Buffer, fg black, Tint #8bade7 60
-#Colorset 23 RootTransparent Buffer, fg black, Tint #64e153 75
-#Colorset 28 RootTransparent Buffer, fg black, Tint #ffd176 75
-#Colorset 25 RootTransparent Buffer, fg black, Tint #d4cbcb 70
 
 ## With thumbnail
 Colorset 22 Pixmap $[CORE_DIR]/7Modules/Desker/bkg/web-bkg-bw.png, Tint #9cd7d7 35
@@ -99,7 +91,7 @@ Colorset 25 Pixmap $[CORE_DIR]/7Modules/Desker/bkg/misc-bkg-bw.png, Tint #d4cbcb
 
 ## Pager
 DestroyModuleConfig FvwmDesker: *
-*FvwmDesker: Geometry 600x70-175+4
+*FvwmDesker: Geometry 528x62
 *FvwmDesker: Rows 1  ## (page rows)
 *FvwmDesker: HilightColorset * 21  ## (active page background)
 *FvwmDesker: BalloonColorset * 10  ## (font color)
@@ -117,9 +109,9 @@ DestroyModuleConfig FvwmDesker: *
 *FvwmDesker: MiniIcons
 
 Style FvwmDesker NoTitle, !Handles, Borders, BorderWidth 1, BorderColorset 6, Sticky, \
-WindowListSkip, FixedSize, !Iconifiable, CirculateSkipIcon, CirculateSkip, StaysOnTop
+WindowListSkip, FixedSize, !Iconifiable, StaysOnTop, NeverFocus
 
-## Desk background
+## Desk wallpaper
 
 DestroyModuleConfig FvwmBacker: *
 *FvwmBacker: Command (Desk 0) Exec exec $[infostore.VER] $[CORE_DIR]/7Modules/Desker/bkg/web-tiled-col.png
@@ -127,11 +119,9 @@ DestroyModuleConfig FvwmBacker: *
 *FvwmBacker: Command (Desk 2) Exec exec $[infostore.VER] $[CORE_DIR]/7Modules/Desker/bkg/work-tiled-col.png
 *FvwmBacker: Command (Desk 3) Exec exec $[infostore.VER] $[CORE_DIR]/7Modules/Desker/bkg/misc-tiled-col.png
 
-## Load
+## Panel open at start
 Module FvwmBacker
-# AddToFunc StartFunction I Module FvwmBacker
-
-Schedule 2000 SendToModule BarButtons PressButton open-panel 1
+Schedule 1500 SendToModule BarButtons PressButton open-panel 1
 
 ######
 # Change preset menu style: Titlebar Right Click

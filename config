@@ -28,8 +28,7 @@
 #  updates, it includes two folders and system files:
 #
 #  .fvwm/core  + config: core script (configs) folders and startup file.
-#  .fvwm/user  + userExt.sys: user script folders and user system file
-#  reads core and user scripts.
+#  .fvwm/user  + userExt.sys: user script folders and user system file.
 #
 #################################
 
@@ -38,9 +37,8 @@ SetEnv CORE_DIR $[HOME]/.fvwm/core
 SetEnv USER_DIR $[HOME]/.fvwm/user
 
 ## If .fvwm/userExt.sys doesn't exist, copy setup/userExtSAMPLE.sys.
-## If .config/picom/picom.K.conf doesn't exist, copy copy setup/picom/picom.K.conf.
+## If .config/picom/picom.K.conf doesn't exist, copy setup/picom/picom.K.conf.
 ## If .config/rofi/config.rasi doesn't exist, copy setup/rofi/config.rasi
-##
 
 ## Copy essential folders and files to assigned locations.
 
@@ -67,9 +65,7 @@ AddToFunc SavePageFocus
 + I All (CurrentPage) State $[FocusPage] False
 + I Current State $[FocusPage] True
 
-#####
 ## Restore previous focused window in current page.
-#####
 
 DestroyFunc RestorePageFocus
 AddToFunc RestorePageFocus
@@ -107,5 +103,8 @@ AddToFunc NoFoc
 + I Style NoDeskI NeverFocus
 + I Style Pgfunc NeverFocus
 + I Style WiconB NeverFocus
++ I Style PgNo NeverFocus
++ I Style FE-Label NeverFocus
++ I Style VdeskPager NeverFocus
 
 Schedule 4000 NoFoc

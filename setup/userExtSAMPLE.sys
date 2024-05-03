@@ -146,10 +146,6 @@ Style * ClickToFocus, FPGrabFocus
 
 Style * TileCascadePlacement
 
-## Assigned FvwmButtons not to be focuced.
-## Loaded in .fvwm/config
-Schedule 3500 NoFoc
-
 ##### Exit panel 
 ## Center panel postion.
 

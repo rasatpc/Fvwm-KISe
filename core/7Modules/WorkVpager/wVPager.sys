@@ -44,7 +44,7 @@ DestroyModuleConfig VdeskPager: *
 *VdeskPager: UseSkipList # hides modules
 *VdeskPager: MiniIcons
 
-Style VdeskPager NoTitle, !Handles, Borders, BorderWidth 1, BorderColorset 6, Sticky, WindowListSkip, FixedSize, !Iconifiable 
+Style VdeskPager NoTitle, !Handles, Borders, BorderWidth 1, BorderColorset 6, Sticky, WindowListSkip, FixedSize, !Iconifiable
 
 ## Change preloaded settings
 KillModule FvwmButtons ControlMP
