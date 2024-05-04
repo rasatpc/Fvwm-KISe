@@ -9,3 +9,7 @@ To install or edit .fvwm/userExt.sys
 
 ## Add the below line below "7.Modules / Extra" or in a launcher.
 Read $[CORE_DIR]/7Modules/Desker/dButtonPager.sys
+
+## Modify or add as your own in /.fvwm/user
+SetEnv USER_DIR $[HOME]/.fvwm/user
+Read $[USER_DIR]/Desker/dButtonPager.sys

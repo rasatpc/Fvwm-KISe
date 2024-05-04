@@ -10,6 +10,7 @@ KillModule FvwmButtons SimpleButton
 ## Button Panel
 
 Module FvwmButtons HideBar
+
 DestroyModuleConfig HideBar: *
 *HideBar: Geometry 58x56+0+190
 *HideBar: Fore Black

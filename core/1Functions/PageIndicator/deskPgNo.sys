@@ -1,5 +1,7 @@
 ## Functions/Extra: deskPgNo.sys
 
+SetEnv CORE_DIR $[HOME]/.fvwm/core
+
 ColorSet 15 RootTransparent Buffer, Tint #4a516a 50, fg white, bg black
 
 DestroyModuleConfig PgNo:*

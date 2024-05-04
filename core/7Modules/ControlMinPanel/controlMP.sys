@@ -42,6 +42,7 @@ Action(Mouse 1) Menu MenuStart Rectangle +$left+38 0 12m)
 *ControlMP: (1x1, Colorset 10, Icon $[smallIcons]/quit-w.png, \
 	Panel (down, steps 6, delay 0, indicator 40) ExitBar "Module FvwmButtons ExitBar", Frame 1)
 
+# Module FvwmButtons ControlMP
 AddToFunc StartFunction I Module FvwmButtons ControlMP
 
 ## Style Setting

@@ -28,18 +28,20 @@ Each script has readme.txt with a description of how to install and where to add
 
 For major modifications such as adding more icons to the icon panel, copy the whole folder to .fvwm/user. For example, .fvwm/core/7Modules/SimpleButton and change the read line in userExt.sys
 
-"Read $[CORE_DIR]/7Modules/SimpleButton/simpleB.sys" to
-"Read $[USER_DIR]/SimpleButton/simpleB.sys"
+"Read $[CORE_DIR]/7Modules/SimpleButton/init.conf" to
+"Read $[USER_DIR]/SimpleButton/init.conf"
 (with variable $[USER_DIR])
 
 Note: At first load, three folders are automatically copied to .fvwm/user.
+
 AutoMoveWin
 SimpleButton
 WorkButtons
+
 To modify them, in the menu (left-click) <System>, click any of them.
 
 Any inspiring and functional script, please share on:
 https://fvwmforums.org
 
 By Rasat
-3 May 2024
+5 May 2024

@@ -7,6 +7,7 @@ KillModule FvwmBacker
 KillModule FvwmPager VdeskPager
 KillModule FvwmButtons DashToDock
 KillModule FvwmButtons SimpleButton
+KillModule FvwmButtons RightPanel
 
 ##########
 ## Return WorkDesk to default desk.
