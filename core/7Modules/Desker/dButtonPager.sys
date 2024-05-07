@@ -29,9 +29,7 @@ DestroyModuleConfig BarButtons: *
 
 *BarButtons: (1x2, Icon $[icons]/work-line.png, \
 	Panel(left, position module -10+4 top, steps 6, delay 10, indicator 48) \
-	"FvwmDesker" 'Module FvwmPager FvwmDesker 0 3', Id open-panel, \
-	    Action(Mouse 2) 'Exec exec xterm', \
-    Action(Mouse 3) 'Exec exec thunar', Frame 2, Colorset 16)
+	"FvwmDesker" 'Module FvwmPager FvwmDesker 0 3', Id open-panel, Frame 2, Colorset 16)
     
 *BarButtons: (1x2, Padding 0 0, Container(Padding 0 0, Frame 1, Columns 2))
 *BarButtons: (Icon $[icons]/move.png, Action Move)
@@ -42,7 +40,7 @@ DestroyModuleConfig BarButtons: *
 
 *BarButtons: (1x2, Title "1rof/3cal", Icon $[icons]/calendar-rofi.png, \
 	Action(Mouse 1) 'Exec exec rofi -show', \
-	Action(Mouse 3) "Exec exec $[CORE_DIR]/7Modules/TimeDayButton/script/Calendar.sh",Frame 1)
+	Action(Mouse 3) "Exec exec $[CORE_DIR]/7Modules/TimeDayButton/script/Calendar.sh", Frame 1)
 	
 *BarButtons: (1x2, Title "xclock", Swallow "xclock" "Exec exec xclock")
 *BarButtons: (2x2, Swallow "FvwmPagerBar" 'FvwmPager FvwmPagerBar * *')

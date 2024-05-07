@@ -24,4 +24,4 @@ https://fvwmforums.org/t/fvwm-kise/4256
 
 Fvwm3-myExt extensions (configs) development started on 8 Dec 2020.
 Fvwm-KISe on 10 July 2023
-Last update: 3 May 2024
+Last update: 7 May 2024
