@@ -7,9 +7,26 @@ SetEnv USER_DIR $[HOME]/.fvwm/user
 # Iconify all except focused window.
 ######
 
+## Iconify switch.
+InfoStoreAdd IconSwitch "ON"
+
 DestroyFunc AIconic
 AddToFunc AIconic
++ I Test (EnvMatch infostore.IconSwitch ON) IconOn
++ I TestRc (NoMatch) IconOff
+
+DestroyFunc IconOn
+AddToFunc IconOn
 + I All (CurrentPage, !Iconic, !Focused) Thumbnail
++ I InfoStoreAdd IconSwitch OFF
+
+DestroyFunc IconOff
+AddToFunc IconOff
++ I All (Iconic) Iconify off
++ I Current InfoStoreAdd WLIST $[w.id]
++ I WindowId $[infostore.WLIST] WarpToWindow 50 50
++ I Schedule 300 Next (CurrentDesk, AcceptsFocus) Focus
++ I InfoStoreAdd IconSwitch ON
 
 ######
 # Full screen maximize.

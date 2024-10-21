@@ -23,12 +23,13 @@ AddToFunc FvwmExpose
         xwd -silent -id $[w.id] | convert -scale $$(($[w.width]/4)) -quality 0 xwd:- \
         png:$[cacheExp]/icon.exp.$[w.id].png \
     && echo AddToMenu FvwmExposeMenu \
-    %$[cacheExp]/icon.exp.$[w.id].png%\\\'\"   $[w.class]  \"\\\' WindowID $[w.id] WarpToWindow 50 50 \
+    %$[cacheExp]/icon.exp.$[w.id].png%\\\'\"   $[w.class]  \"\\\' WindowID $[w.id] Focus WarpToWindow 50 50 \
         && echo AddToMenu FvwmExposeMenu \\\"\\\" Nop \
     || Nop"
 + I WindowId $[infostore.CURRENTWINDOW] WarpToWindow 400p 50p
 + I Popup FvwmExposeMenu Colorset 6
 + I Exec exec rm -f $[cacheExp]/icon.exp.*
++ I Current Raise
 
 ## Mouse Binding
 Mouse 2 R A FvwmExpose # Mouse middle-click anywhere on desk

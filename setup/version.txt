@@ -1,2 +1,2 @@
-7 May 2024
-Fvwm-KISe ver. 2.0.1
+21 Oct 2024
+Fvwm-KISe ver. 2.0.3
