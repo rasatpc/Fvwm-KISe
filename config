@@ -81,6 +81,15 @@ DestroyModuleConfig FvwmEvent-FDpg:*
 
 Module FvwmEvent FvwmEvent-FDpg
 
+# Save focus window ID on restart
+
+AddToFunc ExitFunction
++ I Test (ToRestart) Current InfoStoreAdd WFocusId $[w.id]
+
+AddToFunc StartFunction
++ I Test (Restart) Schedule 1500 WindowId $[infostore.WFocusId] Focus
++ I Test (Restart) InfoStoreRemove WFocusId
+
 #######################
 ## USER
 #######################
