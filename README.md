@@ -31,7 +31,7 @@ Tested on Fvwm3 and Fvwm2
 
 Download:
 
-* Release 2.0.3
+* Release 2.1.1
 * https://github.com/rasatpc/Fvwm-KISe/archive/refs/heads/main.zip
 
 Extract and copy subfolders to ~/.fvwm
