@@ -1,4 +1,4 @@
-21 Oct 2024
+18 Nov 2024
 ################
 # HOW TO INSTALL Fvwm-KISe on FVWM3 (or Fvwm2)
 ################
@@ -61,13 +61,13 @@ Required by Yad and other scripts:
 Dependencies for github installation.
 
 MX Linux:
-* sudo apt-get install libevent-dev libx11-dev libxrandr-dev libxrender-dev libxt-dev libxft-dev
+* sudo apt-get install libevent-dev libxkbcommon-dev libx11-dev libxrandr-dev libxrender-dev libxt-dev libxft-dev
 
 Arch Linux:
-* sudo pacman -Sy libevent-dev libx11-dev libxrandr-dev libxrender-dev libxt-dev libxft-dev
+* sudo pacman -Sy libevent-dev libxkbcommon-dev libx11-dev libxrandr-dev libxrender-dev libxt-dev libxft-dev
 
 Fedora:
-* sudo dnf install libevent-devel libX11-devel libXrandr-devel libXt-devel libXft-devel
+* sudo dnf install libevent-devel libxkbcommon-devel libX11-devel libXrandr-devel libXt-devel libXft-devel
 
 OPTIONAL
 ========
@@ -81,11 +81,11 @@ Arch Linux:
 Fedora:
 * sudo dnf install fribidi-devel ncurses-devel libpng-devel readline-devel libXcursor-devel libXpm-devel sharutils
 
-For make & install command dependencies:
-====================================
-* sudo apt-get install automake autogen gcc
-* sudo pacman -Sy automake autoreconf autogen
-* sudo dnf install automake dh-autoreconf autogen
+For meson or make & install command dependencies:
+=================================================
+* sudo apt-get install automake autogen gcc meson
+* sudo pacman -Sy automake autoreconf autogen meson
+* sudo dnf install automake dh-autoreconf autogen meson
 
 Download GitHub and install:
 ============================
@@ -96,6 +96,20 @@ Download GitHub and install:
 * ./configure --prefix=/usr --enable-mandoc
 * make
 * sudo make install
+
+Uninstall:
+* sudo make uninstall
+
+Download GitHub and meson install (Fvwm 1.1.1):
+===============================================
+* git clone https://github.com/fvwmorg/fvwm3.git
+* cd fvwm3
+* meson setup --prefix=/usr -Dmandoc=true -Dhtmldoc=true build
+* ninja -C build
+* sudo meson install -C build
+
+Uninstall:
+sudo ninja uninstall -C build
 
 #############
 # END GITHUB

@@ -2,9 +2,10 @@
 
 ## Startup manager
 
-Exec nm-applet # (wifi)
-Exec xfce4-power-manager # (screen & battery)
-Exec volumeicon # (sound)
-Exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 & # (policykit authenticator
-Exec gxkb # (keyboard language)
-Test (x touchpad-indicator) Exec touchpad-indicator
+AddToFunc StartFunction
++ I Test (x nm-applet) Exec exec nm-applet # (wifi)
++ I Test (x xfce4-power-manager) Exec exec xfce4-power-manager # (screen & battery)
++ I Test (x volumeicon) Exec exec volumeicon # (sound)
++ I Test Exec exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 & # (policykit authenticator
++ I Test (x gxkb) Exec exec gxkb # (keyboard language)
++ I Test (x touchpad-indicator) Exec exec touchpad-indicator
