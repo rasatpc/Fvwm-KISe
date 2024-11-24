@@ -19,7 +19,7 @@ KillModule FvwmButtons HideWBar
 KillModule FvwmButtons WorkBar
 KillModule FvwmButtons SimpleButton
 
-## Vertical Pager (4 desk with 8 pages)
+## Vertical Pager (3 desk with 6 pages)
 
 DesktopName 0 Web
 DesktopName 1 Email
