@@ -40,23 +40,31 @@ SetEnv USER_DIR $[HOME]/.fvwm/user
 ## If .config/picom/picom.K.conf doesn't exist, copy setup/picom/picom.K.conf.
 ## If .config/rofi/config.rasi doesn't exist, copy setup/rofi/config.rasi
 
+#####
 ## Copy essential folders and files to assigned locations.
 
 Exec exec sh $[HOME_DIR]/setup/copySampleTo.sh
 
-## Load Picom compositor.
-
-Exec exec killall -qw picom
-Schedule 500 Exec exec picom --config ~/.config/picom/picom.K.conf
-
+#####
 ## Load startup functions, wifi and system info.
 
 Read $[CORE_DIR]/1Functions/FVWM-Functions.def
 Read $[CORE_DIR]/1Functions/InitMgr/initMgr.sys
 
 #####
-## Remember focused window in current page.
+## Load Picom compositor.
+
+Exec exec killall -qw picom
+
+AddToFunc StartFunction
++ I InfoStoreRemove picVERSION
++ I PipeRead 'echo InfoStoreAdd picVERSION `picom --version | sed 's/^.//'`'
++ I Test (EnvMatch infostore.picVERSION 9.*) Exec exec picom --config ~/.config/picom/picom.K.conf
++ I Test (EnvMatch infostore.picVERSION 11.*) Exec exec picom --config ~/.config/picom/picom.v11.conf
++ I Test (EnvMatch infostore.picVERSION 12.*) Exec exec picom --config ~/.config/picom/picom.v12.conf
+
 #####
+## Remember focused window in current page.
 
 SetEnv FocusPage 0
 
@@ -81,14 +89,28 @@ DestroyModuleConfig FvwmEvent-FDpg:*
 
 Module FvwmEvent FvwmEvent-FDpg
 
-# Save focus window ID on restart
+#####
+## Save focus window id on restart
 
 AddToFunc ExitFunction
 + I Test (ToRestart) Current InfoStoreAdd WFocusId $[w.id]
 
+# Show previous Window Id on restart
 AddToFunc StartFunction
 + I Test (Restart) Schedule 1500 WindowId $[infostore.WFocusId] Focus
 + I Test (Restart) InfoStoreRemove WFocusId
+
+#####
+## Save current Desk on restart
+
+AddToFunc ExitFunction
++ I Test (ToRestart) InfoStoreAdd DeskNo "0 $[desk.n]"
++ I GoToDesk 0 0
+
+# Show previous Desk on restart
+AddToFunc StartFunction
++ I Test (Restart) Schedule 500 GoToDesk $[infostore.DeskNo]
++ I Test (Restart) InfoStoreRemove DeskNo
 
 #######################
 ## USER

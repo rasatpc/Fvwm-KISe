@@ -9,6 +9,7 @@ Read $[CORE_DIR]/7Modules/Desker/deskerConf.sys
 
 Colorset 21 fg #ffffff, bg #028383, hi, sh, Plain, NoShape
 Colorset 18 fg #ffffff, bg #306ea2, hi #ffffff, sh #ffffff, Plain
+Colorset 15 RootTransparent Buffer, Tint #4A516A 40, fg white, bg black
 
 ## Icon location.
 SetEnv icons $[CORE_DIR]/7Modules/Desker/icons
@@ -21,11 +22,12 @@ SetEnv icons $[CORE_DIR]/7Modules/Desker/icons
 Module FvwmButtons BarButtons
 
 DestroyModuleConfig BarButtons: *
-*BarButtons: Geometry 160x240-0+0
+*BarButtons: Geometry 160x250-0+0
 *BarButtons: Font "xft:Sans:size=10:antialias=True"
-*BarButtons: Colorset 16
+#*BarButtons: Colorset 16
+*BarButtons: (Padding 0 10,  Colorset 18, Container(Rows 1, Frame 0))
 
-*BarButtons: (Container(Columns 4, Frame 1))
+*BarButtons: (1x1, Padding 0 0, Container(Columns 4, Colorset 16, Frame 1))
 *BarButtons: (2x2, Icon $[icons]/work-line.png, \
 	Panel(left, position module -10+4 top, steps 6, delay 10, indicator 48) \
 	"FvwmDesker" 'Module FvwmPager FvwmDesker 0 3', Id open-panel, Frame 2)
@@ -40,7 +42,8 @@ DestroyModuleConfig BarButtons: *
 	Action(Mouse 3) 'Exec exec $[CORE_DIR]/7Modules/TimeDayButton/script/Calendar.sh', Frame 1)
 	
 *BarButtons: (2x2, Title "xclock", Swallow "xclock" 'Exec exec xclock')
-*BarButtons: (4x2, Swallow "FvwmPagerBar" 'FvwmPager FvwmPagerBar * *')
+*BarButtons: (4x2, Swallow "FvwmPagerBar" 'FvwmPager FvwmPagerBar *')
+*BarButtons: (End)
 *BarButtons: (End)
 
 Style BarButtons NoTitle, NoHandles, !Title, WindowListSkip, Layer 4, Sticky, !Iconifiable, \
@@ -73,7 +76,7 @@ DesktopSize "2 1"  ## (columns - rows)
 
 DesktopName 0 Web
 DesktopName 1 Email
-DesktopName 2 Work
+DesktopName 2 Office
 DesktopName 3 Misc
 
 ## Transparent tint color example
@@ -128,7 +131,7 @@ DestroyMenu SendToDesk
 AddToMenu SendToDesk
 + " Web Desk  " MoveToDesk 0 0
 + " Email Desk " MoveToDesk 0 1
-+ " Work Desk  " MoveToDesk 0 2
++ " Office Desk  " MoveToDesk 0 2
 + " Misc Desk " MoveToDesk 0 3
 + "-" Nop
 + " Right Page " Move w+115 w

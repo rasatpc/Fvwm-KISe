@@ -1,13 +1,16 @@
 ## Functions/Extra: autoMoveW.sys
 ## Automatically move applications to specific desk/page when they create windows.
+## SkipMapping -- application on a different page without switching to this page.
+## Example: Style *Firefox StartsOnPage 0 1, SkipMapping
+
 
 ##		APPS		COMMAND			DESK/PAGE		LOCATION
 ## --------------------------------------------------------------------
 
 Style	Chromium	StartsOnPage	0 0 0			# desk 0 page-left side
 Style	*Firefox 	StartsOnPage	0 1 0			# desk 0 page-right side
-# Style	Evolution	StartsOnPage	1 0 0			# desk 1 page-left
-# Style	"Mozilla Thunderbird" StartsOnPage	1 1 0	# desk 1 page-right
+# Style	Evolution	StartsOnPage	1 0 0 , SkipMapping # desk 1 page-left
+# Style	"Mozilla Thunderbird" StartsOnPage	1 1 0 , SkipMapping # desk 1 page-right
 # Style	Gimp		StartsOnPage	2 0 0			# desk 2 page-left
 # Style	scribus		StartsOnPage	2 1 0			# desk 2 page-right
 # Style	Polkit*		StartsOnPage	3 0 0			# desk 3 page-left

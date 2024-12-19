@@ -3,30 +3,31 @@
 SetEnv HOME_DIR $[HOME]/.fvwm
 SetEnv CORE_DIR $[HOME]/.fvwm/core
 
-## Tiling
 
-## Tiling
-DestroyFunc 3Tile
-AddToFunc 3Tile
-+ I FvwmRearrange -tile -r -mn 3 -maximize 0 0 86 82
+## Vertical/horizontal tiling
 
-## Tile switch.
-InfoStoreAdd TileSwitch "ON"
+DestroyFunc AutoTile
+AddToFunc AutoTile
++ I Test (Version >= 1.1.1) FvwmRearrange -maximize
 
-DestroyFunc QTile
-AddToFunc QTile
-+ I Test (EnvMatch infostore.TileSwitch ON) TileOn
-+ I TestRc (NoMatch) TileOff
+DestroyFunc 3TileW
+AddToFunc 3TileW
++ I Test (EnvMatch infostore.TileSwitch$[monitor.current] ON) ATileOff
++ I TestRc (NoMatch) ATileOn
 
-DestroyFunc TileOn
-AddToFunc TileOn
-+ I 3Tile
-+ I InfoStoreAdd TileSwitch OFF
+DestroyFunc ATileOn
+AddToFunc ATileOn
++ I Test (Version >= 1.1.1) AutoTile
++ I Test (Version < 1.1.1) FvwmRearrange -tile -r -mn 3 -maximize 0 0 86 82
++ I InfoStoreAdd TileSwitch$[monitor.current] ON
 
-DestroyFunc TileOff
-AddToFunc TileOff
+DestroyFunc ATileOff
+AddToFunc ATileOff
++ I Current InfoStoreAdd WFocusId $[w.id]
 + I All (CurrentPage, !Iconic, CirculateHit, !Sticky) Maximize Off
-+ I InfoStoreAdd TileSwitch ON
++ I InfoStoreAdd TileSwitch$[monitor.current] OFF
++ I WindowId $[infostore.WFocusId] Focus
++ I Current Raise
 
 ## Icon location
 
@@ -51,7 +52,7 @@ Colorset 51 fg #4b88a4, bg #4b88a4, hi #4b88a4, sh #4b88a4
 Mouse 1 2 A Close
 Mouse 1 4 A Maximize
 Mouse 1 6 A Thumbnail # Iconify
-Mouse 1 8 A QTile # Tiling
+Mouse 1 8 A 3TileW # Tiling
 Mouse 1 1 A Menu MenuWindowOps
 
 ## Decor:

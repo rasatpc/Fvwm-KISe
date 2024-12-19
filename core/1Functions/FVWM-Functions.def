@@ -1,4 +1,4 @@
-# Fvwm version: 1.1.1 (release 28 April 2024)
+# Fvwm version: 1.1.1 (release 30 November 2024)
 # Modified from default Functions
 # Includes transparency option (fvwm-root -r and fvwm3-root -r)
 #
@@ -8,6 +8,22 @@
 # command line options.
 InfoStoreAdd runcmd "dmenu_run"
 InfoStoreAdd runcmdopt "-nb '#2b4e5e'"
+
+# DesktopConfiguration sets how fvwm handles desktops:
+#
+# * global -- the default. This means all screens show the same desktops/pages.
+# * per-monitor -- every monitor has its own virtual desktop/pages.
+#     For this mode it's recommended that FvwmPager is configured to
+#     use the monitor configuration option, so that only windows on that
+#     specific monitor are shown.
+# * shared -- the virtual desktops are shared across all monitors and each
+#     monitor shows a single desktop at a time. If one monitor switches to a
+#     desktop currently being viewed by another, the two monitors swap which
+#     desktop they are viewing.  This is similar to how Xmonad or Herbsflutwm
+#     handle desks.  This mode only works with two or more monitors.
+#
+
+DesktopConfiguration global
 
 ###########
 # 1: Functions

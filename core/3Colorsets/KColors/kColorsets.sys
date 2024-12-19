@@ -1,8 +1,8 @@
 ## Styles/Core: kColors.sys
 
 ## Transparent
-ColorSet 15 RootTransparent Buffer, Tint #4a516a 60, fg white, bg black
-Colorset 24 Transparent
+ColorSet 15 RootTransparent Buffer, Tint #4a516a 50, fg white, bg black
+# ColorSet 24 is reserved for variety of RootTransparent.
 
 ### GREEN
 Colorset 16 VGradient 50 #638079 #b6b6b6, fg #ffffff

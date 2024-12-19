@@ -1,4 +1,4 @@
-FVWM-KISe (ver. 2.1.1)
+FVWM-KISe (ver. 2.7.0)
 
 Instead of one lengthy config, Fvwm-KISe is using the myExt model of individual small scripts. They are organized into folders and run in the same sequence as the original Fvwm.
 
@@ -44,4 +44,4 @@ Any inspiring and functional script, please share on:
 https://fvwmforums.org
 
 By Rasat
-18 Nov 2024
+19 Dec 2024

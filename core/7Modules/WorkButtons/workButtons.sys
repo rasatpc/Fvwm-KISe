@@ -15,8 +15,8 @@ SetEnv wicons $[USER_DIR]/WorkButtons/icons
 
 DestroyModuleConfig WorkBar: *
 *WorkBar: PressColorset 7
-*WorkBar: Colorset 16 ## (close for Pixmap)
-#*WorkBar: Pixmap none
+*WorkBar: Colorset 16
+*WorkBar: Pixmap none
 *WorkBar: Frame 1
 
 ## Add or remove below buttons
@@ -58,4 +58,4 @@ Read $[USER_DIR]/WorkButtons/audio.conf
 Read $[USER_DIR]/WorkButtons/misc.conf
 
 ## Panel open at startup.
-# Schedule 1500 SendToModule HideWBar PressButton open-panel 1
+Schedule 1500 SendToModule HideWBar PressButton open-panel 1

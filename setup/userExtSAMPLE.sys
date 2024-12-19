@@ -25,8 +25,7 @@
 
 ## CORE
 Read $[CORE_DIR]/1Functions/WinPosition/winPos.sys
-Read $[CORE_DIR]/1Functions/DLauncher/deskL-110.sys
-Test (Version >= 1.1.1) Read $[CORE_DIR]/1Functions/DLauncher/deskL.sys
+Read $[CORE_DIR]/1Functions/DLauncher/deskL.sys
 Read $[CORE_DIR]/1Functions/PageIndicator/deskPgNo.sys
 
 ## EXTRA
@@ -115,7 +114,7 @@ Read $[CORE_DIR]/7Modules/RightPager/rightPg.sys
 # Read $[CORE_DIR]/7Modules/WorkVpager/wVPager.sys
 
 ## USER ($[USER_DIR])
-Read $[USER_DIR]/SimpleButton/init.conf
+Schedule 900 Read $[USER_DIR]/SimpleButton/simpleB.sys
 
 ###########################################
 ## Change preloaded settings.

@@ -13,7 +13,8 @@ SetEnv logo-icon $[CORE_DIR]/7Modules/RightTaskBar/icons
 
 ## Color settings
 
-ColorSet 15 RootTransparent Buffer, Tint #4A516A 50, fg white, bg black
+Colorset 12 fg #2d2d2d, bg #88b2b1, hi, sh, Plain, NoShape
+ColorSet 15 RootTransparent Buffer, Tint #4A516A 40, fg white, bg black
 Colorset 21  fg #ffffff, bg #028383, hi, sh, Plain, NoShape
 
 ## FvwmScript date/time background color setting.
@@ -46,7 +47,7 @@ Test (!x stalonetray) PipeRead 'echo "*RightTbar: (120x$(($[vp.height]-430)),\
 *RightTbar: (120x5, Frame 0, Colorset 15)
 *RightTbar: (120x45, Swallow DateTime 'Module FvwmScript FvwmScript-DateTime', Frame 0)
 *RightTbar: (120x5, Frame 0, Colorset 15)
-*RightTbar: (120x30, Frame 0)
+*RightTbar: (120x30, Colorset 21, Frame 0)
 
 ## Style settings
 
@@ -71,7 +72,7 @@ DestroyModuleConfig FvwmIconMan:*
 *FvwmIconMan: DrawIcons always
 *FvwmIconMan: ReliefThickness 0
 *FvwmIconMan: Format "%t"
-*FvwmIconMan: Font "xft:Sans:Bold:size=10:antialias=True"
+*FvwmIconMan: Font "xft:Sans:size=11:antialias=True"
 *FvwmIconMan: Action Mouse 0 A ret
 *FvwmIconMan: Action Mouse 1 A sendcommand IconManClick
 *FvwmIconMan: Action Mouse 3 A sendcommand "Menu MenuIconOps"

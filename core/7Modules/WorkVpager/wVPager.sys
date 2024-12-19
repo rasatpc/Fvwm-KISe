@@ -7,7 +7,7 @@ SetEnv USER_DIR $[HOME]/.fvwm/user
 InfoStoreAdd PAGER "Read $[CORE_DIR]/7Modules/WorkVpager/wVPager.sys"
 
 ## Colorsets
-ColorSet 15 RootTransparent Buffer, Tint #4a516a 60, fg white, bg black
+ColorSet 24 RootTransparent Buffer, Tint #4a516a 45, fg white, bg black
 Colorset 18 fg #ffffff, bg #306ea2, hi #ffffff, sh #ffffff, Plain
 Colorset 17 fg #ffffff, bg #028383, hi, sh, Plain, NoShape
 
@@ -30,12 +30,12 @@ DesktopSize "2 1"  ## (columns - rows)
 Module FvwmPager VdeskPager 0 2  ## (desk number - number of desks)
 
 DestroyModuleConfig VdeskPager: *
-*VdeskPager: Geometry 150x240-0+0
+*VdeskPager: Geometry 150x240-0+10
 *VdeskPager: Rows 3  ## (page rows)
-*VdeskPager: Colorset * 15 ##  RootTransparent requires Picom.
+*VdeskPager: Colorset * 24
 *VdeskPager: HilightColorset * 17  ## (active page background)
 *VdeskPager: BalloonColorset * 10  ## (font color)
-*VdeskPager: WindowColorsets 13 18  ## (inactive - active apps)
+*VdeskPager: WindowColorsets 37 18  ## (inactive - active apps)
 *VdeskPager: Font "xft:Sans:size=12:antialias=True"
 *VdeskPager: WindowBorderWidth 1
 *VdeskPager: BalloonStringFormat %c

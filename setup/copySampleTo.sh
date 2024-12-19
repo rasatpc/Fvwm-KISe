@@ -20,15 +20,13 @@ fi
 
 ## Check if picom.K.conf does not exist.
 
-cd $HOME/.config/picom
+cd $HOME/.config/picom/
 FILEp=picom.K.conf
 if [ ! -f "$FILEp" ]; then
 	cd $HOME/.config
 	mkdir picom
-    cp $HOME/.fvwm/setup/picom/picom.K.conf $HOME/.config/picom/
+    cp $HOME/.fvwm/setup/picom/* $HOME/.config/picom/
 fi
-# Update picom.K.conf
-cp $HOME/.fvwm/setup/picom/picom.K.conf $HOME/.config/picom/
 
 ## Check if config.rasi does not exist.
 

@@ -9,7 +9,7 @@ FvwmRerrange options changed in fvwm3 1.1.1. Tiling options differ from the earl
 To install or edit .fvwm/userExt.sys
 
 ## Add the below line below "1.Functions / Core".
-Read $[CORE_DIR]/1Functions/DLauncher/deskL-110.sys
+Test (Version < 1.1.1) Read $[CORE_DIR]/1Functions/DLauncher/deskL-110.sys
 Test (Version >= 1.1.1) Read $[CORE_DIR]/1Functions/DLauncher/deskL.sys
 
 ## Add this line in userExt.sys when iconifying all except one which is focused.

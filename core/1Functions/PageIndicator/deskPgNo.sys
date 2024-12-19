@@ -5,7 +5,7 @@ SetEnv CORE_DIR $[HOME]/.fvwm/core
 ColorSet 15 RootTransparent Buffer, Tint #4a516a 50, fg white, bg black
 
 DestroyModuleConfig PgNo:*
-*PgNo: Geometry 235x32+8+10
+*PgNo: Geometry 235x32+10+10
 *PgNo: Fore #ffffff
 *PgNo: Pixmap none
 *PgNo: Font "xft:Sans:size=11:antialias=True"

@@ -17,7 +17,7 @@ AddToFunc ReturnDesk
 + I Module FvwmButtons ControlMP
 + I Read $[CORE_DIR]/7Modules/RightPager/rightPg.sys
 + I $[infostore.PAGER] ## If InfostoreAdd it replaces RightPager.
-+ I OpenPL ## SimpleButton
++ I Schedule 900 Read $[USER_DIR]/SimpleButton/simpleB.sys
 + I KillModule FvwmBacker
 + I DestroyModuleConfig FvwmBacker: *
 + I Exec exec $[infostore.VER] $[FVWM_USERDIR]/.BGdefault

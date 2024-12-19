@@ -1,4 +1,4 @@
-18 Nov 2024
+19 Dec 2024
 ################
 # HOW TO INSTALL Fvwm-KISe on FVWM3 (or Fvwm2)
 ################
@@ -18,10 +18,10 @@ MX Linux:
 * sudo apt-get install fvwm3
 
 Arch Linux:
-* pacman -Sy fvwm3
+* yay fvwm3
 
 Fedora/OpenSUSE/other RPM-based distros:
-* sudo dfn install fvwm3
+* sudo dnf install fvwm3
 
 Alpine Linux:
 * apk add fvwm
@@ -29,14 +29,14 @@ Alpine Linux:
 Documentation, XDG menu, Network and Volume Icon (add icon in system tray):
 ===============================================================
 * sudo apt-get install asciidoctor xterm python3-xdg stalonetray volumeicon-alsa
-* sudo pacman -Sy asciidoctor xterm python-pyxdg stalonetray volumeicon
-* sudo dnf install rubygem-asciidoctor xterm xdg-utils stalonetray volumeicon
+* sudo pacman -Sy asciidoctor xterm python python-pyxdg stalonetray volumeicon libxslt
+* sudo dnf install rubygem-asciidoctor xterm xdg-utils stalonetray volumeicon python
 
 Required by Thumbnails, Picom (compositor), and Wallpaper:
 ===============================================================
 * sudo apt install feh imagemagick x11-apps picom
-* sudo pacman -Sy feh imagemagick xorg-apps picom
-* sudo dnf install feh ImageMagick xwd x11-apps picom
+* sudo pacman -Sy feh imagemagick picom
+* sudo dnf install feh ImageMagick xwd picom
 
 Search apps, File Manager, Editor, and Keyboard indicator/switcher
 ===============================================================
@@ -61,13 +61,13 @@ Required by Yad and other scripts:
 Dependencies for github installation.
 
 MX Linux:
-* sudo apt-get install libevent-dev libxkbcommon-dev libx11-dev libxrandr-dev libxrender-dev libxt-dev libxft-dev
+* sudo apt-get install libevent-dev libfontconfig-dev libfreetype6-dev libx11-dev libxext-dev libxft-dev libxkbcommon-dev libxrandr-dev libxrender-dev libxt-dev xtrans-dev librsvg2-dev
 
 Arch Linux:
-* sudo pacman -Sy libevent-dev libxkbcommon-dev libx11-dev libxrandr-dev libxrender-dev libxt-dev libxft-dev
+* sudo pacman -Sy libevent libx11 libxext libxft libxkbcommon libxrandr libxrender libxt xtrans fontconfig freetype2 librsvg go
 
 Fedora:
-* sudo dnf install libevent-devel libxkbcommon-devel libX11-devel libXrandr-devel libXt-devel libXft-devel
+* sudo dnf install libevent-devel libxkbcommon-devel libX11-devel libXext-devel libXft-devel libXrandr-devel libXrender-devel libXt-devel libXft-devel xorg-x11-xtrans-devel esmtp libesmtp librsvg2-devel
 
 OPTIONAL
 ========
@@ -76,7 +76,7 @@ MX Linux:
 * sudo apt-get install libfribidi-dev libncurses5-dev libpng-dev libreadline-dev libxcursor-dev libxpm-dev sharutils
 
 Arch Linux:
-* sudo pacman -Sy libfribidi-dev libncurses5-dev libpng-dev libreadline-dev libxcursor-dev libxpm-dev sharutils
+* sudo pacman -Sy libpng libxcursor libxpm sharutils fribidi ncurses libpng readline libsm libxi
 
 Fedora:
 * sudo dnf install fribidi-devel ncurses-devel libpng-devel readline-devel libXcursor-devel libXpm-devel sharutils
@@ -84,8 +84,8 @@ Fedora:
 For meson or make & install command dependencies:
 =================================================
 * sudo apt-get install automake autogen gcc meson
-* sudo pacman -Sy automake autoreconf autogen meson
-* sudo dnf install automake dh-autoreconf autogen meson
+* sudo pacman -Sy automake autogen meson xtrans
+* sudo dnf install automake dh-autoreconf autogen meson git
 
 Download GitHub and install:
 ============================
