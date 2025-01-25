@@ -59,7 +59,7 @@ AddToFunc 3TileW
 DestroyFunc ATileOn
 AddToFunc ATileOn
 + I Test (Version >= 1.1.1) AutoTile
-+ I Test (Version < 1.1.1) FvwmRearrange -tile -r -mn 3 -maximize 0 0 86 82
++ I Test (Version < 1.1.1) FvwmRearrange -tile -r -mn 3 -gap 10 -maximize 0 0 86 82
 + I InfoStoreAdd TileSwitch$[monitor.current] ON
 
 DestroyFunc ATileOff
