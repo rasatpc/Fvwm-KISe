@@ -47,10 +47,6 @@ AddToFunc ToggleMaximize
 # Vertical/horizontal tiling
 ######
 
-DestroyFunc AutoTile
-AddToFunc AutoTile
-+ I Test (Version >= 1.1.1) FvwmRearrange -maximize
-
 DestroyFunc 3TileW
 AddToFunc 3TileW
 + I Test (EnvMatch infostore.TileSwitch$[monitor.current] ON) ATileOff
@@ -58,7 +54,7 @@ AddToFunc 3TileW
 
 DestroyFunc ATileOn
 AddToFunc ATileOn
-+ I Test (Version >= 1.1.1) AutoTile
++ I Test (Version >= 1.1.1) FvwmRearrange -auto_tile -gap_x 6, -gap_y 6 -maximize
 + I Test (Version < 1.1.1) FvwmRearrange -tile -r -mn 3 -gap 10 -maximize 0 0 86 82
 + I InfoStoreAdd TileSwitch$[monitor.current] ON
 
@@ -94,7 +90,7 @@ AddToFunc WorkD
 ## DESK LAUNCHER
 ########
 
-SetEnv dLicons $[CORE_DIR]/1Functions/DLauncher/icons
+SetEnv dLicons $[CORE_DIR]/1Functions/DeskLauncher/icons
 
 ## Disclude the possibility of FvwmButtons being iconified.
 Style FvwmButtons !Iconifiable

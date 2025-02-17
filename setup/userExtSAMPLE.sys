@@ -25,7 +25,7 @@
 
 ## CORE
 Read $[CORE_DIR]/1Functions/WinPosition/winPos.sys
-Read $[CORE_DIR]/1Functions/DLauncher/deskL.sys
+Read $[CORE_DIR]/1Functions/DeskLauncher/deskL.sys
 Read $[CORE_DIR]/1Functions/PageIndicator/deskPgNo.sys
 
 ## EXTRA
