@@ -3,27 +3,8 @@
 SetEnv HOME_DIR $[HOME]/.fvwm
 SetEnv CORE_DIR $[HOME]/.fvwm/core
 
-
 ## Vertical/horizontal tiling
-
-DestroyFunc TileW
-AddToFunc TileW
-+ I Test (EnvMatch infostore.TileSwitch$[monitor.current] ON) ATileOff
-+ I TestRc (NoMatch) TileOn
-
-DestroyFunc TileOn
-AddToFunc TileOn
-+ I Test (Version >= 1.1.1) FvwmRearrange -auto_tile -gap 6 -maximize
-+ I Test (Version < 1.1.1) FvwmRearrange -tile -r -mn 3 -maximize 0 0 86 82
-+ I InfoStoreAdd TileSwitch$[monitor.current] ON
-
-DestroyFunc TileOff
-AddToFunc TileOff
-+ I Current InfoStoreAdd WFocusId $[w.id]
-+ I All (CurrentPage, !Iconic, CirculateHit, !Sticky) Maximize Off
-+ I InfoStoreAdd TileSwitch$[monitor.current] OFF
-+ I WindowId $[infostore.WFocusId] Focus
-+ I Current Raise
+# Function TileW, check file .fvwm/config
 
 ## Icon location
 
@@ -48,7 +29,7 @@ Colorset 51 fg #4b88a4, bg #4b88a4, hi #4b88a4, sh #4b88a4
 Mouse 1 2 A Close
 Mouse 1 4 A Maximize
 Mouse 1 6 A Thumbnail # Iconify
-Mouse 1 8 A TileW # Tiling
+Mouse 1 8 A TileW # Tiling, check file .fvwm/config
 Mouse 1 1 A Menu MenuWindowOps
 
 ## Decor:

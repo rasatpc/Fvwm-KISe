@@ -47,24 +47,7 @@ AddToFunc ToggleMaximize
 # Vertical/horizontal tiling
 ######
 
-DestroyFunc 3TileW
-AddToFunc 3TileW
-+ I Test (EnvMatch infostore.TileSwitch$[monitor.current] ON) ATileOff
-+ I TestRc (NoMatch) ATileOn
-
-DestroyFunc ATileOn
-AddToFunc ATileOn
-+ I Test (Version >= 1.1.1) FvwmRearrange -auto_tile -gap 6 -maximize
-+ I Test (Version < 1.1.1) FvwmRearrange -tile -r -mn 3 -gap 10 -maximize 0 0 86 82
-+ I InfoStoreAdd TileSwitch$[monitor.current] ON
-
-DestroyFunc ATileOff
-AddToFunc ATileOff
-+ I Current InfoStoreAdd WFocusId $[w.id]
-+ I All (CurrentPage, !Iconic, CirculateHit, !Sticky) Maximize Off
-+ I InfoStoreAdd TileSwitch$[monitor.current] OFF
-+ I WindowId $[infostore.WFocusId] Focus
-+ I Current Raise
+# Function TileW, check file .fvwm/config
 
 ################
 # Work Desk.
@@ -114,7 +97,7 @@ AddToFunc DLauncher
 DLauncher Iconify $[dLicons]/iconifyBkg.png "AIconic" "-g +10-15"
 DLauncher Screen $[dLicons]/full-screen.png "ToggleMaximize" "-g +100-15"
 DLauncher OverView $[dLicons]/overViewBkg.png "FvwmExpose" "-g +190-15"
-DLauncher Tile $[dLicons]/tileBkg.png "3TileW" "-g +280-15"
+DLauncher Tile $[dLicons]/tileBkg.png "TileW" "-g +280-15"
 DLauncher WorkDesk $[dLicons]/work.png "WorkD" "-g +370-15"
 
 Style *DLaunch* !Borders, !Title, WindowListSkip, Sticky, StaysOnBottom
