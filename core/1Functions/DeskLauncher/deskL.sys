@@ -70,6 +70,29 @@ AddToFunc WorkD
 	echo "SetEnv Work ON"; fi'
 
 ################
+# Desktop Drag-and-Drop.
+######
+
+## Desk switch.
+InfoStoreAdd DeskSwitch "ON"
+
+DestroyFunc Deskdnd
+AddToFunc Deskdnd
++ I Test (EnvMatch infostore.DeskSwitch ON) DeskOn
++ I TestRc (NoMatch) DeskOff
+
+DestroyFunc DeskOn
+AddToFunc DeskOn
++ I Read $[CORE_DIR]/1Functions/DeskLauncher/deskdnd.sys
++ I InfoStoreAdd DeskSwitch OFF
+
+DestroyFunc DeskOff
+AddToFunc DeskOff
++ I KillModule FvwmButtons DeskDnd
++ I InfoStoreAdd DeskSwitch ON
+
+
+################
 ## DESK LAUNCHER
 ########
 
@@ -99,6 +122,7 @@ DLauncher Screen $[dLicons]/full-screen.png "ToggleMaximize" "-g +100-15"
 DLauncher OverView $[dLicons]/overViewBkg.png "FvwmExpose" "-g +190-15"
 DLauncher Tile $[dLicons]/tileBkg.png "TileW" "-g +280-15"
 DLauncher WorkDesk $[dLicons]/work.png "WorkD" "-g +370-15"
+DLauncher DeskDnD $[dLicons]/desktopFile.png "Deskdnd" "-g +460-15"
 
 Style *DLaunch* !Borders, !Title, WindowListSkip, Sticky, StaysOnBottom
 Style *DLaunch* NeverFocus

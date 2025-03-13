@@ -1,0 +1,14 @@
+## Loaded by deskL.sys
+## deskdnd.sys
+
+SetEnv DND_DIR $[HOME]/.fvwm/core/1Functions
+
+# Desktop Drag-and-Drop.
+
+Module FvwmButtons DeskDnd
+DestroyModuleConfig DeskDnd:*
+*DeskDnd: Geometry 320x440+100+100
+*DeskDnd: (1x1, Swallow (UseOld) "pcmanfm" \
+   'Exec exec $[DND_DIR]/DeskLauncher/script/pcmanfm $[HOME]/Desktop', Frame 0, Colorset 15)
+
+Style DeskDnd !Title, WindowListSkip, Sticky, !Handles, !Iconifiable, BorderWidth 0, StaysOnBottom
