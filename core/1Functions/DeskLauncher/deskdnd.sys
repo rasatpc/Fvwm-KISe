@@ -3,12 +3,22 @@
 
 SetEnv DND_DIR $[HOME]/.fvwm/core/1Functions
 
+DestroyFunc MenuFocus
+AddToFunc MenuFocus
++ I SloppyFocus
++ I Schedule 900 Exec xdotool key ctrl+m
++ I Schedule 1000 ClickToFocus
+
 # Desktop Drag-and-Drop.
 
 Module FvwmButtons DeskDnd
 DestroyModuleConfig DeskDnd:*
-*DeskDnd: Geometry 320x440+100+100
-*DeskDnd: (1x1, Swallow (UseOld) "pcmanfm" \
+*DeskDnd: Geometry 330x440+100+100
+
+*DeskDnd: (1x1, Container (Columns 1))
+*DeskDnd: (1x1, Title Menu, Action(Mouse 1) MenuFocus, Frame 1, Colorset 10)
+*DeskDnd: (1x28, Swallow (UseOld) "pcmanfm" \
    'Exec exec $[DND_DIR]/DeskLauncher/script/pcmanfm $[HOME]/Desktop', Frame 0, Colorset 15)
+*DeskDnd: (End)
 
 Style DeskDnd !Title, WindowListSkip, Sticky, !Handles, !Iconifiable, BorderWidth 0, StaysOnBottom
