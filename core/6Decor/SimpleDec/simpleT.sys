@@ -1,0 +1,48 @@
+## Decor/Extra: simpleT.sys
+
+
+## SetEnv HOME_DIR $[HOME]/.fvwm
+SetEnv CORE_DIR $[HOME]/.fvwm/core
+
+Icon location
+SetEnv IconSq $[CORE_DIR]/6Decor/SimpleDec/icons
+
+## Colorsets
+## (check $[CORE_DIR]/3Colorsets/KColors/FVWM-Colorsets.def)
+
+#   37 - Inactive Windows 
+#   38 - Active Window
+#   47 - Active Windows Borders
+#   51 - Inactive Windows Borders
+Colorset 37 fg #ffffff, bg #4b88a4, hi, sh, Plain, NoShape
+Colorset 38 fg #ffffff, bg #2b4e5e, hi, sh, Plain, NoShape
+Colorset 47 fg #2b4e5e, bg #2b4e5e, hi #2b4e5e, sh #2b4e5e
+Colorset 51 fg #4b88a4, bg #4b88a4, hi #4b88a4, sh #4b88a4
+
+# Binding:
+Mouse 1 2 A Close
+Mouse 1 1 A Menu MenuWindowOps
+
+# Reset all buttons.
+ButtonStyle Reset
+
+AddToDecor SimpleDecor
++ TitleStyle Centered Height 18 -- Flat
++ ButtonStyle All -- UseTitleStyle
++ BorderStyle Simple -- HiddenHandles !NoInset Raised
++ ButtonStyle All -- Flat
++ AddButtonStyle 1 \
+		All ActiveUp Vector 5 15x15@4 15x85@3 85x85@3 \
+        85x15@3 15x15@3 -- Flat
++ AddButtonStyle 2 \
+        ActiveUp (Pixmap $[IconSq]/cl-active.png -- flat) \
+        Inactive (Pixmap $[IconSq]/cl-inactive.png -- flat)
++ AddButtonStyle 4 
++ AddButtonStyle 6 
++ AddButtonStyle 8
+
++ ButtonStyle All - Clear
+# Add styles in config file.
+
+# Hide button 4, 6 and 8 in config file.
+# Style <window name> !Button 4, !Button 6, !Button 8

@@ -50,24 +50,36 @@ AddToFunc ToggleMaximize
 # Function TileW, check file .fvwm/config
 
 ################
-# Work Desk.
+# ToDo.
 ######
 
-## Loading
-DestroyFunc onWorkD
-AddToFunc onWorkD
-+ I Read $[CORE_DIR]/7Modules/Desker/dButtonPager.sys
-+ I Read $[USER_DIR]/WorkButtons/hideWorkBar.sys
-
 ## Desk switch.
-SetEnv Work ON
+InfoStoreAdd TodoSwitch "ON"
 
-DestroyFunc WorkD
-AddToFunc WorkD
-+ I Piperead 'if [ $Work = ON ]; then echo "onWorkD"; \
-	echo "Schedule 500 SetEnv Work OFF"; fi'
-+ I Piperead 'if [ $Work = OFF ]; then echo "ReturnDesk"; \
-	echo "SetEnv Work ON"; fi'
+DestroyFunc ToDo
+AddToFunc ToDo
++ I Test (EnvMatch infostore.TodoSwitch ON) ToDoOn
++ I TestRc (NoMatch) ToDoOff
+
+DestroyFunc ToDoOn
+AddToFunc ToDoOn
++ I Exec exec $[CORE_DIR]/1Functions/DeskLauncher/script/Todour
++ I InfoStoreAdd TodoSwitch OFF
+
+DestroyFunc ToDoOff
+AddToFunc ToDoOff
++ I Exec pkill Todour
++ I InfoStoreAdd TodoSwitch ON
+
+Read $[CORE_DIR]/6Decor/SimpleDec/simpleT.sys
+
+Style Todour* Title, WindowListSkip, !Sticky, !Iconifiable
+Style Todour* Colorset 37, HilightColorset 38, \
+        BorderColorset 51, HilightBorderColorset 47, \
+        BorderWidth 2, HandleWidth 4, UseDecor SimpleDecor
+Style Todour* !Button 4, !Button 6, !Button 8
+Style Todour* Font "xft:Sans:size=10:minspace=False:antialias=True"
+
 
 ################
 # Desktop Drag-and-Drop.
@@ -92,6 +104,25 @@ AddToFunc DeskOff
 + I KillModule FvwmButtons MenuB
 + I InfoStoreAdd DeskSwitch ON
 
+################
+# Work Desk.
+######
+
+## Loading
+DestroyFunc onWorkD
+AddToFunc onWorkD
++ I Read $[CORE_DIR]/7Modules/Desker/dButtonPager.sys
++ I Read $[USER_DIR]/WorkButtons/hideWorkBar.sys
+
+## Desk switch.
+SetEnv Work ON
+
+DestroyFunc WorkD
+AddToFunc WorkD
++ I Piperead 'if [ $Work = ON ]; then echo "onWorkD"; \
+	echo "Schedule 500 SetEnv Work OFF"; fi'
++ I Piperead 'if [ $Work = OFF ]; then echo "ReturnDesk"; \
+	echo "SetEnv Work ON"; fi'
 
 ################
 ## DESK LAUNCHER
@@ -122,8 +153,9 @@ DLauncher Iconify $[dLicons]/iconifyBkg.png "AIconic" "-g +10-15"
 DLauncher Screen $[dLicons]/full-screen.png "ToggleMaximize" "-g +100-15"
 DLauncher OverView $[dLicons]/overViewBkg.png "FvwmExpose" "-g +190-15"
 DLauncher Tile $[dLicons]/tileBkg.png "TileW" "-g +280-15"
-DLauncher WorkDesk $[dLicons]/work.png "WorkD" "-g +370-15"
+DLauncher ToDo $[dLicons]/checklist.png "ToDo" "-g +370-15"
 DLauncher DeskDnD $[dLicons]/desktopFile.png "Deskdnd" "-g +460-15"
+DLauncher WorkDesk $[dLicons]/work.png "WorkD" "-g +550-15"
 
 Style *DLaunch* !Borders, !Title, WindowListSkip, Sticky, StaysOnBottom
 Style *DLaunch* NeverFocus

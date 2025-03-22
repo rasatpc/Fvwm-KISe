@@ -8,12 +8,32 @@ AddToFunc MenuFocus
 + I WindowId $[infostore.PcmanWin] Focus
 + I Exec xdotool key ctrl+m
 
-# Menu Button
+#DestroyFunc ResizeFocus
+#AddToFunc ResizeFocus
+#+ I WindowId $[infostore.PcmanWin] Focus
+#+ I Current Resize 500p 440p
+#+ I Current Resize 330p 440p
 
+## Resize switch.
+SetEnv ResizeSW ON
+
+DestroyFunc ResizeFocus
+AddToFunc ResizeFocus
++ I Piperead 'if [ $ResizeSW = ON ]; then echo "Current Resize 500p 440p"; \
+	echo "Schedule 500 SetEnv ResizeSW OFF"; fi'
++ I Piperead 'if [ $ResizeSW = OFF ]; then echo "Current Resize 330p 440p"; \
+	echo "SetEnv ResizeSW ON"; fi'
+
+# Menu Button
 Module FvwmButtons MenuB
 DestroyModuleConfig MenuB:*
 *MenuB: Geometry 333x20+100+80
-*MenuB: (1x1, Title Menu, Action(Mouse 1) MenuFocus, Frame 0, Colorset 10)
+*MenuB: PressColorset 41
+*MenuB: Pixmap none
+*MenuB: Rows 1
+*MenuB: (4x1, Title Menu, Action(Mouse 1) MenuFocus, Frame 0, Colorset 10)
+*MenuB: (4x1, Title "Extend <->", Action(Mouse 1) ResizeFocus, Frame 0, Colorset 10)
+*MenuB: (1x1, Icon $[dLicons]/bar48x24.png, Frame 0)
 
 Style MenuB !Title, WindowListSkip, Sticky, !Handles, !Iconifiable, BorderWidth 0, StaysOnBottom, NeverFocus
 

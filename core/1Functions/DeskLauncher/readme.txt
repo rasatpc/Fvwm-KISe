@@ -17,3 +17,11 @@ Style *DLaunch* NeverFocus
 ## Requires for thumbnail and overview
 Read $[CORE_DIR]/1Functions/Thumbnails/thumbnail.sys
 Read $[CORE_DIR]/5Bindings/ExposeList/fvwmExposeList.sys
+
+PCmanFM dependency:
+libfm-gtk4
+https://github.com/rasatpc/pcmanfm-miniDesk
+
+Todour dependency:
+qt5-default
+https://nerdur.com/todour-pl/
