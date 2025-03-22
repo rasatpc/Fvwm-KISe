@@ -5,7 +5,7 @@
 SetEnv CORE_DIR $[HOME]/.fvwm/core
 
 Icon location
-SetEnv IconSq $[CORE_DIR]/6Decor/SimpleDec/icons
+SetEnv IconSq $[CORE_DIR]/6Decor/SingleDecor/icons
 
 ## Colorsets
 ## (check $[CORE_DIR]/3Colorsets/KColors/FVWM-Colorsets.def)

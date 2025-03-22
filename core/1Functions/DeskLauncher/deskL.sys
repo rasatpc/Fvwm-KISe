@@ -71,7 +71,7 @@ AddToFunc ToDoOff
 + I Exec pkill Todour
 + I InfoStoreAdd TodoSwitch ON
 
-Read $[CORE_DIR]/6Decor/SimpleDec/simpleT.sys
+Read $[CORE_DIR]/6Decor/SingleDecor/singleWinD.sys
 
 Style Todour* Title, WindowListSkip, !Sticky, !Iconifiable
 Style Todour* Colorset 37, HilightColorset 38, \
