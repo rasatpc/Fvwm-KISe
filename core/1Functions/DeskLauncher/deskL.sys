@@ -79,7 +79,8 @@ Style Todour* Colorset 37, HilightColorset 38, \
         BorderWidth 2, HandleWidth 4, UseDecor SimpleDecor
 Style Todour* !Button 4, !Button 6, !Button 8
 Style Todour* Font "xft:Sans:size=10:minspace=False:antialias=True"
-Style Todour* MinWindowSize 430p 400p, MaxWindowSize 430p 500p
+Style Todour* MinWindowSize 430p 400p
+#Style Todour* MaxWindowSize 430p 500p
 
 ################
 # Desktop Drag-and-Drop.
