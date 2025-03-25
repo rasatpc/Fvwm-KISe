@@ -162,5 +162,6 @@ AddToFunc NoFoc
 + I Style PgNo NeverFocus
 + I Style FE-Label NeverFocus
 + I Style VdeskPager NeverFocus
++ I Style MenuB NeverFocus
 
 Schedule 4000 NoFoc

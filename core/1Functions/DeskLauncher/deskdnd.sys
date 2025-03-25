@@ -8,20 +8,14 @@ AddToFunc MenuFocus
 + I WindowId $[infostore.PcmanWin] Focus
 + I Exec xdotool key ctrl+m
 
-#DestroyFunc ResizeFocus
-#AddToFunc ResizeFocus
-#+ I WindowId $[infostore.PcmanWin] Focus
-#+ I Current Resize 500p 440p
-#+ I Current Resize 330p 440p
-
 ## Resize switch.
 SetEnv ResizeSW ON
 
 DestroyFunc ResizeFocus
 AddToFunc ResizeFocus
-+ I Piperead 'if [ $ResizeSW = ON ]; then echo "Current Resize 500p 440p"; \
++ I Piperead 'if [ $ResizeSW = ON ]; then echo "WindowId $[infostore.PcmanWin] Resize 500p 440p"; \
 	echo "Schedule 500 SetEnv ResizeSW OFF"; fi'
-+ I Piperead 'if [ $ResizeSW = OFF ]; then echo "Current Resize 330p 440p"; \
++ I Piperead 'if [ $ResizeSW = OFF ]; then echo "WindowId $[infostore.PcmanWin] Resize 330p 440p"; \
 	echo "SetEnv ResizeSW ON"; fi'
 
 # Menu Button
@@ -35,12 +29,12 @@ DestroyModuleConfig MenuB:*
 *MenuB: (4x1, Title "Extend <->", Action(Mouse 1) ResizeFocus, Frame 0, Colorset 10)
 *MenuB: (1x1, Icon $[dLicons]/bar48x24.png, Frame 0)
 
-Style MenuB !Title, WindowListSkip, Sticky, !Handles, !Iconifiable, BorderWidth 0, StaysOnBottom, NeverFocus
+Style MenuB !Title, WindowListSkip, Sticky, !Handles, !Iconifiable, BorderWidth 0, StaysOnBottom
 
 # MiniDesk Drag-and-Drop
 
 Exec exec $[DND_DIR]/DeskLauncher/script/pcmanfm $[HOME]/Desktop
-Schedule 300 Current InfoStoreAdd PcmanWin $[w.id]
+Schedule 500 Current InfoStoreAdd PcmanWin $[w.id]
 
 Style Pcmanfm !Title, WindowListSkip, Sticky, !Handles, !Iconifiable, BorderWidth 0, StaysOnBottom
 
