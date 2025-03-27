@@ -1,12 +1,12 @@
 # Fvwm-KISe
-Fvwm Keep-It-Simple & elegant - is a simplified version of Fvwm-myExt collection of ready-made scripts (configs). KISe is a simple and elegant base to use, modify, or add your own.
+Fvwm Keep-It-Simple & Elegant is a streamlined version of the Fvwm-myExt collection of ready-made scripts (configs). KISe serves as a simple and elegant base for using, modifying, or adding your own scripts.
 
-The default Fvwm config file is the base. In KISe it is split into associated folders and runs in the same sequence as the original. This structure helps to maintain, debug, and create new functions, decor, and modules. Currently, there are 22 scripts (configs) of functions, styles, menus, decor, and modules.
+The default Fvwm config file serves as the basep. In KISe, it is organized into associated folders and operates in the same sequence as the original. This structure aids in maintaining, debugging, and creating new functions, decor, and modules. There are 25 scripts (configs) encompassing functions, styles, menus, décor, and modules.
 
 # Main features:
 * Desk Launcher includes:
 	Iconfied Thumbnails, Full-Screen Maximize, Windows Overview,
-	Tiling, and Work Desk.
+	Tiling, ToDo list, mini-Desk (drag-and-drop), and Work Desk.
 
 * Work Desk includes navigation buttons, Rofi, Calendar, Clock,
 	and 4 Desks Pager with 2 pages each.
@@ -31,11 +31,11 @@ Tested on Fvwm3 and Fvwm2
 
 Download:
 
-* Version 2.7.1
+* Version 3.0.1
 * https://github.com/rasatpc/Fvwm-KISe/archive/refs/heads/main.zip
 
 Extract and copy subfolders to ~/.fvwm
 
-When Fvwm is loaded for the first time, .fvwm/config creates one sub-system file (userExt.sys) which reads the scripts and runs the system.
+When Fvwm is loaded for the first time, .fvwm/config creates a subsystem file (userExt.sys) that reads the scripts and runs the system.
 
-* Requirements & Dependencies read setup/INSTALL.md
+* Requirements & dependencies read setup/INSTALL.md

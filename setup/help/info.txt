@@ -1,20 +1,20 @@
 WELCOME to F(?) Virtual Window Manager (FVWM).
 
-If you are new to FVWM, the first thing to bear in mind it is not a Desktop Environment (GNOME, KDE, XFCE, etc). DE comes with a collection of preconfigured settings and software (file managers, docks/panels, and so on) all integrated together. 
+If you are new to FVWM, the first thing to bear in mind is that it is not a Desktop Environment (like GNOME, KDE, XFCE, etc.). A DE comes with a collection of preconfigured settings and software (such as file managers, docks/panels, and so on), all integrated together. 
 
-FVWM is a Window Manager (WM). What sets it apart from other WMs, it is also a *Virtual* window manager. Among the powerful Fvwm features is the virtual desktop, which allows you to place windows on an area much larger than the actual size of the visible display.
+FVWM is a Window Manager (WM). What sets it apart from other WMs is that it is also a *Virtual* window manager. Among the powerful Fvwm features is the virtual desktop, which allows you to place windows on an area much larger than the visible display itself.
 
 FVWM3 (ver. 1.1.2)
 
-It comes with a minimal startup configuration. It gives the user the choice of expression. Details such as the appearance of windows, the function of panels, pagers, programs that will be used, and mouse/key control are created and defined by the user.
+It includes a minimal startup configuration, allowing users to express their preferences. Details such as window appearance, panel functions, pager usage, selected programs, and mouse/key controls are determined by the user.
 
-FVWM-KISe (ver. 2.7.1)
+FVWM-KISe (ver. 3.0.1)
 
-Fvwm-Keep-It-Simple & elegant is a simplified version of myExt which started as a collection of ready-made scripts (configs). A simple and elegant base and feature-rich rich, for you to use, modify or add your own.
+Fvwm-Keep-It-Simple & elegant is a streamlined version of myExt that began as a collection of pre-made scripts (configs). It offers a simple yet elegant base that is feature-rich, allowing you to use, modify, or add your custom elements.
 
-The default FVWM config file is the base. In KISe it is split into folders and runs in the same sequence as the original. The additional scripts are added in associated folders. This structure helps to maintain, debug, and create new functions, decor, and modules.
+The default FVWM config file serves as the base. In KISe, it is organized into folders and operates in the same sequence as the original. Additional scripts are included in their respective folders. This structure facilitates maintenance, debugging, and the creation of new functions, decor, and modules.
 
-A picture is worth of thousand words. The attached illustrated screenshot shows the main features of Fvwm-KISe.
+A picture is worth a thousand words. The attached illustrated screenshot shows the key features of Fvwm-KISe.
 
 .fvwm/setup/images/fvwm-kise-help.png
 
@@ -24,4 +24,5 @@ https://fvwmforums.org/t/fvwm-kise/4256
 
 Fvwm3-myExt extensions (configs) development started on 8 Dec 2020.
 Fvwm-KISe on 10 July 2023
-Last update: 17 February 2025
+Last update: 27 March 2025
+

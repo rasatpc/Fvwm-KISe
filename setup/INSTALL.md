@@ -1,4 +1,4 @@
-17 Feb 2025
+27 Mar 2025
 ################
 # HOW TO INSTALL Fvwm-KISe on FVWM3 (or Fvwm2)
 ################
@@ -100,7 +100,7 @@ Download GitHub and install:
 Uninstall:
 * sudo make uninstall
 
-Download GitHub and meson install (Fvwm 1.1.1):
+Download GitHub and meson install (Fvwm 1.1.2):
 ===============================================
 * git clone https://github.com/fvwmorg/fvwm3.git
 * cd fvwm3

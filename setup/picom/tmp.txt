@@ -1,0 +1,4 @@
+New picom update: 27 March 2025 for Fvwm-Kise ver. 3.0.1.
+
+Don't remove this file!!!
+If removed, the picom files will be modified by .fvwm/setup/picom/*

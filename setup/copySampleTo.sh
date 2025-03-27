@@ -21,7 +21,7 @@ fi
 ## Check if picom.K.conf does not exist.
 
 cd $HOME/.config/picom/
-FILEp=picom.K.conf
+FILEp=tmp.txt
 if [ ! -f "$FILEp" ]; then
 	cd $HOME/.config
 	mkdir picom

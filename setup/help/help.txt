@@ -1,8 +1,8 @@
-FVWM-KISe (ver. 2.7.1)
+FVWM-KISe (ver. 3.0.1)
 
-Instead of one lengthy config, Fvwm-KISe is using the myExt model of individual small scripts. They are organized into folders and run in the same sequence as the original Fvwm.
+Rather than a single lengthy config, Fvwm-KISe employs the myExt model, which consists of individual small scripts (configs). These scripts are organized into folders and executed in the same sequence as the original Fvwm.
 
-.fvwm/core  + config  -- core scripts (configs) folder and the default configuration file.
+.fvwm/core  + config  -- core scripts folder and the default config file.
 
 .fvwm/core/
 	1Functions
@@ -13,35 +13,35 @@ Instead of one lengthy config, Fvwm-KISe is using the myExt model of individual 
 	6Decor
 	7Modules
 
-To add and make changes in the core and to create your own without being overwritten by new updates, it includes one additional user folder and system file:
+To add and make changes to the core and create your own without being overwritten by new updates, it includes one additional user folder and system file:
 
-.fvwm/user  + userExt.sys  -- user scripts folder and one file that reads the core and user scripts.
+.fvwm/user + userExt.sys -- user scripts folder and a file for reading the core and user scripts.
 
-This structure helps to maintain, debug, and create new functions, decor, and modules.
+This structure aids in maintaining, debugging, and developing new functions, decor, and modules.
 
-To manage wallpapers, how to install and configure, it includes two folders:
+To manage wallpapers, including installation and configuration, there are two folders:
 
 .fvwm/images
 .fvwm/setup
 
-Each script has readme.txt with a description of how to install and where to add in .fvwm/userExt.sys. Also in userExt.sys, major changes are made such as geometry (size and location on screen), and new options (color or behavior).
+Each script includes a readme.txt file that describes how to install it and where to add it in the .fvwm/userExt.sys file. Additionally, major changes are made in userExt.sys, such as adjusting the geometry (size and position on the screen) and introducing new options (color or behavior).
 
-For major modifications such as adding more icons to the icon panel, copy the whole folder to .fvwm/user. For example, .fvwm/core/7Modules/SimpleButton and change the read line in userExt.sys
+To make major changes like adding more icons to the icon panel, copy the entire folder to .fvwm/user. For example, .fvwm/core/7Modules/SimpleButton, and modify the read line in userExt.sys.
 
 "Read $[CORE_DIR]/7Modules/SimpleButton/init.conf" to
 "Read $[USER_DIR]/SimpleButton/init.conf"
 (with variable $[USER_DIR])
 
-Note: At first load, three folders are automatically copied to .fvwm/user.
+Note: Three folders are automatically copied to .fvwm/user at first load.
 
 AutoMoveWin
 SimpleButton
 WorkButtons
 
-To modify them, in the menu (left-click) <System>, click any of them.
+To modify them, click any of them in the menu (left-click) <System>.
 
-Any inspiring and functional script, please share on:
+Please share any inspiring and functional scripts at:
 https://fvwmforums.org
 
 By Rasat
-17 Feb 2025
+27 Mar 2025
