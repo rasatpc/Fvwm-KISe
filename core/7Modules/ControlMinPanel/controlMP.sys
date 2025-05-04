@@ -5,13 +5,13 @@ SetEnv CORE_DIR $[HOME]/.fvwm/core
 
 ## Help Drop Menu
 
+### IMPORTANT ###
+# Variable EDT adds the available text editor from .fvwm/config.
+
 DestroyMenu MenuStart
 AddToMenu MenuStart
-Test (x featherpad) + "Info " Exec exec featherpad $[HOME_DIR]/setup/help/info.txt
-Test (x mousepad) + "Info " Exec exec mousepad $[HOME_DIR]/setup/help/info.txt
-
-Test (x featherpad) + "Bindings " Exec exec featherpad $[HOME_DIR]/setup/help/key-mouse-bindings.txt
-Test (x mousepad) + "Bindings " Exec exec mousepad $[HOME_DIR]/setup/help/Key-Mouse-Bindings.txt
++ "Info " $[infostore.EDT] $[HOME_DIR]/setup/help/info.txt
++ "Bindings " $[infostore.EDT] $[HOME_DIR]/setup/help/key-mouse-bindings.txt
 
 + "How To " Exec exec display -size 960x540 $[HOME]/.fvwm/setup/images/Fvwm-KISe-v1.7.0-help.png
 + "How WD " Exec exec display -size 960x540 $[HOME]/.fvwm/setup/images/Fvwm-KISe-workDesk-help.png

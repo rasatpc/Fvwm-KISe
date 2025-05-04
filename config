@@ -137,6 +137,19 @@ AddToFunc TileOff
 + I WindowId $[infostore.WFocusId] Focus
 + I Current Raise
 
+#####
+## Testing which text editor is available.
+## The variable EDT loads the available editor for the Panel buttons,
+## Kmenu, and ControlMiniPanel.
+
+Test (x geany) InfoStoreAdd EDT "Exec exec geany"
+Test (x kate) InfoStoreAdd EDT "Exec exec kate"
+Test (x pluma) InfoStoreAdd EDT "Exec exec pluma"
+Test (x leafpad) InfoStoreAdd EDT "Exec exec leafpad"
+Test (x gedit) InfoStoreAdd EDT "Exec exec gedit"
+Test (x mousepad) InfoStoreAdd EDT "Exec exec mousepad"
+Test (x featherpad) InfoStoreAdd EDT "Exec exec featherpad"
+
 #######################
 ## USER
 #######################

@@ -12,6 +12,9 @@ Colorset 15 RootTransparent Buffer, Tint #4A516A 40, fg white, bg black
 
 ## Button Panel
 
+### IMPORTANT ###
+# Variable EDT adds the available text editor from .fvwm/config.
+
 Module FvwmButtons HideBar
 
 DestroyModuleConfig HideBar: *
@@ -23,7 +26,7 @@ DestroyModuleConfig HideBar: *
 
 *HideBar: (Panel(down, steps 0, delay 10, position module left, indicator 44) \
 	SimpleButton "Module FvwmButtons SimpleButton", Id open-panel, \
-	Action(Mouse 3) "Exec exec featherpad $[USER_DIR]/SimpleButton/simpleB.sys")
+	Action(Mouse 3) $[infostore.EDT] $[USER_DIR]/SimpleButton/simpleB.sys )
 
 Style HideBar NoTitle, NoHandles, Sticky, WindowListSkip, \
 	BorderWidth 0, CirculateSkip, StaysOnBottom, NeverFocus

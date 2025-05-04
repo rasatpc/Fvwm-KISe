@@ -13,10 +13,15 @@ KillModule FvwmButtons HideBar
 # SetEnv wicons $[CORE_DIR]/7Modules/WorkButtons/icons
 SetEnv wicons $[USER_DIR]/WorkButtons/icons
 
+## Button Panel
+
+### IMPORTANT ###
+# Variable EDT adds the available text editor from .fvwm/config.
+
 DestroyModuleConfig WorkBar: *
 *WorkBar: PressColorset 7
-*WorkBar: Colorset 16
-*WorkBar: Pixmap none
+*WorkBar: Colorset 16 ## (close for Pixmap)
+#*WorkBar: Pixmap none
 *WorkBar: Frame 1
 
 ## Add or remove below buttons
@@ -24,25 +29,25 @@ DestroyModuleConfig WorkBar: *
 *WorkBar: Rows 7  ## (as per numbers of buttons)
 
 *WorkBar: (1x1, Icon $[wicons]/3D/internet-feed-reader.png, Panel(right, steps 0, delay 0, indicator 20) WebBut "Module FvwmButtons WebBut", \
-	Action(Mouse 3) "Exec exec featherpad $[USER_DIR]/WorkButtons/web.conf")
+	Action(Mouse 3) $[infostore.EDT] $[USER_DIR]/WorkButtons/web.conf)
 
 *WorkBar: (1x1, Icon $[wicons]/mail.png, Panel(right, steps 0, delay 0, indicator 20) EmailBut "Module FvwmButtons EmailBut", \
-	Action(Mouse 3) "Exec exec featherpad $[USER_DIR]/WorkButtons/email.conf")
+	Action(Mouse 3) $[infostore.EDT] $[USER_DIR]/WorkButtons/email.conf)
 
 *WorkBar: (1x1, Icon $[wicons]/filemanager.png, Panel(right, steps 0, delay 0, indicator 20) FileBut "Module FvwmButtons FileBut", \
-	Action(Mouse 3) "Exec exec featherpad $[USER_DIR]/WorkButtons/file.conf")
+	Action(Mouse 3) $[infostore.EDT] $[USER_DIR]/WorkButtons/file.conf)
 
 *WorkBar: (1x1, Icon $[wicons]/3D/gnome-graphics.png, Panel(right, steps 0, delay 0, indicator 20) GraphBut "Module FvwmButtons GraphBut", \
-	Action(Mouse 3) "Exec exec featherpad $[USER_DIR]/WorkButtons/graphic.conf")
+	Action(Mouse 3) $[infostore.EDT] $[USER_DIR]/WorkButtons/graphic.conf)
 
 *WorkBar: (1x1, Icon $[wicons]/libreoffice-writer.png, Panel(right, steps 0, delay 0, indicator 20) OfficeBut "Module FvwmButtons OfficeBut", \
-	Action(Mouse 3) "Exec exec featherpad $[USER_DIR]/WorkButtons/office.conf")
+	Action(Mouse 3) $[infostore.EDT] $[USER_DIR]/WorkButtons/office.conf)
 
 *WorkBar: (1x1, Icon $[wicons]/movie.png, Panel(right, steps 0, delay 0, indicator 20) AudioBut "Module FvwmButtons AudioBut", \
-	Action(Mouse 3) "Exec exec featherpad $[USER_DIR]/WorkButtons/audio.conf")
+	Action(Mouse 3) $[infostore.EDT] $[USER_DIR]/WorkButtons/audio.conf)
 
 *WorkBar: (1x1, Icon $[wicons]/win-apps.png, Panel(right, steps 0, delay 0, indicator 20) MiscBut "Module FvwmButtons MiscBut", \
-	Action(Mouse 3) "Exec exec featherpad $[USER_DIR]/WorkButtons/misc.conf")
+	Action(Mouse 3) $[infostore.EDT] $[USER_DIR]/WorkButtons/misc.conf)
 
 ## Style setting
 Style WorkBar !Borders, !Title, WindowListSkip, StaysOnBottom, Sticky, NeverFocus
