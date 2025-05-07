@@ -28,9 +28,9 @@ Alpine Linux:
 
 Documentation, XDG menu, Network and Volume Icon (add icon in system tray):
 ===============================================================
-* sudo apt-get install asciidoctor xterm python3-xdg stalonetray volumeicon-alsa
-* sudo pacman -Sy asciidoctor xterm python python-pyxdg stalonetray volumeicon libxslt
-* sudo dnf install rubygem-asciidoctor xterm xdg-utils stalonetray volumeicon python
+* sudo apt-get install asciidoctor python3-xdg stalonetray volumeicon-alsa
+* sudo pacman -Sy asciidoctor python python-pyxdg stalonetray volumeicon libxslt
+* sudo dnf install rubygem-asciidoctor xdg-utils stalonetray volumeicon python
 
 Required by Thumbnails, Picom (compositor), PcmanFM, and Wallpaper:
 ===============================================================
