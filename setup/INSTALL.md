@@ -38,11 +38,11 @@ Required by Thumbnails, Picom (compositor), PcmanFM, and Wallpaper:
 * sudo pacman -Sy feh imagemagick picom, libfm-gtk4, qt5-default
 * sudo dnf install feh ImageMagick xwd picom, libfm-gtk4, qt5-default
 
-Search apps, File Manager, Editor, and Keyboard indicator/switcher
+Search apps and Keyboard indicator/switcher
 ===============================================================
-* sudo apt install rofi xfce4-appfinder thunar featherpad gxkb
-* sudo pacman -Sy rofi xfce4-appfinder thunar featherpad gxkb
-* sudo dnf install rofi xfce4-appfinder thunar featherpad gxkb
+* sudo apt install rofi xfce4-appfinder gxkb
+* sudo pacman -Sy rofi xfce4-appfinder gxkb
+* sudo dnf install rofi xfce4-appfinder gxkb
 
 Copy .fvwm/setup/rofi to .config/
 Configure keyboard layout ~/.config/gxkb/gxkb.cfg
