@@ -34,9 +34,9 @@ Documentation, XDG menu, Network and Volume Icon (add icon in system tray):
 
 Required by Thumbnails, Picom (compositor), PcmanFM, and Wallpaper:
 ===============================================================
-* sudo apt install feh imagemagick x11-apps picom, libfm-gtk4
-* sudo pacman -Sy feh imagemagick picom, libfm-gtk4, qt5-default
-* sudo dnf install feh ImageMagick xwd picom, libfm-gtk4, qt5-default
+* sudo apt install feh imagemagick x11-apps picom libfm-gtk4
+* sudo pacman -Sy feh imagemagick picom libfm-gtk4 qt5-default
+* sudo dnf install feh ImageMagick xwd picom libfm-gtk4 qt5-default
 
 Search apps and Keyboard indicator/switcher
 ===============================================================
